@@ -1,0 +1,32 @@
+{
+    "id": "988db927-b18f-466a-9066-3c9f6f6a5c0f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Loader",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Text",
+            "id": "8cf481a2-b83c-42b7-ab55-331c0a0dc763",
+            "label": "loadingText",
+            "scope": "CLASS",
+            "x": 2,
+            "y": 6,
+            "text": ">> Initializing: 1 / 8",
+            "fontFamily": "Tempesta Seven",
+            "color": "#ff0000"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

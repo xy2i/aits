@@ -1,0 +1,134 @@
+{
+    "id": "cb6bbd78-81a3-4c1d-a300-68688f5b5eb4",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [
+            "aits/public/assets/asset-pack.json"
+        ],
+        "createMethodName": "editorCreate",
+        "sceneKey": "MainMenu",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6509797f-6ae8-4b88-89d8-8d1d29c71450",
+            "label": "defaultBg",
+            "scope": "CLASS",
+            "texture": {
+                "key": "defaultBg"
+            },
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "",
+            "tintTopRight": "",
+            "tintBottomLeft": "",
+            "tintBottomRight": "",
+            "list": [
+                {
+                    "type": "ColorMatrix",
+                    "id": "b21e00ca-20e0-43ab-b568-5c05c41c2c2f",
+                    "label": "hueFx",
+                    "operationType": 4,
+                    "hueRotation": -140,
+                    "preFX": true
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "c50af833-9ffa-4ff3-b3cd-c3116ee84891",
+                    "label": "brightnessFx",
+                    "operationType": 2,
+                    "brightness": 0.25,
+                    "preFX": true
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "b2eac2a7-fb49-435d-a24a-41b12b15c442",
+                    "label": "contrastFx",
+                    "operationType": 6,
+                    "contrast": 0.2,
+                    "preFX": true
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "57b7c2d2-c3b9-4b9e-bd00-d38dccd9e687",
+                    "label": "saturateFx",
+                    "operationType": 3,
+                    "saturate": 0.2,
+                    "preFX": true
+                }
+            ]
+        },
+        {
+            "prefabId": "a90b59b2-442a-4b64-bc7c-43baeef5b527",
+            "id": "3b975774-8fd9-44f6-b2fc-86ab19133219",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "bottomBar",
+            "x": 0,
+            "y": 620
+        },
+        {
+            "type": "Image",
+            "id": "d53a2bd1-3c85-449b-b238-067fb75c623d",
+            "label": "anti_idle_logo",
+            "texture": {
+                "key": "anti-idle-logo"
+            },
+            "x": 256.419,
+            "y": 39.981,
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Text",
+            "id": "b5223fa9-4e36-43d5-a44e-ae4f3438118f",
+            "label": "text_1",
+            "y": 151,
+            "text": "Welcome to Anti-Idle: The Game!",
+            "fixedWidth": 650,
+            "fixedHeight": 134.65,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "21px",
+            "color": "#c8e1fa"
+        },
+        {
+            "type": "Text",
+            "id": "a5b4a828-bdc1-4bde-b580-9ca9aa9ae53f",
+            "label": "text",
+            "y": 182,
+            "text": "Anti-Idle: The Game is a unique idle-type game created in 2009 (and still updated after 11 years!) \nby Tukkun.\n\nGain some EXP, level up and unlock tons of features and minigames! Anti-Idle: The Game can be \nplayed even when you are busy or not sitting near your computer, but there are also plenty of \nthings that you can do when you are actively playing - and all of that is completely FREE!\n\nWhat are you still waiting for? Press the big \"Awesome!\" button below there and join the \nawesomeness right away, with millions of other players!",
+            "fixedWidth": 650,
+            "lineSpacing": 5.5,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "12px",
+            "color": "#6496c8"
+        },
+        {
+            "type": "Text",
+            "id": "a3c47875-ebf5-48b0-9663-daef71c50def",
+            "label": "text_2",
+            "y": 585.2121894168807,
+            "text": "Your progress is automatically saved and is stored in your computer. Backup your savefile often!",
+            "fixedWidth": 650,
+            "lineSpacing": 5.5,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "12px",
+            "color": "#999"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

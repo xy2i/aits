@@ -1,0 +1,30 @@
+{
+    "name": "template-bun",
+    "description": "A Phaser 3 template using bun.",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/phaserjs/template-bun.git"
+    },
+    "author": "Phaser Studio <support@phaser.io> (https://phaser.io/)",
+    "license": "MIT",
+    "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+    "bugs": {
+        "url": "https://github.com/phaserjs/template-bun/issues"
+    },
+    "homepage": "https://github.com/phaserjs/template-bun#readme",
+    "scripts": {
+        "dev": "COMMIT_HASH=$(git rev-parse --short=8 HEAD) bunx --bun vite --config vite/config.dev.mts",
+        "build": "bunx --bun vite build --config vite/config.build.mts"
+    },
+    "devDependencies": {
+        "@types/node": "^22.9.0",
+        "terser": "^5.36.0",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.11"
+    },
+    "dependencies": {
+        "@phaserjs/editor-scripts-core": "^2.0.6",
+        "phaser": "^3.87.0"
+    }
+}

@@ -1,0 +1,164 @@
+{
+    "id": "a90b59b2-442a-4b64-bc7c-43baeef5b527",
+    "settings": {
+        "createMethodName": "",
+        "preloadMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "exportClass": false,
+        "autoImport": false,
+        "importFileExtension": false,
+        "generateAwakeHandler": false,
+        "compilerInsertSpaces": false,
+        "compilerTabSize": 4,
+        "borderWidth": 650,
+        "borderHeight": 650,
+        "borderX": 0,
+        "borderY": 0
+    },
+    "sceneType": "PREFAB",
+    "displayList": [
+        {
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "type": "Container",
+            "id": "0ebb6c72-3c81-4d05-a53c-503dd74478a2",
+            "label": "bottomBar",
+            "y": 0,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "e13d3657-5fa7-4304-bfda-251bde0a8c97",
+                    "label": "rectangle",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "fillAlpha": 0.5,
+                    "width": 650,
+                    "height": 30
+                },
+                {
+                    "type": "Text",
+                    "id": "c43f9c00-82a4-451b-b734-e107f8afe738",
+                    "label": "fps",
+                    "displayName": "fps",
+                    "x": 5,
+                    "y": 4,
+                    "text": "FPS",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "7px"
+                },
+                {
+                    "type": "Text",
+                    "id": "399e9761-05f2-444d-ae9d-aa74b5e91cfd",
+                    "label": "fpsCounter",
+                    "displayName": "fpsCounter",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "y": 16,
+                    "text": "40",
+                    "fixedWidth": 21,
+                    "fixedHeight": 20,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px"
+                },
+                {
+                    "prefabId": "bafa8d8c-9d32-48f3-be68-4954e51d5cec",
+                    "id": "999d9a5d-6607-4e5b-a18c-ef4d1e5d42e0",
+                    "label": "bottomBar_1"
+                },
+                {
+                    "type": "Text",
+                    "id": "8e94f18d-b137-45dc-b943-b434615dfcb5",
+                    "label": "upNumberLabel",
+                    "x": 630,
+                    "y": 4,
+                    "text": "Ver.",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "7px"
+                },
+                {
+                    "type": "Text",
+                    "id": "c3b376b6-d329-47ce-b92a-a4ca7df31d16",
+                    "label": "upNumber",
+                    "displayName": "upNumber",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "x": 610,
+                    "y": 16,
+                    "text": "1,500",
+                    "fixedWidth": 40,
+                    "fixedHeight": 20,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "color": "#cccccc",
+                    "stroke": ""
+                },
+                {
+                    "type": "Text",
+                    "id": "a4926795-adef-40ad-8674-716a52bf30bc",
+                    "label": "flashVerLabel",
+                    "x": 544,
+                    "y": 4,
+                    "text": "AITS Version",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "7px",
+                    "color": "#999999"
+                },
+                {
+                    "type": "Text",
+                    "id": "dcbf4d9d-d682-4084-9661-17546bbfad32",
+                    "label": "flashNumber",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "x": 448,
+                    "y": 16,
+                    "fixedWidth": 150,
+                    "fixedHeight": 20,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "color": "#999999",
+                    "stroke": ""
+                },
+                {
+                    "type": "Text",
+                    "id": "12a1e267-e2f6-4a08-bd91-52909a84bf6e",
+                    "label": "fps_1",
+                    "displayName": "fps",
+                    "x": 91.303,
+                    "y": 4,
+                    "text": "Date & Time",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "7px"
+                },
+                {
+                    "type": "Text",
+                    "id": "52d27043-71da-48bf-9895-39e36f153032",
+                    "label": "timeDisplay",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "x": 30.001,
+                    "y": 16,
+                    "fixedWidth": 115.01,
+                    "fixedHeight": 20.3,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "color": "#cccccc",
+                    "stroke": ""
+                }
+            ],
+            "x": 0
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

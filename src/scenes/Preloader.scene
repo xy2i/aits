@@ -1,0 +1,113 @@
+{
+    "id": "10854d33-429a-4f3d-a4bb-22dd4f148eef",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Scene1",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d35393a3-5d15-49e3-be3c-c202c57e2080",
+            "label": "container_1",
+            "x": 175,
+            "y": 200,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "ff5fa145-4310-4f2f-9894-d6219adb19c8",
+                    "label": "rectangle_1",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#666666",
+                    "width": 300,
+                    "height": 50
+                },
+                {
+                    "type": "Text",
+                    "id": "069dfd26-45ff-400d-80ce-ac6fac519718",
+                    "label": "loadingText",
+                    "scope": "CLASS",
+                    "x": 4,
+                    "y": 8,
+                    "text": "Anti-Idle: The Game is loading...",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e161f08b-84f1-4052-8456-30bda9c71b80",
+                    "label": "rectangle",
+                    "y": 69,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#666666",
+                    "width": 300,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d74dbefa-a311-4124-a02e-261726de07f0",
+                    "label": "loadingBar",
+                    "scope": "CLASS",
+                    "x": 25,
+                    "y": 25,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "width": 250,
+                    "height": 15
+                },
+                {
+                    "type": "Text",
+                    "id": "21f83d7d-6d01-4f7c-8357-c88de4b788f6",
+                    "label": "flavorText",
+                    "scope": "CLASS",
+                    "x": 4,
+                    "y": 73,
+                    "text": "Did you know? Anti-Idle: The Game is loading!",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "color": "#000",
+                    "maxLines": 100,
+                    "wordWrapWidth": 280,
+                    "wordWrapUseAdvanced": true
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "638c23be-5637-482a-93e9-95ffd79f61d1",
+            "label": "flashNumber",
+            "displayName": "flashNumber",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "x": 501,
+            "y": 637,
+            "text": "v12345",
+            "fixedWidth": 150,
+            "fixedHeight": 20,
+            "align": "right",
+            "fontFamily": "Tempesta Seven",
+            "fontSize": "10px",
+            "color": "#000",
+            "stroke": ""
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
