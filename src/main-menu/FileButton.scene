@@ -1,0 +1,163 @@
+{
+    "id": "4d63567c-3395-4f7e-b0dd-19d69e09636c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "a3a30e5a-72af-461a-9ff6-a17ae4dda0e8",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "5e6872e6-cd80-4a22-9211-e45e385bd93b",
+                    "label": "base",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#003C78",
+                    "width": 120,
+                    "height": 80
+                },
+                {
+                    "type": "Text",
+                    "id": "657f2fb8-4447-4175-a07a-a1266a44acce",
+                    "label": "fileName",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 19,
+                    "text": "< File 0 >",
+                    "fixedHeight": 24.05,
+                    "paddingTop": 6,
+                    "fontFamily": "McLaren",
+                    "fontSize": "18px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "dbe444a4-1717-40b1-826c-7b5305b12a65",
+                    "label": "text",
+                    "x": 6,
+                    "y": 25,
+                    "text": "Time:",
+                    "paddingTop": 6,
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "077d8f1a-43d5-478d-b918-70dc72e9a4e1",
+                    "label": "text_2",
+                    "x": 6,
+                    "y": 41,
+                    "text": "Level:",
+                    "paddingTop": 6,
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "7fe12b97-3845-415e-b8aa-71cced687ebe",
+                    "label": "text_3",
+                    "x": 6,
+                    "y": 56,
+                    "text": "Ascensions:",
+                    "paddingTop": 6,
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "f97fbd56-4f9f-4021-8ba4-f158ace6fed6",
+                    "label": "playTime",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 37,
+                    "y": 25,
+                    "text": "0 min",
+                    "fixedWidth": 80,
+                    "paddingTop": 6,
+                    "align": "right",
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "3c9cd395-0793-4c87-bde7-7cd03abca390",
+                    "label": "ascCount",
+                    "scope": "PUBLIC",
+                    "x": 37,
+                    "y": 56,
+                    "text": "0",
+                    "fixedWidth": 80,
+                    "paddingTop": 6,
+                    "align": "right",
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Text",
+                    "id": "e1216d6b-ce30-41e1-bb5b-04bb0cde20f7",
+                    "label": "curLevel",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 37,
+                    "y": 41,
+                    "text": "1",
+                    "fixedWidth": 80,
+                    "paddingTop": 6,
+                    "align": "right",
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#007dfa"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "99c9db1f-62f5-4a06-b1c6-9b139ad2e8fd",
+                    "label": "overlay",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "fillAlpha": 0,
+                    "width": 120,
+                    "height": 80
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "fileNumber",
+            "label": "File Number",
+            "tooltip": "The file number to access",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "constructor",
+                "expressionType": "any"
+            }
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 
 // You can write more code here
 
-import { step2loadFunctions, step3loadBA, step4createAndUpgradeSave, step5News, step6Events, step7Fcg, step8AchievementsQuests, step9Fishing } from "@/loader/load"
+import { step2loadFunctions, step3loadBA, step4createAndUpgradeSave, step5News, step6Events, step7Fcg, step8AchievementsQuests, step9Fishing } from "@/loader/load";
 
 /* START OF COMPILED CODE */
 
@@ -59,6 +59,7 @@ class Loader extends Phaser.Scene {
 		this.updateLoadingDone();
 		step9Fishing();
 		this.scene.start('MainMenu');
+		this.scene.launch('Ui');
 	}
 
 	/* END-USER-CODE */

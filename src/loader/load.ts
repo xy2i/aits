@@ -4,9 +4,12 @@
  * frame3 - frame10 in jpexs
  */
 
+import { random } from "@/flash/random";
 import { _root } from "@/flash/root";
 import { SharedObject } from "@/flash/sharedobject";
-import { random } from "@/flash/random";
+import { addAchievementR, addNewAchievement } from "@/lib/achievements";
+import { withComma } from "@/lib/format";
+import { dispNews } from "@/lib/news";
 
 export function step2loadFunctions() {
     _root.getFullMonthName = function getFullMonthName(monthCount) {
@@ -445,242 +448,6 @@ export function step2loadFunctions() {
             z++;
         }
     }
-    _root.submitAll = function submitAll() {
-        _root.submitGeneral();
-        _root.submitScore("[Speedrun] Speedrun Time", _root.saveGlobal.challengeTime[0], 999999999);
-        z = 1;
-        while (z <= 20) {
-            _root.submitScore("[Challenge] Challenge #" + z + " Time", _root.saveGlobal.challengeTime[z], 999999999);
-            z++;
-        }
-        _root.submitScore("Ants Sprayed", _root.save.antsSprayed);
-        _root.submitScore("[Garden] Tree Harvests", _root.save.harvestCount);
-        _root.submitScore("[Garden] Tree Income", _root.save.harvestCoin);
-        _root.submitScore("[Garden] Garden EXP", _root.save.gardenEXP);
-        _root.submitScore("[Battle Arena] Bestiary Level", _root.bestiaryLevel);
-        _root.submitScore("[Battle Arena] Arena Rank", _root.save.arenaLevel);
-        _root.submitScore("[Battle Arena] Robacon Rank", _root.save.robaconLevel);
-        _root.submitScore("[Battle Arena] Missions", _root.save.arenaMission);
-        _root.submitScore("[Battle Arena] Mission Kommander", _root.save.arenaKommanderComplete);
-        _root.submitScore("[Battle Arena] Defend Mission", _root.save.arenaDefendComplete);
-        _root.submitScore("[Battle Arena] Prehistoric Mission", _root.save.arenaPrehistoricComplete);
-        _root.submitScore("[Battle Arena] Kills", _root.save.arenaKill);
-        _root.submitScore("[Battle Arena] Kills (Non-Weak)", _root.save.arenaKillWhite);
-        _root.submitScore("[Battle Arena] Kills (Strong)", _root.save.arenaKillRed);
-        _root.submitScore("[Battle Arena] Kills (Boss)", _root.save.arenaKillPurple);
-        _root.submitScore("[Battle Arena] Combo", _root.save.arenaMaxCombo);
-        _root.submitScore("[Battle Arena] Loot Drops", _root.save.arenaLoot);
-        _root.submitScore("[Battle Arena] Unspent Pixels", _root.save.arenaPixelMax);
-        _root.submitScore("[Battle Arena] Crafting Material Used", _root.save.arenaCraftUsed);
-        _root.submitScore("[Battle Arena] Max Damage Dealt", _root.save.arenaMaxDamage);
-        _root.submitScore("[Battle Arena] Invisible Allies Tamed", _root.totalAllyTamed);
-        _root.submitScore("[Battle Arena] Invisible Allies Mastered", _root.totalAllyMastered);
-        _root.submitScore("[Battle Arena] Skill Books", _root.save.arenaSkillBook);
-        _root.submitScore("[Battle Arena] Rune of Health", _root.save.arenaRuneLevel[1], 100);
-        _root.submitScore("[Battle Arena] Rune of Mana", _root.save.arenaRuneLevel[2], 100);
-        _root.submitScore("[Battle Arena] Rune of Rage", _root.save.arenaRuneLevel[3], 100);
-        _root.submitScore("[Battle Arena] Rune of Encounter", _root.save.arenaRuneLevel[4], 100);
-        _root.submitScore("[Battle Arena] Rune of Experience", _root.save.arenaRuneLevel[5], 100);
-        _root.submitScore("[Battle Arena] Rune of Greed", _root.save.arenaRuneLevel[6], 100);
-        _root.submitScore("[Battle Arena] Total Rune Level", _root.save.arenaRuneLevel[1] + _root.save.arenaRuneLevel[2] + _root.save.arenaRuneLevel[3] + _root.save.arenaRuneLevel[4] + _root.save.arenaRuneLevel[5] + _root.save.arenaRuneLevel[6], 600);
-        _root.submitScore("[Button Machine] Button Presses", _root.save.buttonPress);
-        _root.submitScore("[Button Machine] Perfect Clicks", _root.save.buttonPerfect);
-        _root.submitScore("[Button Machine] Max Hit Combo", _root.save.buttonMaxCombo);
-        _root.submitScore("[Money Printer] Illegal Coins", _root.save.totalPrinterMoney);
-        _root.submitScore("[Money Printer] Battery Charges", _root.save.totalPrinterCharge);
-        _root.submitScore("[Arcade] Pong", _root.save.rankedPong);
-        _root.submitScore("[Arcade] Ultimate Avoidance", _root.save.rankedAvoidance);
-        _root.submitScore("[Arcade] Math Master", _root.save.rankedMath);
-        _root.submitScore("[Arcade] Whack-a-greg", _root.save.rankedWhack);
-        _root.submitScore("[Arcade] MindSweeper", _root.save.rankedMind);
-        _root.submitScore("[Arcade] Balance 3", _root.save.rankedBalance);
-        _root.submitScore("[Arcade] Triangle Count", _root.save.rankedCount);
-        _root.submitScore("[Stadium] Simple Race (Impossible)", _root.save.stadiumImpossibleRace);
-        _root.submitScore("[Stadium] Item Fight (Impossible)", _root.save.stadiumImpossibleItem);
-        _root.submitScore("[Stadium] Death Match Wins", _root.save.stadiumDeathMatch);
-        _root.submitScore("[Stadium] Death Match PWNts", _root.save.stadiumBestDeathMatch);
-        _root.submitScore("[Stadium] Fastest Race", _root.save.stadiumBestTime, 99999);
-        _root.submitScore("[Stadium] Unspent Stadium Tokens", _root.save.stadiumTokenMax);
-        _root.submitScore("[TukkunFCG] FCG Level", _root.save.fcgLevel);
-        _root.submitScore("[TukkunFCG] FCG EXP", _root.save.fcgExp + _root.save.fcgExpTotal);
-        _root.submitScore("[TukkunFCG] FCG Cash", _root.save.fcgMaxCash);
-        _root.submitScore("[TukkunFCG] FCG Wins", _root.save.fcgWin);
-        _root.submitScore("[TukkunFCG] FCG Win Streak (Lv6)", _root.save.fcgMaxStreak6);
-        _root.submitScore("[TukkunFCG] FCG Win Streak (Lv7)", _root.save.fcgMaxStreak7);
-        _root.submitScore("[TukkunFCG] FCG Win Streak (Lv8 New)", _root.save.fcgMaxStreak8);
-        _root.submitScore("[TukkunFCG] FCG Win Streak (Lv10)", _root.save.fcgMaxStreak10);
-        _root.submitScore("[TukkunFCG] FCG Wins (Lv8)", _root.save.fcgLevel8);
-        _root.submitScore("[TukkunFCG] FCG Wins (Lv10)", _root.save.fcgLevel10);
-        _root.submitScore("[TukkunFCG] Legendary Monsters Killed", _root.save.fcgLegendCount);
-        _root.submitScore("[LolMarket] LolMarket Profit", _root.save.lolMaxProfit);
-        _root.submitScore("[Awesome Adventures] Reputation", _root.save.awesomeMaxReputation);
-        _root.submitScore("[Awesome Adventures] Town", _root.save.awesomeTotalAdv1);
-        _root.submitScore("[Awesome Adventures] Untitled Zone", _root.save.awesomeTotalAdv2);
-        _root.submitScore("[Awesome Adventures] Titled Zone", _root.save.awesomeTotalAdv3);
-        _root.submitScore("[Fishing] Skill", _root.save.fishBestLevel, 60);
-        _root.submitScore("[Fishing] Mastery", _root.save.fishExp + _root.save.fishTotalExp);
-        _root.submitScore("[Fishing] Score", _root.save.fishScore);
-        _root.submitScore("[Fishing] Score (1 day)", _root.save.fishScoreRecord);
-        _root.submitScore("[Fishing] Catches", _root.save.fishTotal);
-        _root.submitScore("[Fishing] Perfect Catches", _root.save.fishPerfect);
-        _root.submitScore("[Fishing] Perfect Streak", _root.save.fishBestStreak);
-        _root.submitScore("[Career] Career: Idler", _root.save.careerLevel[1], 200);
-        _root.submitScore("[Career] Career: Gardener", _root.save.careerLevel[2], 200);
-        _root.submitScore("[Career] Career: Fighter", _root.save.careerLevel[3], 200);
-        _root.submitScore("[Career] Career: Item Maker", _root.save.careerLevel[4], 200);
-        _root.submitScore("[Career] Career: Button Basher", _root.save.careerLevel[5], 200);
-        _root.submitScore("[Career] Career: Arcade Player", _root.save.careerLevel[6], 200);
-        _root.submitScore("[Career] Career: Racer", _root.save.careerLevel[7], 200);
-        _root.submitScore("[Career] Career: Card Player", _root.save.careerLevel[8], 200);
-        _root.submitScore("[Career] Career: Gem Trader", _root.save.careerLevel[9], 200);
-        _root.submitScore("[Career] Career: Adventurer", _root.save.careerLevel[10], 200);
-        _root.submitScore("[Career] Career: Pet Trainer", _root.save.careerLevel[11], 200);
-        _root.submitScore("[Career] Career: Fisherman", _root.save.careerLevel[12], 200);
-        _root.submitScore("[Career] Total Career Level", _root.totalCareerLevel, 2400);
-        _root.submitScore("[Cyborg] Cyborg Level", _root.save.botLevel, 200);
-        _root.submitScore("[Battle Arena] +10 Upgraded Allies", _root.totalAllyMaxed);
-        _root.submitScore("[Battle Arena] ULTRA ALLIES", _root.totalUltra);
-        _root.submitScore("[Battle Arena] Unique ULTRA-1 Kills [New]", _root.uniqueUlt1);
-        _root.submitScore("[Battle Arena] Unique ULTRA-2 Kills [New]", _root.uniqueUlt2);
-        _root.submitScore("[Battle Arena] Unique ULTRA-3 Kills [New]", _root.uniqueUlt3);
-        _root.submitScore("[Button Machine] Additional Multiplier", _root.save.buttonMultiplier, 1200);
-        _root.submitScore("[Button Machine] Grandpas", _root.save.buttonGrandpa, 20);
-        _root.submitScore("[Arcade] Unranked Upgrades", _root.totalUnrankedPower);
-        _root.submitScore("[Stadium] Hats Unlocked", _root.stadiumHatUnlocked);
-        _root.submitScore("[Awesome Adventures] Reputation (-)", -1 * _root.save.awesomeReputation);
-        _root.submitScore("[Fishing] Rods Unlocked", _root.fishRodCount, 10);
-        _root.submitScore("[BA Raid] Dark Pyramid", _root.save.raidPyramid);
-        _root.submitScore("[BA Raid] Defend Mission", _root.save.raidDefend);
-        _root.submitScore("[BA Raid] Prehistoric Mission", _root.save.raidPrehistoric);
-        _root.submitScore("[BA Raid] The Special Arena", _root.save.raidMegaboss);
-        _root.submitScore("[BA Raid] Tower of DOOOOOOM", _root.save.raidTower);
-        _root.submitScore("[BA Raid] Secret Dungeon", _root.save.raidDungeon);
-        _root.submitScore("[BA Raid] Endless Dungeon", _root.save.raidEndless);
-        _root.submitScore("[BA Raid] THE MEGABOSS\'s Revenge", _root.save.arenaRevengeScore);
-        _root.submitScore("[BA Raid] Spooky Crypt", _root.save.arenaSpookyScore);
-        _root.submitScore("[BA Raid] Triangle Hideout", _root.save.arenaTriangleScore);
-        _root.submitScore("[BA Raid] Special Training Zone (new)", _root.save.raidSpecial);
-        _root.submitScore("[BA Raid] The Corruption", _root.save.arenaCorruptBestDifficulty);
-        _root.submitScore("[Typing] WPM", _root.save.bestWpm);
-    }
-    _root.dispNews = function dispNews(type, news) {
-        if (_root.save.breakNewsMode == 1) {
-            ignoreNews = true;
-            if (_root.saveGlobal.breakAll[type] == true || _root.saveGlobal.breakFeature[type] == true || _root.saveGlobal.breakTab1[type] == true || _root.saveGlobal.breakTab2[type] == true || _root.saveGlobal.breakTab3[type] == true || _root.saveGlobal.breakTab4[type] == true) {
-                ignoreNews = false;
-            }
-            if (ignoreNews == false) {
-                b = 30;
-                while (b >= 2) {
-                    imp = 1;
-                    while (imp <= 4) {
-                        if (_root.saveGlobal["breakTab" + imp][type] == true) {
-                            _root["X" + imp + "breakNews" + b] = _root["X" + imp + "breakNews" + (b - 1)];
-                            _root["X" + imp + "breakStamp" + b] = _root["X" + imp + "breakStamp" + (b - 1)];
-                            _root["X" + imp + "breakColor" + b] = _root["X" + imp + "breakColor" + (b - 1)];
-                        }
-                        imp++;
-                    }
-                    if (_root.saveGlobal.breakAll[type] == true) {
-                        c = 1;
-                        while (c <= 30) {
-                            _root["F" + c + "breakNews" + b] = _root["F" + c + "breakNews" + (b - 1)];
-                            _root["F" + c + "breakStamp" + b] = _root["F" + c + "breakStamp" + (b - 1)];
-                            _root["F" + c + "breakColor" + b] = _root["F" + c + "breakColor" + (b - 1)];
-                            c++;
-                        }
-                    }
-                    else if (_root.saveGlobal.breakFeature[type] == true) {
-                        ft = _root.newsFeature[type];
-                        _root["F" + ft + "breakNews" + b] = _root["F" + ft + "breakNews" + (b - 1)];
-                        _root["F" + ft + "breakStamp" + b] = _root["F" + ft + "breakStamp" + (b - 1)];
-                        _root["F" + ft + "breakColor" + b] = _root["F" + ft + "breakColor" + (b - 1)];
-                    }
-                    b -= 1;
-                }
-                imp = 1;
-                while (imp <= 4) {
-                    if (_root.saveGlobal["breakTab" + imp][type] == true) {
-                        _root["X" + imp + "breakNews1"] = news;
-                        _root["X" + imp + "breakStamp1"] = "[" + _root.clock_display + "]";
-                        _root["X" + imp + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                    }
-                    imp++;
-                }
-                if (_root.saveGlobal.breakAll[type] == true) {
-                    c = 1;
-                    while (c <= 30) {
-                        _root["F" + c + "breakNews1"] = news;
-                        _root["F" + c + "breakStamp1"] = "[" + _root.clock_display + "]";
-                        _root["F" + c + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                        c++;
-                    }
-                }
-                else if (_root.saveGlobal.breakFeature[type] == true) {
-                    ft = _root.newsFeature[type];
-                    _root["F" + ft + "breakNews1"] = news;
-                    _root["F" + ft + "breakStamp1"] = "[" + _root.clock_display + "]";
-                    _root["F" + ft + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                }
-                _root.updateBreakNews = 1;
-            }
-        }
-        else if (_root.save.breakNewsMode == 2) {
-            if (_root.saveGlobal.defTab == 5) {
-                if (_root.saveGlobal.breakAll[type] == true || _root.saveGlobal.breakFeature[type] == true && _root.house._currentframe == _root.newsFeature[type]) {
-                    b = 30;
-                    while (b >= 2) {
-                        if (_root.saveGlobal.breakAll[type] == true) {
-                            c = 1;
-                            while (c <= 30) {
-                                _root["F" + c + "breakNews" + b] = _root["F" + c + "breakNews" + (b - 1)];
-                                _root["F" + c + "breakStamp" + b] = _root["F" + c + "breakStamp" + (b - 1)];
-                                _root["F" + c + "breakColor" + b] = _root["F" + c + "breakColor" + (b - 1)];
-                                c++;
-                            }
-                        }
-                        else if (_root.saveGlobal.breakFeature[type] == true) {
-                            ft = _root.newsFeature[type];
-                            _root["F" + ft + "breakNews" + b] = _root["F" + ft + "breakNews" + (b - 1)];
-                            _root["F" + ft + "breakStamp" + b] = _root["F" + ft + "breakStamp" + (b - 1)];
-                            _root["F" + ft + "breakColor" + b] = _root["F" + ft + "breakColor" + (b - 1)];
-                        }
-                        b -= 1;
-                    }
-                    if (_root.saveGlobal.breakAll[type] == true) {
-                        c = 1;
-                        while (c <= 30) {
-                            _root["F" + c + "breakNews1"] = news;
-                            _root["F" + c + "breakStamp1"] = "[" + _root.clock_display + "]";
-                            _root["F" + c + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                            c++;
-                        }
-                    }
-                    else if (_root.saveGlobal.breakFeature[type] == true) {
-                        ft = _root.newsFeature[type];
-                        _root["F" + ft + "breakNews1"] = news;
-                        _root["F" + ft + "breakStamp1"] = "[" + _root.clock_display + "]";
-                        _root["F" + ft + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                    }
-                    _root.updateBreakNews = 1;
-                }
-            }
-            else if (_root.saveGlobal.defTab == 0 || _root.saveGlobal["breakTab" + _root.saveGlobal.defTab][type] == true) {
-                imp = _root.saveGlobal.defTab;
-                b = 30;
-                while (b >= 2) {
-                    _root["X" + imp + "breakNews" + b] = _root["X" + imp + "breakNews" + (b - 1)];
-                    _root["X" + imp + "breakStamp" + b] = _root["X" + imp + "breakStamp" + (b - 1)];
-                    _root["X" + imp + "breakColor" + b] = _root["X" + imp + "breakColor" + (b - 1)];
-                    b -= 1;
-                }
-                _root["X" + imp + "breakNews1"] = news;
-                _root["X" + imp + "breakStamp1"] = "[" + _root.clock_display + "]";
-                _root["X" + imp + "breakColor1"] = _root.saveGlobal.breakR[type] * 65536 + _root.saveGlobal.breakG[type] * 256 + _root.saveGlobal.breakB[type];
-                _root.updateBreakNews = 1;
-            }
-        }
-    }
     _root.showPopup = function showPopup(popT, popD) {
         _root.popUp.gotoAndStop(2);
         _root.popUp.popTitle.text = popT;
@@ -726,17 +493,6 @@ export function step2loadFunctions() {
         }
         return min + ":" + sec;
     }
-    _root.convertSecCD = function convertSecCD(thatNumber) {
-        if (thatNumber < 0) {
-            thatNumber = 0;
-        }
-        min = Math.floor(thatNumber / 60);
-        sec = Math.floor(thatNumber) - min * 60;
-        if (sec < 10) {
-            sec = "0" + sec;
-        }
-        return min + ":" + sec;
-    }
     _root.tukkunRandom = function tukkunRandom(noZero, maxChance, maxVal) {
         maxVal = Math.ceil(maxVal);
         if (Math.random() < noZero) {
@@ -748,84 +504,6 @@ export function step2loadFunctions() {
         else {
             val = 0;
         }
-    }
-    _root.withComma = function withComma(thatNumber) {
-        let finalNumber;
-        if (thatNumber == Infinity || isNaN(thatNumber)) {
-            finalNumber = "-----";
-        }
-        else {
-            if (thatNumber > 999999999999999) {
-                thatNumber = 999999999999999;
-            }
-            let cNegative = false;
-            let groupval = thatNumber;
-            if (thatNumber < 0) {
-                groupval = Math.abs(thatNumber);
-                cNegative = true;
-            }
-            let group1 = Math.floor(groupval / 1000000000000);
-            let group2 = Math.floor(groupval / 1000000000) - group1 * 1000;
-            let group3 = Math.floor(groupval / 1000000) - group1 * 1000000 - group2 * 1000;
-            let group4 = Math.floor(groupval / 1000) - group1 * 1000000000 - group2 * 1000000 - group3 * 1000;
-            let group5 = Math.floor(groupval) - group1 * 1000000000000 - group2 * 1000000000 - group3 * 1000000 - group4 * 1000;
-            let groupCount = 1;
-            if (group4 > 0) {
-                groupCount = 2;
-            }
-            if (group3 > 0) {
-                groupCount = 3;
-            }
-            if (group2 > 0) {
-                groupCount = 4;
-            }
-            if (group1 > 0) {
-                groupCount = 5;
-            }
-            if (groupCount >= 2 && group5 < 10) {
-                group5 = "0" + group5;
-            }
-            if (groupCount >= 2 && group5 < 100) {
-                group5 = "0" + group5;
-            }
-            if (groupCount >= 3 && group4 < 10) {
-                group4 = "0" + group4;
-            }
-            if (groupCount >= 3 && group4 < 100) {
-                group4 = "0" + group4;
-            }
-            if (groupCount >= 4 && group3 < 10) {
-                group3 = "0" + group3;
-            }
-            if (groupCount >= 4 && group3 < 100) {
-                group3 = "0" + group3;
-            }
-            if (groupCount >= 5 && group2 < 10) {
-                group2 = "0" + group2;
-            }
-            if (groupCount >= 5 && group2 < 100) {
-                group2 = "0" + group2;
-            }
-            if (groupCount == 5) {
-                finalNumber = group1 + "," + group2 + "," + group3 + "," + group4 + "," + group5;
-            }
-            if (groupCount == 4) {
-                finalNumber = group2 + "," + group3 + "," + group4 + "," + group5;
-            }
-            if (groupCount == 3) {
-                finalNumber = group3 + "," + group4 + "," + group5;
-            }
-            if (groupCount == 2) {
-                finalNumber = group4 + "," + group5;
-            }
-            if (groupCount == 1) {
-                finalNumber = group5;
-            }
-            if (cNegative == true) {
-                finalNumber = "-" + finalNumber;
-            }
-        }
-        return finalNumber;
     }
     _root.toB = function toB(reg) {
         if (reg == Infinity || isNaN(reg)) {
@@ -1011,7 +689,7 @@ export function step2loadFunctions() {
         tmpB2 = 0;
         tmpE = _root.bGetE(bn);
         if (tmpE == 0) {
-            return _root.withComma(tmpB);
+            return withComma(tmpB);
         }
         while (tmpB > 99999 || tmpE % 3 != 1) {
             tmpE += 1;
@@ -1044,7 +722,7 @@ export function step2loadFunctions() {
         tmpB2 = 0;
         tmpE = _root.bGetE(bn);
         if (tmpE == 0) {
-            return _root.withComma(tmpB);
+            return withComma(tmpB);
         }
         while (tmpB > 99999 || tmpE % 3 != 1) {
             tmpE += 1;
@@ -1058,556 +736,21 @@ export function step2loadFunctions() {
         tmpE += 2;
         return tmpB + "." + tmpB2 + " x 10" + _root.toFW(tmpE);
     }
-    _root.withCommaB = function withCommaB(num) {
+    function withCommaB(num) {
         if (num < 0) {
             return "-" + _root.bDisp(_root.toB(- num));
         }
         return _root.bDisp(_root.toB(num));
     }
-    _root.withCommaC = function withCommaC(num) {
+    function withCommaC(num) {
         if (num < 0) {
             return "-" + _root.bDispX(_root.toB(- num));
         }
         return _root.bDispX(_root.toB(num));
     }
-    _root.gainBoost = function gainBoost(amount, limit) {
-        if (!isNaN(amount)) {
-            if (limit == 1) {
-                realLimit = _root.boostMax;
-            }
-            else if (limit == 2 || limit == 3) {
-                realLimit = _root.boostMax * 1.5;
-            }
-            else {
-                realLimit = _root.boostMax * 2.5;
-            }
-            if (_root.save.bestLevel <= 5 && _root.save.featureBoostGen != true) {
-                realLimit = 100;
-            }
-            actualGain = amount;
-            if (actualGain > realLimit - _root.save.boost) {
-                actualGain = realLimit - _root.save.boost;
-            }
-            if (actualGain < 0) {
-                actualGain = 0;
-            }
-            _root.save.boost += actualGain;
-            _root.save.boostPurchased += actualGain;
-        }
-    }
-    _root.sauceMult = function sauceMult(sa) {
-        if (_root.save.gDifficulty >= 3 && _root.save.level < 8999) {
-            tMult = 1.2 - _root.save.expSauceAsc[sa] / 1000000 / 20000000 - _root.save.expSauceAsc[sa] / (_root.save.expSauceAsc[40] + 1) * 0.2;
-            if (sa == 0 || sa == 7) {
-                tMult += 0.1;
-            }
-            if (tMult > 1.2) {
-                tMult = 1.2;
-            }
-            if (tMult < 0.8) {
-                tMult = 0.8;
-            }
-        }
-        else if (_root.save.gDifficulty >= 2 && _root.save.level < 8999) {
-            tMult = 1.2 - _root.save.expSauceAsc[sa] / 1000000 / 10000000 - _root.save.expSauceAsc[sa] / (_root.save.expSauceAsc[40] + 1) * 0.2;
-            if (sa == 0 || sa == 7) {
-                tMult += 0.1;
-            }
-            if (tMult > 1.1) {
-                tMult = 1.1;
-            }
-            if (tMult < 0.9) {
-                tMult = 0.9;
-            }
-        }
-        else {
-            tMult = 1;
-        }
-        tMult = Math.round(tMult * 100) / 100;
-        if (isNaN(tMult)) {
-            tMult = 1;
-        }
-        return tMult;
-    }
-    _root.gainEXP = function gainEXP(amount, sauce) {
-        if (isNaN(sauce)) {
-            sauce = _root.house._currentframe;
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity) {
-            if (_root.save.level < 9001 && _root.save.featureBoostAuto == true) {
-                boostToGain = 0.05 + amount / Math.min(_root.requiredExp, 810000000) / Math.pow(_root.save.boost, 1.11) * 35000;
-                if (_root.save.level < 125) {
-                    boostToGain = boostToGain * _root.save.level / 125;
-                }
-                if (_root.save.boost < _root.boostMax) {
-                    boostToGain *= 5;
-                }
-                if (boostToGain > 10) {
-                    boostToGain = 10;
-                }
-                if (_root.save.restTime > 0) {
-                    boostToGain *= 1.1 + _root.save.restEfficiency[3] * 0.01;
-                }
-                if (_root.save.permaBanPenalty[28] == 3) {
-                    boostToGain *= 1.1;
-                }
-                else if (_root.save.permaBanPenalty[28] == 2) {
-                    boostToGain *= 1.06;
-                }
-                else if (_root.save.permaBanPenalty[28] == 1) {
-                    boostToGain *= 1.04;
-                }
-                _root.gainBoost(boostToGain, 3);
-            }
-            multiplier = 1;
-            if (_root.saveid == 23) {
-                multiplier = 0.75;
-            }
-            if (_root.saveid == 24) {
-                multiplier = 0.35;
-            }
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbExp / 100;
-            }
-            ascentMult = _root.save.banned / 10;
-            if (ascentMult > 0.5) {
-                ascentMult = 0.5;
-            }
-            multiplier += ascentMult;
-            multiplier2 = 1;
-            i = 1;
-            while (i <= _root.todayEvent) {
-                yy = _root.clock_year % 10;
-                mm = _root.clock_month;
-                dd = _root.clock_date;
-                if (_root.eventList[yy][mm][dd][i] == "Gain 10% more EXP from all sources") {
-                    multiplier += 0.1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 20% more EXP from all sources") {
-                    multiplier += 0.2;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 30% more EXP from all sources") {
-                    multiplier += 0.3;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more EXP from all sources") {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 25% more EXP from all sources except the Progress Bar, LolMarket and Awesome Adventures" && sauce != 0 && sauce != 13 && sauce != 14) {
-                    multiplier += 0.25;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more EXP from all sources except the Progress Bar, LolMarket and Awesome Adventures" && sauce != 0 && sauce != 13 && sauce != 14) {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 100% more EXP from all sources except the Progress Bar, LolMarket and Awesome Adventures" && sauce != 0 && sauce != 13 && sauce != 14) {
-                    multiplier += 1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 200% more EXP from all sources except the Progress Bar, LolMarket and Awesome Adventures" && sauce != 0 && sauce != 13 && sauce != 14) {
-                    multiplier += 2;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 1.5x EXP from Button Machine" && sauce == 8) {
-                    multiplier2 *= 1.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 1.5x EXP from Arcade" && sauce == 10) {
-                    multiplier2 *= 1.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 1.5x EXP from Stadium" && sauce == 11) {
-                    multiplier2 *= 1.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 1.5x EXP from TukkunFCG" && sauce == 12) {
-                    multiplier2 *= 1.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 1.5x EXP from Fishing" && sauce == 22) {
-                    multiplier2 *= 1.5;
-                }
-                i++;
-            }
-            if (_root.save.hyperDay[1] == _root.todayCode || _root.save.hyperDay[2] == _root.todayCode) {
-                if (sauce != 0 && sauce != 13 && sauce != 14) {
-                    multiplier += 3;
-                }
-            }
-            if (sauce == 0 && _root.save.boostFreeze > 0) {
-                multiplier += Math.min(Math.floor(_root.save.totalStupidity / 500), 250) * 0.01;
-            }
-            multiplier += _root.save.ascStupidity * 0.05;
-            multiplier *= multiplier2;
-            if (_root.save.restTime > 0) {
-                multiplier *= 1.1 + _root.save.restEfficiency[1] * 0.01;
-            }
-            if (_root.save.careerLevel[1] >= 200 && _root.cursoridle >= 30) {
-                multiplier *= 1.03;
-            }
-            if (_root.save.banPenalty[1] == 1) {
-                multiplier *= 1.05;
-            }
-            if (sauce == 38) {
-                multiplier = 1;
-            }
-            if (_root.save.newbieProgress != 15 && _root.save.bestLevel < 1000) {
-                multiplier = 1;
-            }
-            if (_root.save.level == 9000) {
-                multiplier *= 0.5;
-            }
-            if (_root.save.level == 9001) {
-                multiplier *= 0.05;
-            }
-            if (_root.save.level == 9002) {
-                multiplier = 0;
-            }
-            if (_root.save.doubleExpTime > 0) {
-                multiplier *= 1.5;
-            }
-            multiplier *= _root.sauceMult(sauce);
-            if (_root.detectedX == 1) {
-                multiplier = 0;
-            }
-            _root.save.expLag += Math.floor(amount * multiplier);
-            _root.save.expGraph[7] += Math.floor(amount);
-            _root.save.expGraph2[7] += Math.floor(amount * multiplier);
-            _root.save.expSauce[sauce] += Math.floor(amount * multiplier);
-            _root.save.expSauceAsc[sauce] += Math.floor(amount * multiplier);
-            _root.save.expSauce[40] += Math.floor(amount * multiplier);
-            _root.save.expSauceAsc[40] += Math.floor(amount * multiplier);
-            if (_root.cursoridle < 30 && _root.save.showGain == true && sauce != 0 && multiplier > 0) {
-                _root.mainSummonCount += 1;
-                _root.mainAntiLag += 1;
-                _root.popContain.attachMovie("scorePopMain", "scorePopMain" + _root.mainSummonCount, _root.mainAntiLag, { _x: 480, _y: 60, what: "+" + _root.withComma(Math.floor(amount * multiplier)), whatColor: 10092288 });
-            }
-        }
-    }
-    _root.gainCoin = function gainCoin(amount, sauce) {
-        if (isNaN(sauce)) {
-            sauce = _root.house._currentframe;
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.coinOvercap < 300) {
-            if (_root.save.level < 9001 && _root.save.featureBoostAuto == true) {
-                boostToGain = 0.01 + amount / Math.min(_root.requiredExp, 810000000) / Math.pow(_root.save.boost, 1.11) * 7000;
-                if (_root.save.level < 125) {
-                    boostToGain = boostToGain * _root.save.level / 125;
-                }
-                if (_root.save.boost < _root.boostMax) {
-                    boostToGain *= 5;
-                }
-                if (boostToGain > 2) {
-                    boostToGain = 2;
-                }
-                if (_root.save.restTime > 0) {
-                    boostToGain *= 1.1 + _root.save.restEfficiency[3] * 0.01;
-                }
-                if (_root.save.permaBanPenalty[28] == 3) {
-                    boostToGain *= 1.1;
-                }
-                else if (_root.save.permaBanPenalty[28] == 2) {
-                    boostToGain *= 1.06;
-                }
-                else if (_root.save.permaBanPenalty[28] == 1) {
-                    boostToGain *= 1.04;
-                }
-                _root.gainBoost(boostToGain, 3);
-            }
-            multiplier = 1;
-            if (_root.saveid == 24) {
-                multiplier = 0.35;
-            }
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbCoin / 100;
-            }
-            if (sauce != 0) {
-                if (sauce == 6 || sauce == 13) {
-                    multiplier += Math.min(Math.floor(_root.save.totalStupidity / 250), 100) * 0.01;
-                }
-                else if (_root.save.totalStupidity >= 25000) {
-                    multiplier += Math.min(Math.floor((_root.save.totalStupidity - 25000) / 250), 150) * 0.02 + 1;
-                }
-                else {
-                    multiplier += Math.min(Math.floor(_root.save.totalStupidity / 250), 100) * 0.01;
-                }
-            }
-            i = 1;
-            while (i <= _root.todayEvent) {
-                yy = _root.clock_year % 10;
-                mm = _root.clock_month;
-                dd = _root.clock_date;
-                if (_root.eventList[yy][mm][dd][i] == "Gain 10% more Coins from all sources") {
-                    multiplier += 0.1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 20% more Coins from all sources") {
-                    multiplier += 0.2;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 30% more Coins from all sources") {
-                    multiplier += 0.3;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more Coins from all sources") {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 25% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 0.25;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 100% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 200% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 2;
-                }
-                i++;
-            }
-            if (_root.save.restTime > 0) {
-                multiplier *= 1.1 + _root.save.restEfficiency[2] * 0.01;
-            }
-            if (_root.save.careerLevel[1] >= 200 && _root.cursoridle >= 30) {
-                multiplier *= 1.03;
-            }
-            if (_root.save.banPenalty[2] == 1) {
-                multiplier *= 1.1;
-            }
-            if (_root.save.doubleCoinTime > 0) {
-                multiplier *= 1.5;
-            }
-            if (sauce == 22 || sauce == 38 || sauce == 39) {
-                multiplier = 1;
-            }
-            if (_root.detectedX == 1) {
-                multiplier = 0;
-            }
-            finalAmnt = Math.floor(amount * multiplier);
-            _root.save.coinLag += finalAmnt;
-            _root.save.coinSauce[sauce] += finalAmnt;
-            _root.save.coinSauce[40] += finalAmnt;
-            if (_root.save.level < 9000) {
-                if (_root.save.permaBanPenalty[8] == 3) {
-                    _root.save.expLag += Math.floor(finalAmnt * 0.1);
-                    _root.save.expGraph[7] += Math.floor(amount * 0.1);
-                    _root.save.expGraph2[7] += Math.floor(finalAmnt * 0.1);
-                }
-                else if (_root.save.permaBanPenalty[8] == 2) {
-                    _root.save.expLag += Math.floor(finalAmnt * 0.06);
-                    _root.save.expGraph[7] += Math.floor(amount * 0.06);
-                    _root.save.expGraph2[7] += Math.floor(finalAmnt * 0.06);
-                }
-                else if (_root.save.permaBanPenalty[8] == 1) {
-                    _root.save.expLag += Math.floor(finalAmnt * 0.04);
-                    _root.save.expGraph[7] += Math.floor(amount * 0.04);
-                    _root.save.expGraph2[7] += Math.floor(finalAmnt * 0.04);
-                }
-            }
-            if (_root.cursoridle < 30 && _root.save.showGain == true && sauce != 22 && sauce != 0 && sauce != 39) {
-                _root.mainSummonCount += 1;
-                _root.mainAntiLag += 1;
-                _root.popContain.attachMovie("scorePopMain", "scorePopMain" + _root.mainSummonCount, _root.mainAntiLag, { _x: 80, _y: 20, what: "+" + _root.withComma(Math.floor(amount * multiplier)), whatColor: 16776960 });
-            }
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.coinOvercap >= 300 && _root.save.banned >= 5) {
-            multiplier = 1;
-            if (_root.saveid == 24) {
-                multiplier = 0.35;
-            }
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbCoin / 100;
-            }
-            if (sauce != 0) {
-                if (sauce == 6 || sauce == 13) {
-                    multiplier += Math.min(Math.floor(_root.save.totalStupidity / 250), 100) * 0.01;
-                }
-                else if (_root.save.totalStupidity >= 25000) {
-                    multiplier += Math.min(Math.floor((_root.save.totalStupidity - 25000) / 250), 150) * 0.02 + 1;
-                }
-                else {
-                    multiplier += Math.min(Math.floor(_root.save.totalStupidity / 250), 100) * 0.01;
-                }
-            }
-            i = 1;
-            while (i <= _root.todayEvent) {
-                yy = _root.clock_year % 10;
-                mm = _root.clock_month;
-                dd = _root.clock_date;
-                if (_root.eventList[yy][mm][dd][i] == "Gain 10% more Coins from all sources") {
-                    multiplier += 0.1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 20% more Coins from all sources") {
-                    multiplier += 0.2;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 30% more Coins from all sources") {
-                    multiplier += 0.3;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more Coins from all sources") {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 25% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 0.25;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 50% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 0.5;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 100% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 1;
-                }
-                if (_root.eventList[yy][mm][dd][i] == "Gain 200% more Coins from all sources except the Progress Bar, Garden, LolMarket and Fishing" && sauce != 0 && sauce != 6 && sauce != 13 && sauce != 22) {
-                    multiplier += 2;
-                }
-                i++;
-            }
-            if (_root.save.restTime > 0) {
-                multiplier *= 1.1 + _root.save.restEfficiency[2] * 0.01;
-            }
-            if (_root.save.careerLevel[1] >= 200 && _root.cursoridle >= 30) {
-                multiplier *= 1.03;
-            }
-            if (_root.save.banPenalty[2] == 1) {
-                multiplier *= 1.1;
-            }
-            if (_root.save.doubleCoinTime > 0) {
-                multiplier *= 1.5;
-            }
-            if (sauce == 22 || sauce == 38 || sauce == 39) {
-                multiplier = 1;
-            }
-            if (_root.detectedX == 1) {
-                multiplier = 0;
-            }
-            finalAmnt = Math.floor(amount * multiplier);
-            _root.save.reforgingCoin += finalAmnt;
-            _root.save.coinSauce[sauce] += finalAmnt;
-            _root.save.coinSauce[40] += finalAmnt;
-        }
-    }
-    _root.gainGreenCoin = function gainGreenCoin(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.greenCoinOvercap < 300) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbGreenCoin / 100;
-            }
-            multiplier += Math.min(Math.floor(_root.save.totalStupidity / 5), 10) * 0.03;
-            _root.save.greenCoin += Math.floor(amount * multiplier);
-            if (_root.cursoridle < 30 && _root.save.showGain == true) {
-                _root.mainSummonCount += 1;
-                _root.mainAntiLag += 1;
-                _root.popContain.attachMovie("scorePopMain", "scorePopMain" + _root.mainSummonCount, _root.mainAntiLag, { _x: 10, _y: 60, what: "+" + _root.withComma(Math.floor(amount * multiplier)), whatColor: 65280 });
-            }
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.greenCoinOvercap >= 300 && _root.save.banned >= 5) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbGreenCoin / 100;
-            }
-            multiplier += Math.min(Math.floor(_root.save.totalStupidity / 5), 10) * 0.03;
-            _root.save.reforgingGreenCoin += Math.floor(amount * multiplier);
-        }
-    }
-    _root.gainGreenCoinND = function gainGreenCoinND(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.greenCoinOvercap < 300) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbGreenCoin / 100;
-            }
-            multiplier += Math.min(Math.floor(_root.save.totalStupidity / 5), 10) * 0.03;
-            _root.save.greenCoin += Math.floor(amount * multiplier);
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.greenCoinOvercap >= 300 && _root.save.banned >= 5) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbGreenCoin / 100;
-            }
-            multiplier += Math.min(Math.floor(_root.save.totalStupidity / 5), 10) * 0.03;
-            _root.save.reforgingGreenCoin += Math.floor(amount * multiplier);
-        }
-    }
-    _root.gainBlueCoin = function gainBlueCoin(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.blueCoinOvercap < 300) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbBlueCoin / 100;
-            }
-            _root.save.blueCoin += Math.floor(amount * multiplier);
-            if (_root.cursoridle < 30 && _root.save.showGain == true) {
-                _root.mainSummonCount += 1;
-                _root.mainAntiLag += 1;
-                _root.popContain.attachMovie("scorePopMain", "scorePopMain" + _root.mainSummonCount, _root.mainAntiLag, { _x: 100, _y: 60, what: "+" + _root.withComma(Math.floor(amount * multiplier)), whatColor: 39423 });
-            }
-        }
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.blueCoinOvercap >= 300 && _root.save.banned >= 5) {
-            multiplier = 1;
-            if (_root.saveid == 4) {
-                multiplier = _root.save.dbBlueCoin / 100;
-            }
-            _root.save.reforgingBlueCoin += Math.floor(amount * multiplier);
-        }
-    }
-    _root.gainWhiteCoin = function gainWhiteCoin(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity) {
-            multiplier = 1;
-            if (Math.random() < Math.min(Math.floor(_root.save.totalStupidity / 500), 20) * 0.05) {
-                multiplier += 1;
-            }
-            i = 1;
-            while (i <= _root.todayEvent) {
-                yy = _root.clock_year % 10;
-                mm = _root.clock_month;
-                dd = _root.clock_date;
-                if (_root.eventList[yy][mm][dd][i] == "Gain 100% more White Coins from all sources except level 9001 reward" && amount < 1000) {
-                    multiplier += 1;
-                }
-                i++;
-            }
-            _root.save.whiteCoin += Math.floor(amount * multiplier);
-            if (_root.save.whiteCoin > 999999) {
-                _root.save.whiteCoin = 999999;
-            }
-            if (Math.floor(amount * multiplier) >= 2) {
-                _root.dispNews(163, "Gained " + _root.withComma(amount * multiplier) + " White Coins! You now have " + _root.withComma(_root.save.whiteCoin) + ".");
-            }
-            else {
-                _root.dispNews(163, "Gained 1 White Coin! You now have " + _root.withComma(_root.save.whiteCoin) + ".");
-            }
-        }
-    }
-    _root.gainWhiteCoinB = function gainWhiteCoinB(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity) {
-            multiplier = 1;
-            i = 1;
-            while (i <= _root.todayEvent) {
-                yy = _root.clock_year % 10;
-                mm = _root.clock_month;
-                dd = _root.clock_date;
-                if (_root.eventList[yy][mm][dd][i] == "Gain 100% more White Coins from all sources except level 9001 reward" && amount < 1000) {
-                    multiplier += 1;
-                }
-                i++;
-            }
-            _root.save.whiteCoin += Math.floor(amount * multiplier);
-            if (_root.save.whiteCoin > 999999) {
-                _root.save.whiteCoin = 999999;
-            }
-            if (Math.floor(amount * multiplier) >= 2) {
-                _root.dispNews(163, "Gained " + _root.withComma(amount * multiplier) + " White Coins! You now have " + _root.withComma(_root.save.whiteCoin) + ".");
-            }
-            else {
-                _root.dispNews(163, "Gained 1 White Coin! You now have " + _root.withComma(_root.save.whiteCoin) + ".");
-            }
-        }
-    }
-    _root.dispOverGC = function dispOverGC() {
-        var _loc3_ = Math.floor(_root.save.greenCoin / 1000000000);
-        var _loc2_ = Math.floor(_root.save.greenCoin % 1000000000 / 10000000);
-        if (_loc2_ < 10) {
-            _loc2_ = "0" + _loc2_;
-        }
-        return _loc3_ + "." + _loc2_ + "B";
-    }
-    _root.dispOverBC = function dispOverBC() {
-        var _loc3_ = Math.floor(_root.save.blueCoin / 1000000);
-        var _loc2_ = Math.floor(_root.save.blueCoin % 1000000 / 10000);
-        if (_loc2_ < 10) {
-            _loc2_ = "0" + _loc2_;
-        }
-        return _loc3_ + "." + _loc2_ + "M";
-    }
     _root.gainEventToken = function gainEventToken(amount) {
         if (!isNaN(amount) && amount > 0) {
-            actualAmount = Math.floor(amount);
+            let actualAmount = Math.floor(amount);
             if (actualAmount > _root.eventMaxToken - _root.save.eventTokenToday) {
                 actualAmount = _root.eventMaxToken - _root.save.eventTokenToday;
             }
@@ -1617,81 +760,7 @@ export function step2loadFunctions() {
             _root.save.eventToken += actualAmount;
             _root.save.eventTokenToday += actualAmount;
             if (actualAmount > 0) {
-                _root.dispNews(155, "Event Tokens gained! (+" + _root.withComma(actualAmount) + ")");
-            }
-        }
-    }
-    _root.gainCareerEXP = function gainCareerEXP(careerID, amount, mustTurnOn) {
-        amount = Math.floor(amount);
-        if (!isNaN(amount) && amount > 0) {
-            if (_root.save.careerActive[careerID] > 0 || _root.save.careerBoost[careerID] > 0 || mustTurnOn == false) {
-                if (_root.save.careerBoost[careerID] > 0 && mustTurnOn != false) {
-                    if (_root.save.permaBanPenalty[13] == 3) {
-                        amount = Math.floor(amount * 4);
-                        _root.dispNews(143, "Blessed Career - 300% extra Career EXP gained!");
-                    }
-                    else if (_root.save.permaBanPenalty[13] == 2) {
-                        amount = Math.floor(amount * 3.2);
-                        _root.dispNews(143, "Blessed Career - 220% extra Career EXP gained!");
-                    }
-                    else if (_root.save.permaBanPenalty[13] == 1) {
-                        amount = Math.floor(amount * 2.8);
-                        _root.dispNews(143, "Blessed Career - 180% extra Career EXP gained!");
-                    }
-                    else {
-                        amount = Math.floor(amount * 2);
-                        _root.dispNews(143, "Blessed Career - 100% extra Career EXP gained!");
-                    }
-                }
-                amount += Math.floor(amount * Math.min(Math.floor(_root.save.totalStupidity / 250), 20) * 0.03);
-                if (_root.save.banPenalty[6] == 1) {
-                    amount = Math.floor(amount * 1.2);
-                }
-                i = 1;
-                while (i <= _root.todayEvent) {
-                    yy = _root.clock_year % 10;
-                    mm = _root.clock_month;
-                    dd = _root.clock_date;
-                    if (_root.eventList[yy][mm][dd][i] == "1.5x Career EXP gain") {
-                        amount = Math.floor(amount * 1.5);
-                    }
-                    i++;
-                }
-                _root.save.careerEXP[careerID] += amount;
-                if (_root.save.questType == "Career EXP") {
-                    if (_root.save.questSubtype == "Career " + careerID || _root.save.questSubtype == "Any") {
-                        _root.save.questCount += amount;
-                    }
-                }
-                _root.dispNews(careerID + 130, "Career EXP gained! (" + careerName[careerID] + ", +" + _root.withComma(amount) + ")");
-                careerReq = 100 + _root.save.careerLevel[careerID] * (_root.save.careerLevel[careerID] + 1) * Math.max(1, _root.save.careerLevel[careerID] - 99) * 5;
-                if (_root.save.careerEXP[careerID] > 4000000000) {
-                    _root.save.careerEXP[careerID] = 4000000000;
-                }
-                while (_root.save.careerEXP[careerID] >= careerReq && _root.save.careerLevel[careerID] < 200) {
-                    _root.save.careerEXP[careerID] -= careerReq;
-                    _root.save.careerLevel[careerID] += 1;
-                    careerReq = 100 + _root.save.careerLevel[careerID] * (_root.save.careerLevel[careerID] + 1) * Math.max(1, _root.save.careerLevel[careerID] - 99) * 5;
-                    _root.dispNews(144, "Career Level Up! (" + careerName[careerID] + ", Lv. " + _root.save.careerLevel[careerID] + ")");
-                    if (_root.save.careerLevel[careerID] >= 100) {
-                        _root.save.mysteryBox[10] += 1;
-                        _root.dispNews(144, "You have gained a Supply Crate!");
-                    }
-                }
-                while (_root.save.careerEXP[careerID] >= 40000000 && _root.save.careerLevel[careerID] == 200) {
-                    _root.save.careerEXP[careerID] -= 40000000;
-                    _root.save.mysteryBox[10] += 1;
-                    careerReq = 100 + _root.save.careerLevel[careerID] * (_root.save.careerLevel[careerID] + 1) * Math.max(1, _root.save.careerLevel[careerID] - 99) * 5;
-                    _root.dispNews(144, "40,000,000 [" + careerName[careerID] + "] Career EXP has been exchanged for a Supply Crate!");
-                }
-            }
-            if (careerID == _root.save.curBusiness && mustTurnOn != false) {
-                if (_root.save.careerActive[careerID] > 0 || _root.save.careerBoost[careerID] > 0) {
-                    _root.save.curBusinessActivity += amount;
-                }
-                else {
-                    _root.save.curBusinessActivity += Math.ceil(amount * 0.5);
-                }
+                dispNews(155, "Event Tokens gained! (+" + withComma(actualAmount) + ")");
             }
         }
     }
@@ -1770,36 +839,36 @@ export function step2loadFunctions() {
         if (_root.save.featureEpicLicense == true) {
             if (Math.random() < _root.save.epicSkill[1] * 0.01) {
                 _root.progPercent += 100 * rewardToClaim;
-                _root.dispNews(8, "Epic Skill [Double Progress] activated!");
+                dispNews(8, "Epic Skill [Double Progress] activated!");
             }
             if (Math.random() < _root.save.epicSkill[2] * 0.01) {
                 _root.gainBoost(2 * rewardToClaim, 3);
-                _root.dispNews(9, "Epic Skill [Boost Charger] activated!");
+                dispNews(9, "Epic Skill [Boost Charger] activated!");
             }
             if (Math.random() < _root.save.epicSkill[3] * 0.01) {
                 coinToGet += 1000000 * rewardToClaim;
                 greenCoinToGet += 500 * rewardToClaim;
-                _root.dispNews(10, "Epic Skill [Coin Collector] activated!");
+                dispNews(10, "Epic Skill [Coin Collector] activated!");
             }
             if (Math.random() < _root.save.epicSkill[4] * 0.01) {
                 _root.save.printerCharge += 1 * rewardToClaim;
                 _root.save.totalPrinterCharge += 1 * rewardToClaim;
-                _root.dispNews(11, "Epic Skill [Battery Booster] activated!");
+                dispNews(11, "Epic Skill [Battery Booster] activated!");
             }
             if (Math.random() < _root.save.epicSkill[5] * 0.01) {
                 _root.save.fishFatigue -= 1 * rewardToClaim;
-                _root.dispNews(12, "Epic Skill [Fanatical Fisher] activated!");
+                dispNews(12, "Epic Skill [Fanatical Fisher] activated!");
             }
             if (Math.random() < _root.save.epicSkill[6] * 0.01) {
                 doubleMod = 2;
-                _root.dispNews(13, "Epic Skill [Module Master] activated!");
+                dispNews(13, "Epic Skill [Module Master] activated!");
             }
             if (Math.random() < _root.save.epicSkill[7] * 0.01) {
                 _root.save.botEnergy += 1 * rewardToClaim;
                 if (_root.save.botEnergy > 359999) {
                     _root.save.botEnergy = 359999;
                 }
-                _root.dispNews(184, "Epic Skill [Cyborg Charger] activated!");
+                dispNews(184, "Epic Skill [Cyborg Charger] activated!");
             }
         }
         i = 1;
@@ -1999,15 +1068,15 @@ export function step2loadFunctions() {
         _root.gainGreenCoinND(greenCoinToGet);
         _root.gainBlueCoin(blueCoinToGet);
         if (rewardToClaim > 1) {
-            _root.dispNews(5, _root.withComma(rewardToClaim) + " rewards claimed! (+" + _root.withComma(expToGet) + " EXP | +" + _root.withComma(coinToGet) + " Coins)");
+            dispNews(5, withComma(rewardToClaim) + " rewards claimed! (+" + withComma(expToGet) + " EXP | +" + withComma(coinToGet) + " Coins)");
         }
         else {
-            _root.dispNews(4, "Reward claimed! (+" + _root.withComma(expToGet) + " EXP | +" + _root.withComma(coinToGet) + " Coins)");
+            dispNews(4, "Reward claimed! (+" + withComma(expToGet) + " EXP | +" + withComma(coinToGet) + " Coins)");
         }
         if (_root.save.level > 10) {
             if (Math.random() < (0.01 - _root.save.boost / 100000) * rewardToClaim) {
                 _root.gainBoost(5, 3);
-                _root.dispNews(6, "Yay, free boost! (+5% Boost)");
+                dispNews(6, "Yay, free boost! (+5% Boost)");
             }
         }
     }
@@ -2092,15 +1161,15 @@ export function step2loadFunctions() {
             if (Math.random() < 0.01 * Math.sqrt(plotExpToEarn)) {
                 if (Math.random() < 0.3333333333333333) {
                     _root.save.gardenSeed[26] += 1;
-                    _root.dispNews(22, "Gained Seed #1 for Another Garden!");
+                    dispNews(22, "Gained Seed #1 for Another Garden!");
                 }
                 else if (Math.random() < 0.5) {
                     _root.save.gardenSeed[51] += 1;
-                    _root.dispNews(22, "Gained Seed #26 for Another Garden!");
+                    dispNews(22, "Gained Seed #26 for Another Garden!");
                 }
                 else {
                     _root.save.gardenSeed[76] += 1;
-                    _root.dispNews(22, "Gained Seed #51 for Another Garden!");
+                    dispNews(22, "Gained Seed #51 for Another Garden!");
                 }
             }
         }
@@ -2112,7 +1181,7 @@ export function step2loadFunctions() {
             }
             if (Math.random() < 0.15 && _root.save.gardenSeed[_root.save.gardenTrees[slot]] < 99) {
                 _root.save.gardenSeed[_root.save.gardenTrees[slot]] += 1;
-                _root.dispNews(22, "Gained Seed #" + (_root.save.gardenTrees[slot] - 25) + " for Another Garden!");
+                dispNews(22, "Gained Seed #" + (_root.save.gardenTrees[slot] - 25) + " for Another Garden!");
             }
             if (Math.random() < 0.01 * plotExpToEarn) {
                 fruitToEarn = 1;
@@ -2127,7 +1196,7 @@ export function step2loadFunctions() {
                 }
                 _root.save.gardenFruit += fruitToEarn;
                 if (harvestAll != true) {
-                    _root.dispNews(21, "Gained " + fruitToEarn + " Randomfruit! You now have: " + _root.withComma(_root.save.gardenFruit));
+                    dispNews(21, "Gained " + fruitToEarn + " Randomfruit! You now have: " + withComma(_root.save.gardenFruit));
                 }
                 else {
                     harvestSummaryFruit += fruitToEarn;
@@ -2169,7 +1238,7 @@ export function step2loadFunctions() {
                 careerToGain = Math.floor(careerToGain * 3);
             }
             _root.gainCareerEXP(2, careerToGain, true);
-            _root.dispNews(19, "Tree #" + slot + " harvested! (+" + _root.withComma(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005)) + " Coins)");
+            dispNews(19, "Tree #" + slot + " harvested! (+" + withComma(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005)) + " Coins)");
             if (slot <= 25) {
                 _root.gainEXP(_root.save.gardenHarvestValue[slot] * tmul * (0.3 + _root.curCareerLevel[2] * 0.0015) * (1 + _root.save.petStat[1] * 0.002), 6);
             }
@@ -2247,76 +1316,13 @@ export function step2loadFunctions() {
         _root.gainBlueCoin(harvestSummaryBlueCoin);
         _root.gainCareerEXP(2, harvestSummaryCareer, true);
         if (harvestSummaryCount >= 2) {
-            _root.dispNews(19, harvestSummaryCount + " trees harvested! (+" + _root.withComma(harvestSummaryCoin) + " Coins)");
+            dispNews(19, harvestSummaryCount + " trees harvested! (+" + withComma(harvestSummaryCoin) + " Coins)");
         }
         else if (harvestSummaryCount == 1) {
-            _root.dispNews(19, "1 tree harvested! (+" + _root.withComma(harvestSummaryCoin) + " Coins)");
+            dispNews(19, "1 tree harvested! (+" + withComma(harvestSummaryCoin) + " Coins)");
         }
         if (harvestSummaryFruit >= 1) {
-            _root.dispNews(21, "Gained " + harvestSummaryFruit + " Randomfruit! You now have: " + _root.withComma(_root.save.gardenFruit));
-        }
-    }
-    _root.printMoney = function printMoney(moneyToPrintX) {
-        _root.printPercent = 0;
-        if (_root.save.printerCharge > 0) {
-            if (_root.save.questType == "Print") {
-                if (_root.save.questSubtype == "Any") {
-                    _root.save.questCount += 1;
-                }
-            }
-            _root.save.printerCharge -= 1;
-            if (_root.save.printerCharge > 160) {
-                _root.save.printerCharge -= 4;
-            }
-            if (_root.save.printerCharge > 1000) {
-                _root.save.printerCharge = 1000;
-            }
-            if (Math.random() < Math.min(Math.floor(_root.save.totalStupidity / 20), 25) * 0.04) {
-                _root.gainBlueCoin(1);
-            }
-            _root.dispNews(75, "Money printed! (+" + _root.withComma(moneyToPrintX) + " Coins)");
-            critPrintChance = 0.01;
-            if (_root.save.permaBanPenalty[29] == 3) {
-                critPrintChance *= 6;
-            }
-            else if (_root.save.permaBanPenalty[29] == 2) {
-                critPrintChance *= 4;
-            }
-            else if (_root.save.permaBanPenalty[29] == 1) {
-                critPrintChance *= 3;
-            }
-            if (Math.random() < critPrintChance) {
-                greenCoinToGain = Math.floor(((_root.save.printerLevel + 25) * Math.pow(Math.min(_root.save.level, 9001), 0.65) * 0.63 * 10 + 4560) * (100 + _root.save.printerLevel) / 100);
-                greenCoinToGain = Math.round(greenCoinToGain / 125) * 10;
-                if (_root.save.permaBanPenalty[4] == 3) {
-                    greenCoinToGain = Math.round(greenCoinToGain * 2.5);
-                }
-                else if (_root.save.permaBanPenalty[4] == 2) {
-                    greenCoinToGain = Math.round(greenCoinToGain * 1.9);
-                }
-                else if (_root.save.permaBanPenalty[4] == 1) {
-                    greenCoinToGain = Math.round(greenCoinToGain * 1.6);
-                }
-                _root.gainGreenCoin(greenCoinToGain);
-                _root.dispNews(76, "CRITICAL PRINT! (+" + _root.withComma(greenCoinToGain) + " Green Coins)");
-                if (_root.save.questType == "Print") {
-                    if (_root.save.questSubtype == "Critical") {
-                        _root.save.questCount += 1;
-                    }
-                }
-            }
-        }
-        if (_root.save.printerCharge > 0 && _root.save.printerCharge < 10) {
-            _root.dispNews(156, "Your Printer Battery is low.");
-        }
-        if (_root.save.printerCharge <= 0) {
-            _root.dispNews(157, "Your Printer Battery has run out. Charge it now!");
-        }
-        _root.gainCoin(moneyToPrintX, 9);
-        _root.save.totalPrinterMoney += moneyToPrintX;
-        if (_root.save.totalPrinterMoney >= 1000000) {
-            _root.save.totalPrinterMillion += Math.floor(_root.save.totalPrinterMoney / 1000000);
-            _root.save.totalPrinterMoney %= 1000000;
+            dispNews(21, "Gained " + harvestSummaryFruit + " Randomfruit! You now have: " + withComma(_root.save.gardenFruit));
         }
     }
     _root.toHex = function toHex(dec) {
@@ -2443,1257 +1449,6 @@ export function step2loadFunctions() {
             _root.save.challengeToken = Math.floor(_root.saveid * (_root.saveid + 1) * (_root.saveid - 7) * 156.4);
         }
     }
-    _root.calcPerf = function calcPerf(op) {
-        tempCPerf = 0;
-        if (op == 0) {
-            tempCPerf = 40 + _root.save.botLevel * 1;
-        }
-        else if (op == 1) {
-            tempCPerf = Math.floor(100 + _root.save.highPong * 0.0065 + Math.pow(_root.save.totalPong / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 2) {
-            tempCPerf = Math.floor(100 + _root.save.highAvoidance * 0.0065 + Math.pow(_root.save.totalAvoidance / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 3) {
-            tempCPerf = Math.floor(100 + _root.save.highMath * 0.0065 + Math.pow(_root.save.totalMath / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 4) {
-            tempCPerf = Math.floor(100 + _root.save.highWhack * 0.0065 + Math.pow(_root.save.totalWhack / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 5) {
-            tempCPerf = Math.floor(100 + _root.save.highCount * 0.0065 + Math.pow(_root.save.totalCount / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 6) {
-            tempCPerf = Math.floor(100 + _root.save.highMind * 0.0065 + Math.pow(_root.save.totalMind / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 7) {
-            tempCPerf = Math.floor(100 + _root.save.highBalance * 0.0065 + Math.pow(_root.save.totalBalance / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 8) {
-            tempCPerf = Math.floor(50 + _root.save.stadiumAbilityCost / 4 + Math.pow(_root.save.stadiumRace, 0.3) * 10 + Math.pow(_root.save.stadiumImpossibleRace, 0.4) * 15) / 10;
-        }
-        else if (op == 9) {
-            tempCPerf = Math.floor(50 + _root.save.stadiumAbilityCost / 4 + Math.pow(_root.save.stadiumItem, 0.3) * 10 + Math.pow(_root.save.stadiumImpossibleItem, 0.4) * 15) / 10;
-        }
-        else if (op == 10) {
-            tempCPerf = Math.floor(50 + _root.save.stadiumAbilityCost / 8 + _root.save.stadiumBestDeathMatch * 0.65 + Math.pow(_root.save.stadiumDeathMatch, 0.5) * 2);
-        }
-        else if (op == 11) {
-            tempCPerf = Math.floor(100 + _root.save.highMMRX * 0.0065 + Math.pow(_root.save.totalMMRX / 100000, 0.4) * 10) * 100;
-        }
-        else if (op == 12) {
-            tempCPerf = Math.floor(45 + 500 * _root.save.fcgMaxStreak1 / (_root.save.fcgMaxStreak1 + 25) + Math.pow(_root.save.fcgLevel1, 0.4) * 14 + _root.save.fcgLevel * 9) / 10;
-        }
-        else if (op == 13) {
-            tempCPerf = Math.floor(40 + 500 * _root.save.fcgMaxStreak2 / (_root.save.fcgMaxStreak2 + 25) + Math.pow(_root.save.fcgLevel2, 0.4) * 13 + _root.save.fcgLevel * 8) / 10;
-        }
-        else if (op == 14) {
-            tempCPerf = Math.floor(35 + 500 * _root.save.fcgMaxStreak3 / (_root.save.fcgMaxStreak3 + 25) + Math.pow(_root.save.fcgLevel3, 0.4) * 12 + _root.save.fcgLevel * 7) / 10;
-        }
-        else if (op == 15) {
-            tempCPerf = Math.floor(30 + 500 * _root.save.fcgMaxStreak4 / (_root.save.fcgMaxStreak4 + 25) + Math.pow(_root.save.fcgLevel4, 0.4) * 11 + _root.save.fcgLevel * 6) / 10;
-        }
-        else if (op == 16) {
-            tempCPerf = Math.floor(25 + 500 * _root.save.fcgMaxStreak6 / (_root.save.fcgMaxStreak6 + 25) + Math.pow(_root.save.fcgLevel6, 0.3) * 9 + _root.save.fcgLevel * 4) / 10;
-        }
-        else if (op == 17) {
-            tempCPerf = Math.floor(20 + 500 * _root.save.fcgMaxStreak7 / (_root.save.fcgMaxStreak7 + 25) + Math.pow(_root.save.fcgLevel7, 0.3) * 8 + _root.save.fcgLevel * 3) / 10;
-        }
-        else if (op == 18) {
-            tempCPerf = Math.floor(15 + 500 * _root.save.fcgMaxStreak8 / (_root.save.fcgMaxStreak8 + 25) + Math.pow(_root.save.fcgLevel8, 0.3) * 7 + _root.save.fcgLevel * 2) / 10;
-        }
-        else if (op == 19) {
-            tempCPerf = Math.floor(10 + 500 * _root.save.fcgMaxStreak10 / (_root.save.fcgMaxStreak10 + 25) + Math.pow(_root.save.fcgLevel10, 0.3) * 5 + _root.save.fcgLevel * 1) / 10;
-        }
-        else if (op == 20) {
-            tempCPerf = Math.floor(10 + 500 * _root.save.fishBestStreak / (_root.save.fishBestStreak + 25) + Math.pow(_root.save.fishPerfect, 0.3) * 5 + _root.save.fishBestLevel * 5) / 10;
-        }
-        if (op != 0 && tempCPerf < _root.cyborgActMaxPerf[op]) {
-            tempCPerf += (_root.cyborgActMaxPerf[op] - tempCPerf) * (_root.save.botLevel * 0.0025 + Math.pow(_root.save.botOp[op] * Math.max(30, _root.cyborgActTime[op]) / 30, 0.45) * 0.001);
-        }
-        if (op >= 1 && op <= 7 || op == 11) {
-            tempCPerf = Math.floor(tempCPerf / 100) * 100;
-        }
-        else if (op == 10) {
-            tempCPerf = Math.floor(tempCPerf);
-        }
-        else {
-            tempCPerf = Math.floor(tempCPerf * 10) / 10;
-        }
-        if (tempCPerf > _root.cyborgActMaxPerf[op]) {
-            tempCPerf = _root.cyborgActMaxPerf[op];
-        }
-        if (tempCPerf < _root.cyborgActMinPerf[op]) {
-            tempCPerf = _root.cyborgActMinPerf[op];
-        }
-        if (isNaN(tempCPerf)) {
-            tempCPerf = 0;
-        }
-        return tempCPerf;
-    }
-    _root.calcMaxPerfCount = function calcMaxPerfCount() {
-        maxPerfCount = 0;
-        tmpOp = 1;
-        while (tmpOp <= 20) {
-            if (_root.cyborgActMaxPerf[tmpOp] == _root.calcPerf(tmpOp)) {
-                maxPerfCount += 1;
-            }
-            tmpOp++;
-        }
-        _root.save.botMaxTask = maxPerfCount;
-    }
-    _root.cyborgOp = function cyborgOp(op) {
-        if (op == 0) {
-            _root.save.botEnergy += _root.calcPerf(0);
-            if (_root.save.botEnergy > 359999) {
-                _root.save.botEnergy = 359999;
-            }
-        }
-        else if (op >= 1 && op <= 7 || op == 11) {
-            tempCScore = Math.floor(_root.calcPerf(op) * (0.005 + Math.random() * 0.0025 + Math.random() * 0.001 + Math.random() * Math.random() * 0.0015)) * 100;
-            if (op == 1) {
-                _root.gainWhiteCoin(6 + random(10));
-                cybA = "Pong";
-                medMult = 3;
-                div = 50;
-                if (_root.save.highPong < tempCScore) {
-                    _root.save.highPong = tempCScore;
-                }
-                if (_root.save.todayHighPong < tempCScore) {
-                    _root.save.todayHighPong = tempCScore;
-                }
-                _root.save.totalPong += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Pong.");
-            }
-            else if (op == 2) {
-                _root.gainWhiteCoin(2 + random(6));
-                cybA = "Ultimate Avoidance";
-                medMult = 3;
-                div = 50;
-                if (_root.save.highAvoidance < tempCScore) {
-                    _root.save.highAvoidance = tempCScore;
-                }
-                if (_root.save.todayHighAvoidance < tempCScore) {
-                    _root.save.todayHighAvoidance = tempCScore;
-                }
-                _root.save.totalAvoidance += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Ultimate Avoidance.");
-            }
-            else if (op == 3) {
-                _root.gainWhiteCoin(1 + random(4));
-                cybA = "Math Master";
-                medMult = 2;
-                div = 150;
-                if (_root.save.highMath < tempCScore) {
-                    _root.save.highMath = tempCScore;
-                }
-                if (_root.save.todayHighMath < tempCScore) {
-                    _root.save.todayHighMath = tempCScore;
-                }
-                _root.save.totalMath += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Math Master.");
-            }
-            else if (op == 4) {
-                _root.gainWhiteCoin(2 + random(6));
-                cybA = "Whack-a-greg";
-                medMult = 2;
-                div = 100;
-                if (_root.save.highWhack < tempCScore) {
-                    _root.save.highWhack = tempCScore;
-                }
-                if (_root.save.todayHighWhack < tempCScore) {
-                    _root.save.todayHighWhack = tempCScore;
-                }
-                _root.save.totalWhack += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Whack-a-greg.");
-            }
-            else if (op == 5) {
-                _root.gainWhiteCoin(8 + random(14));
-                cybA = "Triangle Count";
-                medMult = 3;
-                div = 100;
-                if (_root.save.highCount < tempCScore) {
-                    _root.save.highCount = tempCScore;
-                }
-                if (_root.save.todayHighCount < tempCScore) {
-                    _root.save.todayHighCount = tempCScore;
-                }
-                _root.save.totalCount += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Triangle Count.");
-            }
-            else if (op == 6) {
-                _root.gainWhiteCoin(4 + random(8));
-                cybA = "MindSweeper";
-                medMult = 4;
-                div = 100;
-                if (_root.save.highMind < tempCScore) {
-                    _root.save.highMind = tempCScore;
-                }
-                if (_root.save.todayHighMind < tempCScore) {
-                    _root.save.todayHighMind = tempCScore;
-                }
-                _root.save.totalMind += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in MindSweeper.");
-            }
-            else if (op == 7) {
-                _root.gainWhiteCoin(6 + random(10));
-                cybA = "Balance 3";
-                medMult = 3;
-                div = 80;
-                if (_root.save.highBalance < tempCScore) {
-                    _root.save.highBalance = tempCScore;
-                }
-                if (_root.save.todayHighBalance < tempCScore) {
-                    _root.save.todayHighBalance = tempCScore;
-                }
-                _root.save.totalBalance += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in Balance 3.");
-            }
-            else if (op == 11) {
-                _root.gainWhiteCoin(6 + random(10));
-                cybA = "MMR X";
-                medMult = 4;
-                div = 80;
-                if (_root.save.highMMRX < tempCScore) {
-                    _root.save.highMMRX = tempCScore;
-                }
-                if (_root.save.todayMMRX < tempCScore) {
-                    _root.save.todayMMRX = tempCScore;
-                }
-                _root.save.totalMMRX += tempCScore;
-                _root.dispNews(175, "[Cyborg] Simulation Cyborg scored " + _root.withComma(tempCScore) + " in MMR X.");
-            }
-            _root.gainCyborgEXP(Math.ceil((tempCScore / _root.cyborgActMaxPerf[op] + 1) * (_root.cyborgActTime[op] / 20) + _root.cyborgActCost[op] / 10));
-            if (tempCScore >= 100000) {
-                medalToGet = Math.floor(Math.floor(tempCScore / 100000) * medMult * (1 + _root.curCareerLevel[6] * 0.02));
-                _root.dispNews(175, "[Cyborg] You have gained " + medalToGet + " Arcade 100k Medals!");
-                _root.save.arcade100kMedal += medalToGet;
-            }
-            if (_root.save.questType == cybA) {
-                if (_root.save.questSubtype == "High Score") {
-                    if (_root.save.questCount < tempCScore) {
-                        _root.save.questCount = tempCScore;
-                    }
-                }
-                if (_root.save.questSubtype == "Total Score") {
-                    _root.save.questCount += tempCScore;
-                }
-            }
-            _root.arcadeRewardMult = 3;
-            if (_root.save.careerLevel[6] >= 200) {
-                _root.arcadeRewardMult *= 1 + _root.save.arcadeRating * 0.06;
-            }
-            else {
-                _root.arcadeRewardMult *= 1 + _root.save.arcadeRating * 0.05;
-            }
-            _root.gainCareerEXP(6, Math.floor(tempCScore / div / 4 * _root.arcadeRewardMult), true);
-            baseExp = Math.floor(tempCScore / div / 1.8 * _root.arcadeRewardMult);
-            baseCoin = Math.floor(tempCScore / div / 2.4 * _root.arcadeRewardMult);
-            baseGreenCoin = Math.floor(tempCScore / div * 2.5 * _root.arcadeRewardMult);
-            baseBlueCoin = Math.floor(tempCScore / div / 200 * _root.arcadeRewardMult);
-            baseExp = Math.floor(baseExp * (1 + _root.curCareerLevel[6] * 0.005) * (1 + _root.save.petStat[4] * 0.002));
-            baseCoin = Math.floor(baseCoin * (1 + _root.curCareerLevel[6] * 0.01));
-            baseGreenCoin = Math.floor(baseGreenCoin * (1 + _root.curCareerLevel[6] * 0.01));
-            finalExp = Math.ceil(baseExp * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100));
-            finalCoin = Math.ceil(baseCoin * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100));
-            finalGreenCoin = Math.ceil(baseGreenCoin);
-            finalBlueCoin = Math.ceil(baseBlueCoin);
-            if (_root.save.permaBanPenalty[10] == 3) {
-                finalExp = Math.floor(finalExp * 3);
-            }
-            else if (_root.save.permaBanPenalty[10] == 2) {
-                finalExp = Math.floor(finalExp * 2.2);
-            }
-            else if (_root.save.permaBanPenalty[10] == 1) {
-                finalExp = Math.floor(finalExp * 1.8);
-            }
-            if (_root.save.banPenalty[9] == 1) {
-                finalExp = Math.floor(finalExp * 1.3);
-            }
-            if (finalExp > 99999999999) {
-                finalExp = 99999999999;
-            }
-            if (finalCoin > 99999999999) {
-                finalCoin = 99999999999;
-            }
-            _root.gainEXP(finalExp, 10);
-            _root.gainCoin(finalCoin, 10);
-            _root.gainGreenCoin(finalGreenCoin);
-            _root.gainBlueCoin(finalBlueCoin);
-            tempProgToGet = cyborgActTime[op] * 25;
-            _root.progPercent += tempProgToGet;
-            _root.dispNews(175, "[Cyborg] You have gained: " + _root.withComma(finalExp) + " EXP + " + _root.withComma(finalCoin) + " Coins");
-        }
-        else if (op >= 8 && op <= 9) {
-            if (Math.random() < _root.calcPerf(op) / 100) {
-                order = 1;
-                _root.gainCyborgEXP(2);
-                if (Math.random() < 0.5) {
-                    _root.gainWhiteCoin(1);
-                }
-            }
-            else {
-                order = 2 + random(4);
-                if (order != 5) {
-                    _root.gainCyborgEXP(1);
-                }
-            }
-            if (op == 8) {
-                baseExp = 3200;
-                baseCoin = 5900;
-                baseGreenCoin = 10000;
-                baseBlueCoin = 20;
-                baseToken = 600;
-            }
-            else {
-                baseExp = 3750;
-                baseCoin = 6900;
-                baseGreenCoin = 12500;
-                baseBlueCoin = 25;
-                baseToken = 700;
-            }
-            fReward = _root.save.stadiumReward;
-            _root.gainCareerEXP(7, Math.floor(300 + (300 + (5 - order) * 50) * (100 + fReward) / 100 / order), true);
-            finalExp = Math.ceil((baseExp - 150) / order * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100) * (1 + fReward * 0.01));
-            finalCoin = Math.ceil((baseCoin - 150) / order * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100));
-            finalGreenCoin = Math.ceil(baseGreenCoin / order);
-            finalBlueCoin = Math.ceil(baseBlueCoin / order);
-            finalToken = Math.ceil(baseToken / order);
-            finalExp = Math.floor(finalExp * (1 + _root.curCareerLevel[7] * 0.005) * (1 + _root.save.petStat[5] * 0.002));
-            finalCoin = Math.floor(finalCoin * (1 + _root.curCareerLevel[7] * 0.005));
-            finalToken = Math.floor(finalToken * (1 + _root.curCareerLevel[7] * 0.01));
-            if (_root.save.careerLevel[7] >= 100) {
-                finalGreenCoin = Math.floor(finalGreenCoin * 2);
-            }
-            if (_root.save.careerLevel[7] >= 200) {
-                finalBlueCoin = Math.floor(finalBlueCoin * 4);
-            }
-            if (order >= 2) {
-                finalCoin = Math.floor(finalCoin * 0.5);
-                finalToken = Math.floor(finalToken * 0.5);
-            }
-            if (order == 5) {
-                finalExp = Math.floor(finalExp * 0.5);
-                finalCoin = Math.floor(finalCoin * 0.5);
-                finalGreenCoin = Math.floor(finalGreenCoin * 0.5);
-                finalBlueCoin = Math.floor(finalBlueCoin * 0.5);
-                finalToken = Math.floor(finalToken * 0.5);
-            }
-            if (_root.save.banPenalty[9] == 1) {
-                finalExp = Math.floor(finalExp * 1.3);
-            }
-            if (_root.save.stadiumProTime > 0) {
-                finalExp = Math.floor(finalExp * 1.5);
-                finalToken = Math.floor(finalToken * 2);
-            }
-            if (_root.save.permaBanPenalty[19] == 3) {
-                finalExp = Math.floor(finalExp * 3);
-            }
-            else if (_root.save.permaBanPenalty[19] == 2) {
-                finalExp = Math.floor(finalExp * 2.2);
-            }
-            else if (_root.save.permaBanPenalty[19] == 1) {
-                finalExp = Math.floor(finalExp * 1.8);
-            }
-            if (finalExp < 0) {
-                finalExp = 0;
-            }
-            if (finalCoin < 0) {
-                finalCoin = 0;
-            }
-            _root.gainEXP(finalExp, 11);
-            _root.gainCoin(finalCoin, 11);
-            _root.gainGreenCoin(finalGreenCoin);
-            _root.gainBlueCoin(finalBlueCoin);
-            if (op == 8) {
-                _root.dispNews(175, "[Cyborg] Simple Race COMPLETE! - Position: #" + order);
-            }
-            else if (op == 9) {
-                _root.dispNews(175, "[Cyborg] Item Fight COMPLETE! - Position: #" + order);
-            }
-            _root.dispNews(175, "[Cyborg] You have gained: " + _root.withComma(finalExp) + " EXP + " + _root.withComma(finalCoin) + " Coins");
-            _root.dispNews(175, "[Cyborg] You have gained " + _root.withComma(finalToken) + " Stadium Tokens!");
-            if (order == 1) {
-                if (_root.save.questType == "Simple Race" && op == 8 || _root.save.questType == "Item Fight" && op == 9) {
-                    if (_root.save.questSubtype == "Easy") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Medium") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Hard") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Impossible") {
-                        _root.save.questCount += 1;
-                    }
-                }
-                if (op == 8) {
-                    _root.save.stadiumRace += 1;
-                    _root.save.stadiumImpossibleRace += 1;
-                }
-                else if (op == 9) {
-                    _root.save.stadiumItem += 1;
-                    _root.save.stadiumImpossibleItem += 1;
-                }
-            }
-            _root.save.stadiumToken += finalToken;
-        }
-        else if (op == 10) {
-            tempCScore = Math.floor(_root.calcPerf(op) * (0.5 + Math.random() * 0.3 + Math.random() * 0.2));
-            baseExp = 250000;
-            baseCoin = 250000;
-            baseGreenCoin = 500000;
-            baseBlueCoin = 1000;
-            baseToken = 10000;
-            fReward = _root.save.stadiumReward;
-            if (_root.save.questType == "Death Match") {
-                if (_root.save.questSubtype == "PWNt") {
-                    if (_root.save.questCount < tempCScore) {
-                        _root.save.questCount = tempCScore;
-                    }
-                }
-            }
-            if (Math.random() < 0.95 && Math.random() < (tempCScore - 200) / 500) {
-                order = 1;
-                _root.gainCyborgEXP(Math.ceil((tempCScore / 1100 + 1) * (_root.cyborgActTime[op] / 20) + 50));
-            }
-            else {
-                order = 2 + random(4);
-                if (tempCScore >= 600) {
-                    order = 2;
-                }
-                _root.gainCyborgEXP(Math.ceil((tempCScore / 1100 + 1) * (_root.cyborgActTime[op] / 20) + 10));
-            }
-            _root.gainCareerEXP(7, Math.floor(10000 + (20000 + tempCScore * 50 + (5 - order) * 5000) * (100 + fReward) / 100 / order), true);
-            finalExp = Math.ceil((baseExp + Math.floor(tempCScore * 250)) / order * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100) * (1 + fReward * 0.01));
-            finalCoin = Math.ceil((baseCoin + Math.floor(tempCScore * 250)) / order * Math.pow(_root.save.level, 0.6) * (_root.save.boost / 100));
-            finalGreenCoin = Math.ceil((baseGreenCoin + tempCScore * 500) / order);
-            finalBlueCoin = Math.ceil((baseBlueCoin + tempCScore * 1) / order);
-            finalToken = Math.ceil((baseToken + tempCScore * 10) / order);
-            finalExp = Math.floor(finalExp * (1 + _root.curCareerLevel[7] * 0.005) * (1 + _root.save.petStat[5] * 0.002));
-            finalCoin = Math.floor(finalCoin * (1 + _root.curCareerLevel[7] * 0.005));
-            finalToken = Math.floor(finalToken * (1 + _root.curCareerLevel[7] * 0.01));
-            if (_root.save.careerLevel[7] >= 100) {
-                finalGreenCoin = Math.floor(finalGreenCoin * 2);
-            }
-            if (_root.save.careerLevel[7] >= 200) {
-                finalBlueCoin = Math.floor(finalBlueCoin * 4);
-            }
-            if (order >= 2) {
-                finalCoin = Math.floor(finalCoin * 0.5);
-                finalToken = Math.floor(finalToken * 0.5);
-            }
-            if (order == 5) {
-                finalExp = Math.floor(finalExp * 0.5);
-                finalCoin = Math.floor(finalCoin * 0.5);
-                finalGreenCoin = Math.floor(finalGreenCoin * 0.5);
-                finalBlueCoin = Math.floor(finalBlueCoin * 0.5);
-                finalToken = Math.floor(finalToken * 0.5);
-            }
-            if (_root.save.banPenalty[9] == 1) {
-                finalExp = Math.floor(finalExp * 1.3);
-            }
-            if (_root.save.stadiumProTime > 0) {
-                finalExp = Math.floor(finalExp * 1.5);
-                finalToken = Math.floor(finalToken * 2);
-            }
-            if (_root.save.permaBanPenalty[19] == 3) {
-                finalExp = Math.floor(finalExp * 3);
-            }
-            else if (_root.save.permaBanPenalty[19] == 2) {
-                finalExp = Math.floor(finalExp * 2.2);
-            }
-            else if (_root.save.permaBanPenalty[19] == 1) {
-                finalExp = Math.floor(finalExp * 1.8);
-            }
-            if (finalExp < 0) {
-                finalExp = 0;
-            }
-            if (finalCoin < 0) {
-                finalCoin = 0;
-            }
-            if (finalExp > 999999999999) {
-                finalExp = 999999999999;
-            }
-            if (finalCoin > 999999999999) {
-                finalCoin = 999999999999;
-            }
-            _root.gainEXP(finalExp, 11);
-            _root.gainCoin(finalCoin, 11);
-            _root.gainGreenCoin(finalGreenCoin);
-            _root.gainBlueCoin(finalBlueCoin);
-            _root.gainWhiteCoin(Math.floor((10 + tempCScore / 25) / order));
-            _root.save.stadiumToken += finalToken;
-            _root.dispNews(175, "[Cyborg] Death Match COMPLETE! - Position: #" + order + " - PWNts: " + _root.withComma(tempCScore));
-            _root.dispNews(175, "[Cyborg] You have gained: " + _root.withComma(finalExp) + " EXP + " + _root.withComma(finalCoin) + " Coins");
-            _root.dispNews(175, "[Cyborg] You have gained " + _root.withComma(finalToken) + " Stadium Tokens!");
-            if (order == 1) {
-                if (_root.save.questType == "Death Match") {
-                    if (_root.save.questSubtype == "Win") {
-                        _root.save.questCount += 1;
-                    }
-                }
-                _root.save.stadiumDeathMatch += 1;
-            }
-            if (_root.save.stadiumBestDeathMatch < tempCScore) {
-                _root.save.stadiumBestDeathMatch = tempCScore;
-            }
-            if (_root.save.stadiumTodayDeathMatch < tempCScore) {
-                _root.save.stadiumTodayDeathMatch = tempCScore;
-            }
-        }
-        else if (op >= 11 && op <= 19) {
-            _root.save.fcgPlay += 1;
-            if (op == 11) {
-                fDiff = 0;
-                diffMult = 0;
-            }
-            else if (op == 12) {
-                fDiff = 1;
-                diffMult = 1;
-            }
-            else if (op == 13) {
-                fDiff = 2;
-                diffMult = 2;
-            }
-            else if (op == 14) {
-                fDiff = 3;
-                diffMult = 3;
-            }
-            else if (op == 15) {
-                fDiff = 4;
-                diffMult = 4;
-            }
-            else if (op == 16) {
-                fDiff = 6;
-                diffMult = 6;
-            }
-            else if (op == 17) {
-                fDiff = 7;
-                diffMult = 15;
-            }
-            else if (op == 18) {
-                fDiff = 8;
-                diffMult = 20;
-            }
-            else if (op == 19) {
-                fDiff = 10;
-                diffMult = 30;
-            }
-            if (op == 19) {
-                _root.save.fcgSeriousDeck = 34 + random(35);
-            }
-            actualWinRate = _root.calcPerf(op);
-            if (op == 19 && _root.save.fcgSeriousDeck == 69) {
-                actualWinRate *= 0.2;
-            }
-            if (Math.random() < actualWinRate / 100) {
-                if (_root.save.questType == "Win") {
-                    if (_root.save.questSubtype == "Any") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 2" && fDiff >= 2) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 3" && fDiff >= 3) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 4" && fDiff >= 4) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 6" && fDiff >= 6) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 7" && fDiff >= 7) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 8" && fDiff >= 8) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Level 10" && fDiff >= 10) {
-                        _root.save.questCount += 1;
-                    }
-                }
-                if (fDiff == 6) {
-                    _root.gainWhiteCoin(1);
-                }
-                else if (fDiff == 7) {
-                    _root.gainWhiteCoin(3);
-                }
-                else if (fDiff == 8) {
-                    _root.gainWhiteCoin(5);
-                }
-                else if (fDiff == 10) {
-                    if (_root.save.fcgStreak10 >= 4 && _root.save.fcgStreak10 % 5 == 4) {
-                        _root.save.fcgSeriousDeck = 69;
-                    }
-                    _root.gainWhiteCoin(10);
-                }
-                _root.save.fcgWin += 1;
-                _root.save.fcgStreak += 1;
-                target = 2500;
-                finalFcgExp = 25;
-                finalFcgCash = 100;
-                if (op == 19 && _root.save.fcgSeriousDeck == 69) {
-                    target = 62500;
-                    finalFcgExp = 1337;
-                    finalFcgCash = 5000;
-                    _root.gainWhiteCoin(50);
-                }
-                _root.save["fcgStreak" + fDiff] += 1;
-                if (_root.save["fcgMaxStreak" + fDiff] < _root.save["fcgStreak" + fDiff]) {
-                    _root.save["fcgMaxStreak" + fDiff] = _root.save["fcgStreak" + fDiff];
-                }
-                _root.save["fcgLevel" + fDiff] += 1;
-                target += 2500 + Math.min(_root.save["fcgStreak" + fDiff], 50) * diffMult * 100 + diffMult * 1000;
-                finalFcgExp += 25 + Math.min(_root.save["fcgStreak" + fDiff], 50) * diffMult * 1 + diffMult * 25;
-                finalFcgCash += 100 + Math.min(_root.save["fcgStreak" + fDiff], 50) * diffMult * 2 + diffMult * 50;
-                target = Math.floor(target * (1 + _root.save.fcgLevel * 0.02) * (1 + Math.random() * 0.05));
-                finalFcgExp = Math.floor(finalFcgExp * (1 + _root.save.fcgLevel * 0.002) * (1 + Math.random() * 0.05));
-                finalFcgCash = Math.floor(finalFcgCash * (1 + _root.save.fcgLevel * 0.002) * (0.7 + Math.random() * 0.4));
-                if (_root.save.powerUserTime > 0 && _root.save.banPenalty[9] == 1) {
-                    target = Math.floor(target * 1.95);
-                    finalFcgCash = Math.floor(finalFcgCash * 2);
-                }
-                else if (_root.save.powerUserTime > 0) {
-                    target = Math.floor(target * 1.5);
-                    finalFcgCash = Math.floor(finalFcgCash * 2);
-                }
-                else if (_root.save.banPenalty[9] == 1) {
-                    target = Math.floor(target * 1.3);
-                }
-                target = Math.floor(target * (1 + _root.save.petStat[6] * 0.002));
-                finalExp = Math.ceil(Math.pow(_root.save.level, 0.6) * Math.max(_root.boostMax, _root.save.boost) / 100) * target;
-                finalExp = Math.floor(finalExp * (1 + _root.curCareerLevel[8] * 0.005));
-                if (_root.save.permaBanPenalty[20] == 3) {
-                    finalExp = Math.floor(finalExp * 3);
-                }
-                else if (_root.save.permaBanPenalty[20] == 2) {
-                    finalExp = Math.floor(finalExp * 2.2);
-                }
-                else if (_root.save.permaBanPenalty[20] == 1) {
-                    finalExp = Math.floor(finalExp * 1.8);
-                }
-                if (_root.save.careerLevel[8] >= 100) {
-                    finalFcgCash = Math.floor(finalFcgCash * 1.5);
-                }
-                _root.gainEXP(finalExp, 12);
-                _root.save.fcgExp += finalFcgExp;
-                _root.save.fcgCash += finalFcgCash;
-                _root.gainBlueCoin(Math.floor(finalFcgExp / 2 * (1 + _root.curCareerLevel[8] * 0.01)));
-                _root.gainCareerEXP(8, Math.floor(500 + finalFcgExp * 15), true);
-                _root.gainCyborgEXP(Math.ceil(2 * (_root.cyborgActTime[op] / 20) + _root.cyborgActCost[op] / 10));
-                _root.dispNews(175, "[Cyborg] Epic win! (+" + _root.withComma(finalExp) + " EXP)");
-                _root.dispNews(175, "[Cyborg] You have gained " + _root.withComma(finalFcgExp) + " FCG EXP + " + _root.withComma(finalFcgCash) + " FCG Cash!");
-            }
-            else {
-                target = 500;
-                finalFcgExp = 5;
-                finalFcgCash = 10;
-                _root.save["fcgStreak" + fDiff] = 0;
-                _root.save.fcgStreak = 0;
-                _root.save.fcgLose += 1;
-                target = Math.floor(target * (1 + _root.save.fcgLevel * 0.02) * (1 + Math.random() * 0.05));
-                finalFcgExp = Math.floor(finalFcgExp * (1 + _root.save.fcgLevel * 0.005) * (1 + Math.random() * 0.05));
-                finalFcgCash = Math.floor(finalFcgCash * (1 + _root.save.fcgLevel * 0.005) * (0.7 + Math.random() * 0.4));
-                if (_root.save.powerUserTime > 0 && _root.save.banPenalty[9] == 1) {
-                    target = Math.floor(target * 1.95);
-                    finalFcgCash = Math.floor(finalFcgCash * 2);
-                }
-                else if (_root.save.powerUserTime > 0) {
-                    target = Math.floor(target * 1.5);
-                    finalFcgCash = Math.floor(finalFcgCash * 2);
-                }
-                else if (_root.save.banPenalty[9] == 1) {
-                    target = Math.floor(target * 1.3);
-                }
-                target = Math.floor(target * (1 + _root.save.petStat[6] * 0.002));
-                finalExp = Math.ceil(Math.pow(_root.save.level, 0.6) * Math.max(_root.boostMax, _root.save.boost) / 100) * target;
-                _root.gainEXP(finalExp, 12);
-                _root.save.fcgExp += finalFcgExp;
-                _root.save.fcgCash += finalFcgCash;
-                _root.gainBlueCoin(Math.floor(finalFcgExp / 2 * (1 + _root.curCareerLevel[8] * 0.01)));
-                _root.gainCareerEXP(8, Math.floor(500 + finalFcgExp * 15), true);
-                _root.dispNews(175, "[Cyborg] Epic lose! (+" + _root.withComma(finalExp) + " EXP)");
-                _root.dispNews(175, "[Cyborg] You have gained " + _root.withComma(finalFcgExp) + " FCG EXP + " + _root.withComma(finalFcgCash) + " FCG Cash!");
-            }
-        }
-        else if (op == 20) {
-            chaos1 = random(200) + 1;
-            if (_root.save.careerLevel[12] >= 200 && Math.random() < 0.03) {
-                chaos1 = random(20) + 1;
-            }
-            if (Math.random() < 0.05 && _root.save.fishStreak >= 2) {
-                cybFishCurrent = 59;
-            }
-            else if (chaos1 <= 3 && _root.save.fishStreak >= 5) {
-                chaos = random(100) + 1;
-                if (chaos <= 4 && _root.save.fishLevel >= 25) {
-                    cybFishCurrent = 3;
-                }
-                else if (chaos <= 20 && _root.save.fishLevel >= 15) {
-                    cybFishCurrent = 2;
-                }
-                else {
-                    cybFishCurrent = 1;
-                }
-            }
-            else if (chaos1 <= 6 && _root.save.fishStreak >= 4) {
-                chaos = random(100) + 1;
-                if (chaos <= 4 && _root.save.fishLevel >= 25) {
-                    cybFishCurrent = 6;
-                }
-                else if (chaos <= 20 && _root.save.fishLevel >= 15) {
-                    cybFishCurrent = 5;
-                }
-                else {
-                    cybFishCurrent = 4;
-                }
-            }
-            else if (chaos1 <= 12 && _root.save.fishStreak >= 3) {
-                chaos = random(100) + 1;
-                tempChance = _root.save.fishLevel;
-                if (chaos <= tempChance) {
-                    cybFishCurrent = 8;
-                }
-                else if (chaos <= 50) {
-                    cybFishCurrent = 7;
-                }
-                else if (chaos <= 50 + tempChance) {
-                    cybFishCurrent = 10;
-                }
-                else if (chaos <= 100) {
-                    cybFishCurrent = 9;
-                }
-            }
-            else if (chaos1 <= 17 && _root.save.fishStreak >= 6) {
-                if (_root.save.fishStreak >= 10 && _root.save.fishLevel >= 20 && Math.random() < 0.6) {
-                    cybFishCurrent = 54;
-                }
-                else if (_root.save.fishStreak >= 9 && _root.save.fishLevel >= 15 && Math.random() < 0.7) {
-                    cybFishCurrent = 61;
-                }
-                else if (_root.save.fishStreak >= 8 && _root.save.fishLevel >= 10 && Math.random() < 0.8) {
-                    cybFishCurrent = 53;
-                }
-                else if (_root.save.fishStreak >= 7 && _root.save.fishLevel >= 5 && Math.random() < 0.9) {
-                    cybFishCurrent = 60;
-                }
-                else {
-                    cybFishCurrent = 52;
-                }
-            }
-            else if (chaos1 <= 20 && _root.save.fishStreak >= 5 || _root.save.eliteFisherTime > 0 && _root.save.fishStreak >= 2 && Math.random() < 0.02 && chaos1 > 20) {
-                if (_root.save.fishStreak >= 11 && _root.save.fishLevel >= 30 && Math.random() < 0.4) {
-                    cybFishCurrent = 58;
-                }
-                else if (_root.save.fishStreak >= 9 && _root.save.fishLevel >= 20 && Math.random() < 0.6) {
-                    cybFishCurrent = 57;
-                }
-                else if (_root.save.fishStreak >= 7 && _root.save.fishLevel >= 10 && Math.random() < 0.8) {
-                    cybFishCurrent = 56;
-                }
-                else {
-                    cybFishCurrent = 55;
-                }
-            }
-            else if (chaos1 <= 130) {
-                ftc = 11;
-                fL = _root.save.fishLevel + 1 + Math.ceil(Math.sqrt(_root.save.fishStreak / 3));
-                if (_root.save.eliteFisherTime > 0) {
-                    fL += 4;
-                }
-                i = 1;
-                while (i <= fL) {
-                    if (ftc < 30) {
-                        blah = _root.save.fishLevel - _root.fishArray[ftc + 1].fishLevel;
-                        if (blah > 0) {
-                            chance = 45 + Math.pow(blah, 0.7) * 3;
-                        }
-                        else {
-                            chance = 35 - Math.pow(Math.abs(blah), 1.1) * 3;
-                        }
-                        if (ftc >= 20) {
-                            chance *= 0.6;
-                        }
-                        if (chance > 80) {
-                            chance = 80;
-                        }
-                        if (Math.random() < chance / 100) {
-                            ftc += 1;
-                        }
-                    }
-                    i++;
-                }
-                if (Math.random() < 0.3) {
-                    ftc = 11 + random(ftc - 10);
-                }
-                cybFishCurrent = ftc;
-            }
-            else {
-                ftc = 31;
-                fL = _root.save.fishLevel + 1 + Math.ceil(Math.sqrt(_root.save.fishStreak / 3));
-                if (_root.save.eliteFisherTime > 0) {
-                    fL += 4;
-                }
-                i = 1;
-                while (i <= fL) {
-                    if (ftc < 60) {
-                        if (ftc >= 50) {
-                            blah = _root.save.fishLevel - _root.fishArray[ftc + 21].fishLevel;
-                        }
-                        else {
-                            blah = _root.save.fishLevel - _root.fishArray[ftc + 1].fishLevel;
-                        }
-                        if (blah > 0) {
-                            chance = 45 + Math.pow(blah, 0.7) * 3;
-                        }
-                        else {
-                            chance = 35 - Math.pow(Math.abs(blah), 1.1) * 3;
-                            if (ftc >= 50) {
-                                chance *= 0.1;
-                            }
-                        }
-                        if (ftc >= 40) {
-                            chance *= 0.6;
-                        }
-                        if (ftc >= 50) {
-                            chance *= 0.5;
-                        }
-                        if (ftc >= 50 && _root.save.fishStreak < (ftc - 50) * 2) {
-                            chance *= 0.3;
-                        }
-                        if (chance > 80) {
-                            chance = 80;
-                        }
-                        if (Math.random() < chance / 100) {
-                            ftc += 1;
-                        }
-                    }
-                    i++;
-                }
-                if (ftc > 50 && Math.random() < 0.95) {
-                    ftc = 50 + random(ftc - 49);
-                    if (Math.random() < 0.75) {
-                        ftc = 50;
-                    }
-                }
-                if (Math.random() < 0.3) {
-                    ftc = 31 + random(ftc - 30);
-                }
-                if (ftc > 50) {
-                    ftc += 20;
-                }
-                cybFishCurrent = ftc;
-            }
-            cybFishCurrentExp = Math.floor(_root.fishArray[cybFishCurrent].fishExp * (1 + _root.curCareerLevel[12] * 0.01));
-            cybFishCate = _root.fishArray[cybFishCurrent].fishCate;
-            cybFishSpec = _root.fishArray[cybFishCurrent].fishSpec;
-            cybFishLev = _root.fishArray[cybFishCurrent].fishLevel;
-            cybFishAExp = Math.floor(_root.fishArray[cybFishCurrent].fishAExp * (1 + _root.curCareerLevel[12] * 0.005));
-            if (_root.save.eliteFisherTime > 0) {
-                cybFishAExp = Math.floor(cybFishAExp * 1.5);
-            }
-            if (cybFishCate == "Fish" || cybFishCate == "Junk") {
-                tempName = "Lv. " + cybFishLev + " " + cybFishCate;
-            }
-            else if (cybFishLev == "") {
-                tempName = cybFishCate;
-            }
-            else {
-                tempName = cybFishLev + " " + cybFishCate;
-            }
-            if (Math.random() < _root.calcPerf(op) / 100 && (_root.save.fishStreak < 250 || Math.random() < 0.7) || cybFishSpec == "Manual+") {
-                _root.save.fishStreak += 1;
-                if (_root.save.fishBestStreak < _root.save.fishStreak) {
-                    _root.save.fishBestStreak = _root.save.fishStreak;
-                }
-                streakBonus = _root.save.fishStreak;
-                if (_root.save.fishStreak > 10) {
-                    streakBonus = 9 + Math.ceil(_root.save.fishStreak / 10);
-                }
-                if (_root.save.fishStreak > 100) {
-                    streakBonus = 20;
-                }
-                if (_root.save.fishStreak > 1000) {
-                    streakBonus = 0;
-                }
-                _root.save.fishScore += cybFishCurrentExp * (200 + streakBonus * 50);
-                _root.save.fishScoreToday += cybFishCurrentExp * (200 + streakBonus * 50);
-                _root.save.fishExp += cybFishCurrentExp + streakBonus;
-                _root.gainCareerEXP(12, 100 + cybFishCurrentExp * 3 + streakBonus * 5 + _root.save.fishLevel, true);
-                if (_root.save.permaBanPenalty[35] == 3) {
-                    _root.gainGreenCoin(30000 + streakBonus * 6000);
-                }
-                else if (_root.save.permaBanPenalty[35] == 2) {
-                    _root.gainGreenCoin(20000 + streakBonus * 4000);
-                }
-                else if (_root.save.permaBanPenalty[35] == 1) {
-                    _root.gainGreenCoin(15000 + streakBonus * 3000);
-                }
-                else {
-                    _root.gainGreenCoin(5000 + streakBonus * 1000);
-                }
-                _root.gainBlueCoin(10 + streakBonus * 2);
-                _root.dispNews(175, "[Cyborg] Fishing Mastery increased! (+" + _root.withComma(cybFishCurrentExp + streakBonus) + ")");
-                expToGain = Math.floor(cybFishAExp * Math.pow(_root.save.level, 0.6) * _root.save.boost / 100 * (1 + streakBonus / 20));
-                if (_root.save.permaBanPenalty[6] == 3) {
-                    expToGain = Math.floor(expToGain * 3);
-                }
-                else if (_root.save.permaBanPenalty[6] == 2) {
-                    expToGain = Math.floor(expToGain * 2.2);
-                }
-                else if (_root.save.permaBanPenalty[6] == 1) {
-                    expToGain = Math.floor(expToGain * 1.8);
-                }
-                if (cybFishCurrent == 52) {
-                    _root.save.awesomeRefill += 1;
-                }
-                if (cybFishCurrent == 53) {
-                    _root.save.gardenFertilizer += 1;
-                }
-                if (cybFishCurrent == 54) {
-                    _root.save.gardenMegaFertilizer += 1;
-                }
-                if (cybFishCurrent == 55) {
-                    _root.save.mysteryBox[1] += 1;
-                }
-                if (cybFishCurrent == 56) {
-                    _root.save.mysteryBox[7] += 1;
-                }
-                if (cybFishCurrent == 57) {
-                    _root.save.mysteryBox[8] += 1;
-                }
-                if (cybFishCurrent == 58) {
-                    _root.save.mysteryBox[4] += 1;
-                }
-                if (cybFishCurrent == 59) {
-                    _root.gainWhiteCoin(1);
-                }
-                if (cybFishCurrent == 60) {
-                    _root.save.boostPotion += 1;
-                }
-                if (cybFishCurrent == 61) {
-                    _root.save.megaBoostPotion += 1;
-                }
-                _root.gainEXP(expToGain, 22);
-                _root.dispNews(175, "[Cyborg] PERFECT CATCH (" + _root.save.fishStreak + "x)! " + tempName + " GET! (+" + _root.withComma(expToGain) + " EXP)");
-                if (_root.save.questType == "Result") {
-                    if (_root.save.questSubtype == "Perfect" || _root.save.questSubtype == "Success") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Perfect Streak") {
-                        if (_root.save.questCount < _root.save.fishStreak) {
-                            _root.save.questCount = _root.save.fishStreak;
-                        }
-                    }
-                }
-                if (_root.save.fishLevel > 30) {
-                    if (_root.save.fishLevel > 50) {
-                        expToGain = Math.floor(expToGain * (_root.save.fishLevel * 0.03 - 0.3));
-                    }
-                    else {
-                        expToGain = Math.floor(expToGain * (_root.save.fishLevel * 0.05 - 1.3));
-                    }
-                    _root.gainEXP(expToGain, 22);
-                    _root.dispNews(175, "[Cyborg] Bonus LEGEND EXP gained! (+" + _root.withComma(expToGain) + " EXP)");
-                }
-                if (_root.save.fishStreak >= 3) {
-                    _root.gainCyborgEXP(3);
-                }
-                else {
-                    _root.gainCyborgEXP(2);
-                }
-                _root.save.fishPerfect += 1;
-                _root.save.fishTotal += 1;
-                _root.save.fishFound[cybFishCurrent] += 1;
-                _root.save.fishLeft[cybFishCurrent] += 1;
-                _root.gainBoost(1, 3);
-            }
-            else {
-                _root.save.fishStreak = 0;
-                _root.save.fishScore += cybFishCurrentExp * 100;
-                _root.save.fishScoreToday += cybFishCurrentExp * 100;
-                _root.save.fishExp += cybFishCurrentExp;
-                _root.gainCareerEXP(12, 50 + cybFishCurrentExp * 3 + _root.save.fishLevel, true);
-                if (_root.save.permaBanPenalty[35] == 3) {
-                    _root.gainGreenCoin(15000);
-                }
-                else if (_root.save.permaBanPenalty[35] == 2) {
-                    _root.gainGreenCoin(10000);
-                }
-                else if (_root.save.permaBanPenalty[35] == 1) {
-                    _root.gainGreenCoin(7500);
-                }
-                else {
-                    _root.gainGreenCoin(2500);
-                }
-                _root.gainBlueCoin(5);
-                _root.dispNews(175, "[Cyborg] Fishing Mastery increased! (+" + _root.withComma(cybFishCurrentExp) + ")");
-                if (cybFishCurrent == 52) {
-                    _root.save.awesomeRefill += 1;
-                }
-                if (cybFishCurrent == 53) {
-                    _root.save.gardenFertilizer += 1;
-                }
-                if (cybFishCurrent == 54) {
-                    _root.save.gardenMegaFertilizer += 1;
-                }
-                if (cybFishCurrent == 55) {
-                    _root.save.mysteryBox[1] += 1;
-                }
-                if (cybFishCurrent == 56) {
-                    _root.save.mysteryBox[7] += 1;
-                }
-                if (cybFishCurrent == 57) {
-                    _root.save.mysteryBox[8] += 1;
-                }
-                if (cybFishCurrent == 58) {
-                    _root.save.mysteryBox[4] += 1;
-                }
-                if (cybFishCurrent == 59) {
-                    _root.gainWhiteCoin(1);
-                }
-                if (cybFishCurrent == 60) {
-                    _root.save.boostPotion += 1;
-                }
-                if (cybFishCurrent == 61) {
-                    _root.save.megaBoostPotion += 1;
-                }
-                expToGain = Math.floor(cybFishAExp * Math.pow(_root.save.level, 0.6) * _root.save.boost / 100 * 0.8);
-                if (_root.save.permaBanPenalty[6] == 3) {
-                    expToGain = Math.floor(expToGain * 2);
-                }
-                else if (_root.save.permaBanPenalty[6] == 2) {
-                    expToGain = Math.floor(expToGain * 1.6);
-                }
-                else if (_root.save.permaBanPenalty[6] == 1) {
-                    expToGain = Math.floor(expToGain * 1.4);
-                }
-                _root.gainEXP(expToGain, 22);
-                _root.dispNews(175, "[Cyborg] " + tempName + " GET! (+" + _root.withComma(expToGain) + " EXP)");
-                if (_root.save.fishLevel > 30) {
-                    if (_root.save.fishLevel > 50) {
-                        expToGain = Math.floor(expToGain * (_root.save.fishLevel * 0.03 - 0.3));
-                    }
-                    else {
-                        expToGain = Math.floor(expToGain * (_root.save.fishLevel * 0.05 - 1.3));
-                    }
-                    _root.gainEXP(expToGain, 22);
-                    _root.dispNews(175, "[Cyborg] Bonus LEGEND EXP gained! (+" + _root.withComma(expToGain) + " EXP)");
-                }
-                if (_root.save.questType == "Result") {
-                    if (_root.save.questSubtype == "Success") {
-                        _root.save.questCount += 1;
-                    }
-                }
-                _root.gainCyborgEXP(1);
-                _root.save.fishTotal += 1;
-                _root.save.fishFound[cybFishCurrent] += 1;
-                _root.save.fishLeft[cybFishCurrent] += 1;
-            }
-            if (_root.save.questType == "Junk" && cybFishCurrent >= 11 && cybFishCurrent <= 30) {
-                if (_root.save.questSubtype == "Any") {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 5+" && cybFishCurrent >= 15) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 10+" && cybFishCurrent >= 20) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 20+" && cybFishCurrent >= 25) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 30" && cybFishCurrent >= 30) {
-                    _root.save.questCount += 1;
-                }
-            }
-            if (_root.save.questType == "Fish" && (cybFishCurrent >= 31 && cybFishCurrent <= 50 || cybFishCurrent >= 71)) {
-                if (_root.save.questSubtype == "Any") {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 5+" && cybFishCurrent >= 35) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 10+" && cybFishCurrent >= 40) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 20+" && cybFishCurrent >= 45) {
-                    _root.save.questCount += 1;
-                }
-                if (_root.save.questSubtype == "Lv. 30" && cybFishCurrent >= 50) {
-                    _root.save.questCount += 1;
-                }
-            }
-            if (_root.save.questType == "Special Item") {
-                if (cybFishCurrent <= 10 || cybFishCurrent >= 52) {
-                    if (_root.save.questSubtype == "Any") {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Treasure Box" && cybFishCurrent >= 1 && cybFishCurrent <= 3) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Key" && cybFishCurrent >= 4 && cybFishCurrent <= 6) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Energy Drink" && cybFishCurrent >= 7 && cybFishCurrent <= 8) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Pet Food" && cybFishCurrent >= 9 && cybFishCurrent <= 10) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Energy Refill" && cybFishCurrent == 52) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Fertilizer" && cybFishCurrent == 53) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Mega Fertilizer" && cybFishCurrent == 54) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Mystery Box" && cybFishCurrent >= 55 && cybFishCurrent <= 58) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Explosion Crate" && cybFishCurrent == 55) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Awesome Crate" && cybFishCurrent == 56) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Chaos Crate" && cybFishCurrent == 57) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Legendary Box" && cybFishCurrent == 58) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "White Coin" && cybFishCurrent == 59) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Regular Boost Potion" && cybFishCurrent == 60) {
-                        _root.save.questCount += 1;
-                    }
-                    if (_root.save.questSubtype == "Mega Boost Potion" && cybFishCurrent == 61) {
-                        _root.save.questCount += 1;
-                    }
-                }
-            }
-        }
-        _root.save.botOp[op] += 1;
-    }
-    _root.checkCyborg = function checkCyborg() {
-        if (_root.save.bestLevel >= 1250) {
-            if (_root.save.botCurrentOp >= 1 && _root.save.botCurrentOp <= 7 || _root.save.botCurrentOp == 11) {
-                if (_root.save.featureArcade == true && _root.house._currentframe != 10) {
-                    _root.save.botActive = true;
-                }
-                else {
-                    _root.save.botActive = false;
-                }
-            }
-            else if (_root.save.botCurrentOp >= 8 && _root.save.botCurrentOp <= 10) {
-                if (_root.save.featureStadium == true && _root.house._currentframe != 11) {
-                    _root.save.botActive = true;
-                }
-                else {
-                    _root.save.botActive = false;
-                }
-            }
-            else if (_root.save.botCurrentOp >= 12 && _root.save.botCurrentOp <= 19) {
-                if (_root.save.featureTukkunFCG == true && _root.house._currentframe != 12) {
-                    _root.save.botActive = true;
-                }
-                else {
-                    _root.save.botActive = false;
-                }
-            }
-            else if (_root.save.botCurrentOp == 20) {
-                if (_root.save.featureFishing == true && _root.house._currentframe != 22 && _root.save.fishExamLeft <= 0) {
-                    _root.save.botActive = true;
-                }
-                else {
-                    _root.save.botActive = false;
-                }
-            }
-            if (_root.save.botEnergy <= 0) {
-                _root.save.botEnergy = 0;
-                _root.save.botActive = false;
-            }
-            if (_root.save.botCurrentOp == 0) {
-                _root.save.botActive = true;
-                _root.save.botCurrentOpNum = 1;
-                _root.save.botCurrentOpMax = 1;
-            }
-            if (_root.cyborgWorking == true && _root.save.botActive == false) {
-                _root.dispNews(176, "[Cyborg] Simulation Cyborg status: PAUSED");
-            }
-            if (_root.save.botActive == true) {
-                if (_root.cyborgWorking == false) {
-                    if (_root.save.botCurrentOp != 0) {
-                        _root.dispNews(177, "[Cyborg] Simulation Cyborg status: WORKING");
-                    }
-                    else {
-                        _root.dispNews(177, "[Cyborg] Simulation Cyborg status: RECHARGING");
-                    }
-                }
-                if (_root.save.botCurrentOp != 0) {
-                    _root.save.botEnergy -= 1;
-                }
-                _root.save.botCurrentOpTime += 1;
-                if (_root.save.botCurrentOpTime >= _root.cyborgActTime[_root.save.botCurrentOp]) {
-                    _root.save.botCurrentOpTime = 0;
-                    _root.cyborgOp(_root.save.botCurrentOp);
-                    _root.save.botCurrentOpNum += 1;
-                    if (_root.save.botCurrentOpNum > _root.save.botCurrentOpMax) {
-                        if (_root.save.botCurrentOp != 0) {
-                            _root.save.botCurrentOp = 0;
-                            _root.dispNews(178, "[Cyborg] Simulation Cyborg status: FINISHED");
-                        }
-                        _root.save.botActive = true;
-                        _root.save.botCurrentOpNum = 1;
-                        _root.save.botCurrentOpMax = 1;
-                    }
-                }
-            }
-            _root.cyborgWorking = _root.save.botActive;
-        }
-    }
-    _root.gainCyborgPoint = function gainCyborgPoint(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity && _root.save.bestLevel >= 1250) {
-            _root.save.botPoint += Math.floor(amount);
-            if (_root.save.botPoint > 9999999999) {
-                _root.save.botPoint = 9999999999;
-            }
-            if (Math.floor(amount) >= 2) {
-                _root.dispNews(174, "[Cyborg] Gained " + _root.withComma(amount) + " Cyborg Points! You now have " + _root.withComma(_root.save.botPoint) + ".");
-            }
-            else {
-                _root.dispNews(174, "[Cyborg] Gained 1 Cyborg Point! You now have " + _root.withComma(_root.save.botPoint) + ".");
-            }
-        }
-    }
-    _root.gainCyborgExp = function gainCyborgEXP(amount) {
-        if (!isNaN(amount) && amount > 0 && amount != Infinity) {
-            expReq = _root.save.botLevel * 5;
-            if (_root.save.botLevel > 100) {
-                expReq = _root.save.botLevel * (_root.save.botLevel - 99) * 5;
-            }
-            if (_root.save.botLevel == 200) {
-                expReq = -1;
-            }
-            if (amount > expReq && expReq > 0) {
-                amount = expReq;
-            }
-            _root.save.botExp += Math.floor(amount);
-            _root.dispNews(179, "[Cyborg] Simulation Cyborg gained " + _root.withComma(amount) + " EXP!");
-            if (_root.save.botExp >= expReq && expReq > 0) {
-                _root.save.botExp -= expReq;
-                _root.save.botLevel += 1;
-                _root.dispNews(180, "[Cyborg] Simulation Cyborg LEVEL UP! Simulation Cyborg is now Lv. " + _root.withComma(_root.save.botLevel) + ".");
-            }
-        }
-    }
     _root.equipModule = function equipModule(modLoc) {
         if (_root.save.progModuleTier[modLoc] > 0) {
             _root.organizeModule();
@@ -3735,6 +1490,8 @@ export function step2loadFunctions() {
         _root.organizeModule();
     }
     _root.organizeModule = function organizeModule() {
+        let mustSwap;
+        let j;
         i = 1;
         while (i <= 8) {
             if (_root.save.progModuleTier[i] == 0) {
@@ -4853,14 +2610,14 @@ export function step3loadBA() {
         _loc1_.bonusAmnt = bonusAmnt;
         _root.setArray.push(_loc1_);
     }
-    function checkArenaSet(itemName) {
+    _root.checkArenaSet = function checkArenaSet(itemName) {
         let setArray = _root.setArray;
-        tempSetID = 0;
-        n = 1;
+        let tempSetID = 0;
+        let n = 1;
         while (n <= setArray.length - 1) {
-            p = 0;
+            let p = 0;
             while (p <= setArray[n].setItems.length - 1) {
-                tempName = setArray[n].setItems[p];
+                let tempName = setArray[n].setItems[p];
                 if (itemName == tempName) {
                     tempSetID = n;
                 }
@@ -5406,7 +3163,7 @@ export function step3loadBA() {
             unob = 0;
             _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
         }
-        itemSet = _root.checkArenaSet(name);
+        let itemSet = _root.checkArenaSet(name);
         if (moreBonus == undefined) {
             moreBonus = "";
             _root.breakNews("[Error]", "ERROR: " + name + " / [moreBonus] not defined.", 16711680, 9002);
@@ -5742,7 +3499,7 @@ export function step3loadBA() {
             unob = 0;
             _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
         }
-        itemSet = _root.checkArenaSet(name);
+        let itemSet = _root.checkArenaSet(name);
         if (moreBonus == undefined) {
             moreBonus = "";
             _root.breakNews("[Error]", "ERROR: " + name + " / [moreBonus] not defined.", 16711680, 9002);
@@ -6012,7 +3769,7 @@ export function step3loadBA() {
             unob = 0;
             _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
         }
-        itemSet = _root.checkArenaSet(name);
+        let itemSet = _root.checkArenaSet(name);
         if (moreBonus == undefined) {
             moreBonus = "";
             _root.breakNews("[Error]", "ERROR: " + name + " / [moreBonus] not defined.", 16711680, 9002);
@@ -6244,9 +4001,9 @@ export function step3loadBA() {
             }
         }
     }
-    function getArenaWeapon(reqRank, subtype, frame, range, attack, speed, defense, crit, dexterity, health, maxLevel, expTNL, level, exp, enhance, bonusPow, bonus, ability, moreBonus, sell, expiry, noBonus, noLife, noFuse, noUnique, spirit, unob, name, desc, guard) {
-        k = 9999;
-        i = 1;
+    _root.getArenaWeapon = function getArenaWeapon(reqRank, subtype, frame, range, attack, speed, defense, crit, dexterity, health, maxLevel, expTNL, level, exp, enhance, bonusPow, bonus, ability, moreBonus, sell, expiry, noBonus, noLife, noFuse, noUnique, spirit, unob, name, desc, guard) {
+        let k = 9999;
+        let i = 1;
         while (i <= 30) {
             if (_root.save.inventoryExist[i] != 1) {
                 if (k > i) {
@@ -6300,7 +4057,7 @@ export function step3loadBA() {
                 unob = 0;
                 _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
             }
-            itemSet = _root.checkArenaSet(name);
+            let itemSet = _root.checkArenaSet(name);
             if (moreBonus == undefined) {
                 moreBonus = "";
                 _root.breakNews("[Error]", "ERROR: " + name + " / [moreBonus] not defined.", 16711680, 9002);
@@ -6598,20 +4355,20 @@ export function step3loadBA() {
                 }
             }
             if (k <= 30) {
-                _root.dispNews(49, "Weapon GET! [" + name + "]");
+                dispNews(49, "Weapon GET! [" + name + "]");
             }
             else {
-                _root.dispNews(55, "Weapon inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(55, "Weapon inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(55, "Weapon inventory full! [" + name + "] deleted :(");
+            dispNews(55, "Weapon inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
-    function getArenaArmor(reqRank, subtype, frame, attack, speed, defense, crit, dexterity, health, maxLevel, expTNL, level, exp, enhance, bonusPow, bonus, ability, moreBonus, sell, expiry, noBonus, noLife, noFuse, noUnique, spirit, unob, name, desc, guard) {
-        k = 9999;
-        i = 101;
+    _root.getArenaArmor = function getArenaArmor(reqRank, subtype, frame, attack, speed, defense, crit, dexterity, health, maxLevel, expTNL, level, exp, enhance, bonusPow, bonus, ability, moreBonus, sell, expiry, noBonus, noLife, noFuse, noUnique, spirit, unob, name, desc, guard) {
+        let k = 9999;
+        let i = 101;
         while (i <= 130) {
             if (_root.save.inventoryExist[i] != 1) {
                 if (k > i) {
@@ -6665,7 +4422,7 @@ export function step3loadBA() {
                 unob = 0;
                 _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
             }
-            itemSet = _root.checkArenaSet(name);
+            let itemSet = _root.checkArenaSet(name);
             if (moreBonus == undefined) {
                 moreBonus = "";
                 _root.breakNews("[Error]", "ERROR: " + name + " / [moreBonus] not defined.", 16711680, 9002);
@@ -6897,14 +4654,14 @@ export function step3loadBA() {
                 }
             }
             if (k <= 130) {
-                _root.dispNews(50, "Armor GET! [" + name + "]");
+                dispNews(50, "Armor GET! [" + name + "]");
             }
             else {
-                _root.dispNews(56, "Armor inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(56, "Armor inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(56, "Armor inventory full! [" + name + "] deleted :(");
+            dispNews(56, "Armor inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
@@ -6941,14 +4698,14 @@ export function step3loadBA() {
             _root.save.inventoryObtainTime[k] = _root.systemtimenow;
             _root.save.inventoryDesc[k] = desc;
             if (k <= 630) {
-                _root.dispNews(54, "Outfit GET! [" + name + "]");
+                dispNews(54, "Outfit GET! [" + name + "]");
             }
             else {
-                _root.dispNews(60, "Outfit inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(60, "Outfit inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(60, "Outfit inventory full! [" + name + "] deleted :(");
+            dispNews(60, "Outfit inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
@@ -7008,7 +4765,7 @@ export function step3loadBA() {
                 unob = 0;
                 _root.breakNews("[Error]", "ERROR: " + name + " / [unob] not defined.", 16711680, 9002);
             }
-            itemSet = _root.checkArenaSet(name);
+            let itemSet = _root.checkArenaSet(name);
             if (desc == "This medal\'s name depends on your Anti-Idle title when you craft it. Don\'t ask how that works.") {
                 itemSet = 0;
             }
@@ -7252,20 +5009,20 @@ export function step3loadBA() {
                 }
             }
             if (k <= 530) {
-                _root.dispNews(51, "Accessory GET! [" + name + "]");
+                dispNews(51, "Accessory GET! [" + name + "]");
             }
             else {
-                _root.dispNews(57, "Accessory inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(57, "Accessory inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(57, "Accessory inventory full! [" + name + "] deleted :(");
+            dispNews(57, "Accessory inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
-    function getArenaEnhancer(subtype, frame, power, curse, success, bonus, ability, moreBonus, enhance, bonusPow, sell, expiry, name, desc, guard) {
-        k = 9999;
-        i = 201;
+    _root.getArenaEnhancer = function getArenaEnhancer(subtype, frame, power, curse, success, bonus, ability, moreBonus, enhance, bonusPow, sell, expiry, name, desc, guard) {
+        let k = 9999;
+        let i = 201;
         while (i <= 230) {
             if (_root.save.inventoryExist[i] != 1) {
                 if (k > i) {
@@ -7581,14 +5338,14 @@ export function step3loadBA() {
                 }
             }
             if (k <= 230) {
-                _root.dispNews(52, "Enhancer GET! [" + name + "]");
+                dispNews(52, "Enhancer GET! [" + name + "]");
             }
             else {
-                _root.dispNews(58, "Enhancer inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(58, "Enhancer inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(58, "Enhancer inventory full! [" + name + "] deleted :(");
+            dispNews(58, "Enhancer inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
@@ -7627,14 +5384,14 @@ export function step3loadBA() {
             _root.save.inventoryObtainTime[k] = _root.systemtimenow;
             _root.save.inventoryDesc[k] = desc;
             if (k <= 430) {
-                _root.dispNews(53, "Potion GET! [" + name + "]");
+                dispNews(53, "Potion GET! [" + name + "]");
             }
             else {
-                _root.dispNews(59, "Potion inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(59, "Potion inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(59, "Potion inventory full! [" + name + "] deleted :(");
+            dispNews(59, "Potion inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
@@ -7673,14 +5430,14 @@ export function step3loadBA() {
             _root.save.inventoryObtainTime[k] = _root.systemtimenow;
             _root.save.inventoryDesc[k] = desc;
             if (k <= 730) {
-                _root.dispNews(170, "Chip GET! [" + name + "]");
+                dispNews(170, "Chip GET! [" + name + "]");
             }
             else {
-                _root.dispNews(171, "Chip inventory full! [" + name + "] moved to Recently Deleted tab.");
+                dispNews(171, "Chip inventory full! [" + name + "] moved to Recently Deleted tab.");
             }
         }
         else {
-            _root.dispNews(171, "Chip inventory full! [" + name + "] deleted :(");
+            dispNews(171, "Chip inventory full! [" + name + "] deleted :(");
         }
         checkFullInventory();
     }
@@ -8625,7 +6382,7 @@ export function step3loadBA() {
                 _root.save.inventoryNoFuse[k] = true;
                 _root.save.inventoryNoUnique[k] = false;
             }
-            _root.dispNews(61, "[" + _root.save.inventoryName[k] + "] enhanced with [" + _root.save.inventoryName[j] + "]!");
+            dispNews(61, "[" + _root.save.inventoryName[k] + "] enhanced with [" + _root.save.inventoryName[j] + "]!");
             if (_root.save.inventorySubtype[j].indexOf("Protector") == -1 && _root.save.inventoryName[j].indexOf("[I]") == -1) {
                 if (_root.save.questType == "Enhance") {
                     if (_root.save.questSubtype == "Success") {
@@ -8708,6 +6465,7 @@ export function step3loadBA() {
             i++;
         }
     }
+    _root.checkFullInventory = checkFullInventory;
     function addArenaEnemy(level, speed, attack, defense, accuracy, evasion, hp, exp, coin, pixel, name, element, boss, evolve, heal, zombie, rangeDamage, explode, explodeDamage, rampagePct, skill, skillLevel, art, loc, allyPassive1, allyPassive1X, allyPassive2, allyPassive2X, allyPassive3, allyPassive3X, allyActive1, allyActive1X, allyActive1Y, allyActive1Z, allyActive2, allyActive2X, allyActive2Y, allyActive2Z, allyActive3, allyActive3X, allyActive3Y, allyActive3Z) {
         var _loc1_ = new Object();
         _loc1_.level = level;
@@ -8758,7 +6516,7 @@ export function step3loadBA() {
         if (isNaN(_root.save.arenaAllyEXP[ID])) {
             _root.save.arenaAllyEXP[ID] = 0;
             _root.save.arenaAllyUpgrade[ID] = 0;
-            _root.dispNews(35, "Invisible Ally GET! [" + _root.enemyList[ID].name + "]!");
+            dispNews(35, "Invisible Ally GET! [" + _root.enemyList[ID].name + "]!");
         }
     }
     function addKommanderMission(monID, minDiff, monCount) {
@@ -10955,9 +8713,9 @@ export function step4createAndUpgradeSave() {
     _root.autoBanned = 0;
     _root.systemclock = new Date();
     _root.systemtimenow = _root.systemclock.getTime();
-    var globalSetting = SharedObject.getLocal("ATG_Global", "/");
+    _root.globalSetting = SharedObject.getLocal("ATG_Global", "/");
     _root.my_so = SharedObject.getLocal("antiIdle_file0", "/");
-    var another_so = SharedObject.getLocal("antiIdle_temp", "/");
+    _root.another_so = SharedObject.getLocal("antiIdle_temp", "/");
     if (isNaN(_root.saveid)) {
         _root.saveid = -1;
     }
@@ -17822,7 +15580,7 @@ export function step4createAndUpgradeSave() {
                 _root.save.inventoryAttack[i] += _root.save.inventoryEnhance[i] * 75;
                 j = 5000;
                 while (j <= 7000) {
-                    if (_root.save.inventoryDesc[i].indexOf(_root.withComma(j)) != -1) {
+                    if (_root.save.inventoryDesc[i].indexOf(withComma(j)) != -1) {
                         _root.save.inventoryAttack[i] -= Math.floor(j - 5000) / 5;
                         _root.save.inventoryAttack[i] += Math.floor(j - 5000) / 2;
                         j = 7001;
@@ -20442,83 +18200,7 @@ export function step7Fcg() {
 }
 
 export function step8AchievementsQuests() {
-    function addNewAchievement(ID, name, desc, need, amnt, type, where, secret, redCoin) {
-        _root.totalachievements += 1;
-        if (secret == true) {
-            _root.totalsachievements += 1;
-        }
-        _root.maxredcoin += redCoin;
-        var _loc2_ = new Object();
-        _loc2_.ID = ID;
-        _loc2_.name = name;
-        _loc2_.desc = desc;
-        _loc2_.need = need;
-        _loc2_.amnt = amnt;
-        _loc2_.type = type;
-        _loc2_.where = where;
-        _loc2_.secret = secret;
-        _loc2_.redCoin = redCoin;
-        achList.push(_loc2_);
-    }
-    function checkAchievements() {
-        _root.awards = 0;
-        _root.sawards = 0;
-        _root.achRedCoin = 0;
-        if (_root.saveid >= 10) {
-            _root.save.achEarnTime[1150] = 99999999999;
-            _root.save.achEarnTime[1151] = 99999999999;
-            _root.save.achEarnTime[1152] = 99999999999;
-            _root.save.achEarnTime[1153] = 99999999999;
-            _root.save.achEarnTime[1154] = 99999999999;
-            _root.save.achEarnTime[1155] = 99999999999;
-            _root.save.achEarnTime[1156] = 99999999999;
-            _root.save.achEarnTime[1157] = 99999999999;
-            _root.save.achEarnTime[1158] = 99999999999;
-            _root.save.achEarnTime[1159] = 99999999999;
-            _root.save.achEarnTime[1160] = 99999999999;
-            _root.save.achEarnTime[1161] = 99999999999;
-            _root.save.achEarnTime[1162] = 99999999999;
-            _root.save.achEarnTime[1163] = 99999999999;
-            _root.save.achEarnTime[1164] = 99999999999;
-            _root.save.achEarnTime[1165] = 99999999999;
-            _root.save.achEarnTime[9035] = 99999999999;
-        }
-        i = 1;
-        while (i <= _root.totalachievements) {
-            if (_root.achList[i].where == "save") {
-                achCurrent = _root.save[_root.achList[i].need];
-            }
-            else if (_root.achList[i].where == "root") {
-                achCurrent = _root[_root.achList[i].need];
-            }
-            achRequired = _root.achList[i].amnt;
-            if (!isNaN(achCurrent) && achCurrent >= achRequired && _root.achList[i].type == "Max" || achCurrent <= achRequired && _root.achList[i].type == "Min" || !isNaN(_root.save.achEarnTime[_root.achList[i].ID])) {
-                if (isNaN(_root.save.achEarnTime[_root.achList[i].ID])) {
-                    _root.save.achEarnTime[_root.achList[i].ID] = _root.systemtimenow;
-                    if (_root.save.showBanner != false) {
-                        _root.accomplishPop.targetX = 10;
-                        _root.accomplishPop.count = 0;
-                        _root.accomplishPop.gotoAndStop(2);
-                        _root.accomplishPop.lolMessage.text = _root.achList[i].name;
-                        _root.accomplishPop.rcText.text = "Progress Bar Reward: +" + _root.achList[i].redCoin / 100 + "%";
-                        _root.accomplishPop.countText.text = _root.save.maxAchievement + 1 + " / " + _root.totalachievements;
-                    }
-                    _root.dispNews(3, "Achievement earned! [" + _root.achList[i].name + "] (" + (_root.save.maxAchievement + 1) + " / " + _root.totalachievements + ")");
-                    _root.newAchName = _root.achList[i].name;
-                    _root.newAchRedCoin = _root.achList[i].redCoin;
-                }
-                _root.awards += 1;
-                if (_root.achList[i].secret == true) {
-                    _root.sawards += 1;
-                }
-                _root.achRedCoin += _root.achList[i].redCoin;
-            }
-            i++;
-        }
-        if (_root.save.maxAchievement < _root.awards) {
-            _root.save.maxAchievement = _root.awards;
-        }
-    }
+
     function addNewQuest(expired, eventQuest, dailyQuest, questID, questImage, reqLevel, reqQuest, reqQuestRank, questName, descA, descB, need, where, amnt1, amnt2, amnt3, amnt4, questToken, eventToken) {
         _root.totalMainQuest += 1;
         var _loc2_ = new Object();
@@ -20562,29 +18244,18 @@ export function step8AchievementsQuests() {
         questList.push(_loc2_);
         _root.totalquest += 1;
     }
-    function addAchievementR(ID, secret, achName, descA, descB, need, where, amnt) {
-        var _loc1_ = new Object();
-        _loc1_.ID = ID;
-        _loc1_.secret = secret;
-        _loc1_.achName = achName;
-        _loc1_.descA = descA;
-        _loc1_.descB = descB;
-        _loc1_.need = need;
-        _loc1_.where = where;
-        _loc1_.amnt = amnt;
-        achListR.push(_loc1_);
-    }
     _root.totalquest = 0;
     _root.totalNewQuest = 0;
     _root.totalMainQuest = 0;
     _root.totalachievements = 0;
     _root.totalsachievements = 0;
     _root.maxredcoin = 0;
-    var achList = [];
-    var questList = [];
-    var mainQuestList = [];
-    var newAchList = [];
-    var newMainQuestList = [];
+    _root.achList = [{}];
+    _root.achListR = [{}];
+    var questList = [{}];
+    var mainQuestList = [{}];
+    var newAchList = [{}];
+    var newMainQuestList = [{}];
     var questMap = new Array();
     var questHLink = new Array();
     var questVLink = new Array();

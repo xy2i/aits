@@ -5,6 +5,9 @@
  * This is not a full SOL parser, it does parse enough to load an anti idle save
  */
 
+import { SharedObject } from "./sharedobject";
+
+
 /** Byte sequence marking the end of an object,
  * usually after arrays or objects. */
 const END_OF_OBJECT = [0x00, 0x00, 0x09];
@@ -236,6 +239,9 @@ export function deserializeSol(buf: ArrayBuffer): Save {
 // Setup file input handler
 export function setupSOLReader() {
     const fileInput = document.querySelector('input');
+    const span = document.createElement("span");
+    span.textContent = "Upload SOL";
+    fileInput.parentNode.insertBefore(span, fileInput);
 
     fileInput.addEventListener('change', async (event) => {
         const file = event.target.files[0];
@@ -245,7 +251,16 @@ export function setupSOLReader() {
             const buffer = await file.arrayBuffer();
             const savefile = deserializeSol(buffer);
             console.log(savefile);
-            localStorage.setItem(savefile.name, JSON.stringify(savefile.data));
+            localStorage.setItem(savefile.name, JSON.stringify(savefile.data, (key, value) => {
+                if (Array.isArray(value)) {
+                    return {
+                        __isSparseArray: true,
+                        values: { ...value }
+                    };
+                }
+                return value;
+            }));
+            console.log(SharedObject.getLocal(savefile.name));
         } catch (error) {
             console.error('Error reading SOL file:', error);
         }

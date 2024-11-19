@@ -1,0 +1,205 @@
+{
+    "id": "41a9f0e4-a01c-4ccb-9c87-ef48ac9e4b79",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "eb73f3e7-fb24-4001-8f96-6887b4f0c1a8",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "044f095b-eed6-4320-8163-2689223943be",
+                    "label": "rectangle_1",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "fillAlpha": 0.5,
+                    "width": 650,
+                    "height": 70
+                },
+                {
+                    "prefabId": "4710337b-048a-4726-8ff2-464f2e9f75ac",
+                    "id": "f6eec734-5915-48f8-900a-848b32ce41a1",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coin",
+                    "x": 5,
+                    "y": 7.5
+                },
+                {
+                    "prefabId": "4710337b-048a-4726-8ff2-464f2e9f75ac",
+                    "id": "4f5e5322-32d2-43b5-a1d1-d49c48a35a45",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "coinType"
+                    ],
+                    "label": "coin_1",
+                    "coinType": "green",
+                    "x": 5,
+                    "y": 37
+                },
+                {
+                    "prefabId": "4710337b-048a-4726-8ff2-464f2e9f75ac",
+                    "id": "813f1dcd-8310-49c2-8750-a8a5f8ec203e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "coinType"
+                    ],
+                    "label": "coin_2",
+                    "coinType": "blue",
+                    "x": 122,
+                    "y": 37.5
+                },
+                {
+                    "type": "Text",
+                    "id": "a8f5390d-4644-45c7-8bd6-782aac491880",
+                    "label": "coinText",
+                    "scope": "CLASS",
+                    "x": 32,
+                    "y": 15,
+                    "text": "1,000,000,000,000",
+                    "fixedWidth": 190,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#ffff00"
+                },
+                {
+                    "type": "Text",
+                    "id": "745a5109-4cde-4576-99b3-cebcf7931a1a",
+                    "label": "greenCoinText",
+                    "scope": "CLASS",
+                    "x": 32,
+                    "y": 45,
+                    "text": "1,00B",
+                    "fixedWidth": 100,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#66FF00"
+                },
+                {
+                    "type": "Text",
+                    "id": "8c542238-ae0e-424d-8fe9-c32c8693f096",
+                    "label": "blueCoinText",
+                    "scope": "CLASS",
+                    "x": 149,
+                    "y": 45,
+                    "text": "1,00B",
+                    "fixedWidth": 100,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#0099ff"
+                },
+                {
+                    "prefabId": "a64dfff0-008d-4e72-80bb-a39431c73eab",
+                    "id": "21a2952d-57ca-4836-9c87-584b9d1508b3",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "overcap",
+                    "x": 35,
+                    "y": 10
+                },
+                {
+                    "prefabId": "a64dfff0-008d-4e72-80bb-a39431c73eab",
+                    "id": "76c9709b-c31f-432a-a4df-560fd92d1a13",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "coinType"
+                    ],
+                    "label": "overcap_1",
+                    "coinType": "green",
+                    "x": 35,
+                    "y": 40
+                },
+                {
+                    "prefabId": "a64dfff0-008d-4e72-80bb-a39431c73eab",
+                    "id": "6139fbdf-fcae-43c7-b2ef-0e330d0837d2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "coinType"
+                    ],
+                    "label": "overcap_2",
+                    "coinType": "blue",
+                    "x": 152,
+                    "y": 40
+                },
+                {
+                    "type": "Text",
+                    "id": "bc0152ac-6071-4fbc-bac5-d439b780e3f2",
+                    "label": "titleText",
+                    "scope": "CLASS",
+                    "x": 200,
+                    "y": 41,
+                    "text": "Title",
+                    "fixedWidth": 220,
+                    "fixedHeight": 21.3,
+                    "align": "center",
+                    "fontFamily": "McLaren",
+                    "fontSize": "12px",
+                    "color": "#e5e5e5"
+                },
+                {
+                    "type": "Text",
+                    "id": "d1605b66-f6e4-4621-96aa-a9899391e676",
+                    "label": "nameText",
+                    "scope": "CLASS",
+                    "x": 185,
+                    "y": 16,
+                    "text": "Name",
+                    "fixedWidth": 240,
+                    "fixedHeight": 28.4,
+                    "align": "center",
+                    "fontFamily": "McLaren",
+                    "fontSize": "17px",
+                    "color": "#e5e5e5"
+                },
+                {
+                    "prefabId": "0d760eb7-6510-4c6c-9ca7-329c8c381844",
+                    "id": "2970a0a8-8d9e-46fb-bc52-c9c60a52b194",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "expBar",
+                    "x": 400,
+                    "y": 25
+                },
+                {
+                    "prefabId": "b2eb4c18-0e19-4b3f-b4d7-7845c17eb613",
+                    "id": "a1d8d030-7834-45f0-ae0f-e88f19847e2d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "ascentDisp",
+                    "x": 400,
+                    "y": 2.5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

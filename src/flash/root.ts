@@ -12,3 +12,5 @@ export const _root: {
     save: {},
     saveGlobal: {},
 };
+
+console.log(_root);

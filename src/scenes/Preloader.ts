@@ -1,10 +1,10 @@
 
 // You can write more code here
 
+import { version } from "@/../package.json";
+import { random } from "@/flash/random";
 import { _root } from "@/flash/root";
 import { SharedObject } from "@/flash/sharedobject";
-import { random } from "@/flash/random";
-import { version } from "@/../package.json";
 import { loadFonts, preloadFonts } from '@/font';
 import Phaser from "phaser";
 
@@ -29,12 +29,10 @@ class Preloader extends Phaser.Scene {
 		super("Scene1");
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
 	editorCreate(): void {
-
 		// container_1
 		const container_1 = this.add.container(175, 200);
 
@@ -98,7 +96,7 @@ class Preloader extends Phaser.Scene {
 	/** Load assets */
 	async preload() {
 		if (import.meta.env.DEV) {
-			_root.flashVer = `${version} dev (${import.meta.env.COMMIT_HASH})`;
+			_root.flashVer = `dev ${import.meta.env.COMMIT_HASH}`;
 		} else {
 			_root.flashVer = `${version}`;
 		}
@@ -106,6 +104,7 @@ class Preloader extends Phaser.Scene {
 
 	// Write your code here
 	async create() {
+		this.cameras.main.setOrigin(0, 0);
 		this.editorCreate();
 		this.flashNumber.text = _root.flashVer;
 		this.flavorText.text = FLAVOR_TEXT[Math.floor(Math.random() * FLAVOR_TEXT.length)];
@@ -128,7 +127,7 @@ class Preloader extends Phaser.Scene {
 		this.loadingText.text = "Loading fonts...";
 		await loadFonts();
 
-		this.load.pack("asset-pack", "public/assets/asset-pack.json");
+		this.load.pack("asset-pack", "assets/asset-pack.json");
 		this.loadingText.text = "Loading save file...";
 
 		_root.kpaChip = false;
@@ -141,7 +140,6 @@ class Preloader extends Phaser.Scene {
 		_root.offlineVersion = true;
 		_root.globalSetting = SharedObject.getLocal("ATG_Global", "/");
 		_root.saveGlobal = _root.globalSetting.data;
-		_root.save = {};
 		_root.preloadedFile0 = false;
 		_root.preloadedFile1 = false;
 		_root.preloadedFile2 = false;
@@ -154,7 +152,6 @@ class Preloader extends Phaser.Scene {
 
 		this.scene.start('Loader');
 	}
-
 	/* END-USER-CODE */
 }
 
@@ -162,3 +159,4 @@ class Preloader extends Phaser.Scene {
 
 // You can write more code here
 export { Preloader };
+

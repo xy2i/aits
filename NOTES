@@ -1,3 +1,4 @@
 frame2 in general: fixup variables, especially "i"
 i definde the functions but never called them so this will error a bunch
 
+button logic in 2379_56onclipevent(load)

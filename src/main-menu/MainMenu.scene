@@ -1,0 +1,154 @@
+{
+    "id": "cb6bbd78-81a3-4c1d-a300-68688f5b5eb4",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [
+            "aits/assets/asset-pack.json"
+        ],
+        "createMethodName": "editorCreate",
+        "sceneKey": "MainMenu",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6509797f-6ae8-4b88-89d8-8d1d29c71450",
+            "label": "defaultBg",
+            "scope": "CLASS",
+            "texture": {
+                "key": "defaultBg"
+            },
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "",
+            "tintTopRight": "",
+            "tintBottomLeft": "",
+            "tintBottomRight": ""
+        },
+        {
+            "type": "Text",
+            "id": "b5223fa9-4e36-43d5-a44e-ae4f3438118f",
+            "label": "text_1",
+            "y": 151,
+            "text": "Welcome to Anti-Idle: The Game!",
+            "fixedWidth": 650,
+            "fixedHeight": 134.65,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "21px",
+            "color": "#c8e1fa"
+        },
+        {
+            "type": "Text",
+            "id": "a5b4a828-bdc1-4bde-b580-9ca9aa9ae53f",
+            "label": "text",
+            "y": 182,
+            "text": "Anti-Idle: The Game is a unique idle-type game created in 2009 (and still updated after 11 years!) \nby Tukkun.\n\nGain some EXP, level up and unlock tons of features and minigames! Anti-Idle: The Game can be \nplayed even when you are busy or not sitting near your computer, but there are also plenty of \nthings that you can do when you are actively playing - and all of that is completely FREE!\n\nWhat are you still waiting for? Press the big \"Awesome!\" button below there and join the \nawesomeness right away, with millions of other players!",
+            "fixedWidth": 650,
+            "lineSpacing": 5.5,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "12px",
+            "color": "#6496c8"
+        },
+        {
+            "type": "Text",
+            "id": "a3c47875-ebf5-48b0-9663-daef71c50def",
+            "label": "text_2",
+            "y": 585.2121894168807,
+            "text": "Your progress is automatically saved and is stored in your computer. Backup your savefile often!",
+            "fixedWidth": 650,
+            "lineSpacing": 5.5,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "12px",
+            "color": "#999"
+        },
+        {
+            "prefabId": "4d63567c-3395-4f7e-b0dd-19d69e09636c",
+            "id": "adf647fa-dac0-440a-bcbe-6d9caba7649b",
+            "unlock": [
+                "x",
+                "y",
+                "fileNumber"
+            ],
+            "label": "fileButton0",
+            "fileNumber": "0",
+            "x": 15,
+            "y": 445
+        },
+        {
+            "prefabId": "4d63567c-3395-4f7e-b0dd-19d69e09636c",
+            "id": "e5b14f04-e8b3-4fea-bac8-0123556c72cb",
+            "unlock": [
+                "x",
+                "y",
+                "fileNumber"
+            ],
+            "label": "fileButton1",
+            "fileNumber": 1,
+            "x": 140,
+            "y": 445
+        },
+        {
+            "prefabId": "4d63567c-3395-4f7e-b0dd-19d69e09636c",
+            "id": "35310655-23ae-4f01-8f59-d66555413970",
+            "unlock": [
+                "x",
+                "y",
+                "fileNumber"
+            ],
+            "label": "fileButton2",
+            "fileNumber": 2,
+            "x": 265,
+            "y": 445
+        },
+        {
+            "prefabId": "4d63567c-3395-4f7e-b0dd-19d69e09636c",
+            "id": "41d068fa-bd52-47f9-a1c1-f0fb1aab87c2",
+            "unlock": [
+                "x",
+                "y",
+                "fileNumber"
+            ],
+            "label": "fileButton3",
+            "fileNumber": 3,
+            "x": 390,
+            "y": 445
+        },
+        {
+            "type": "Text",
+            "id": "ff3f391c-ca03-41a4-9b41-76c5d604f748",
+            "label": "text_4",
+            "x": 1,
+            "y": 54,
+            "text": "put logo here",
+            "fixedWidth": 650,
+            "fixedHeight": 134.65,
+            "align": "center",
+            "fontFamily": "McLaren",
+            "fontSize": "42px",
+            "color": "#c8e1fa"
+        },
+        {
+            "prefabId": "925fc7fa-89e7-4f04-862e-74d65711c0fd",
+            "id": "bc6e3020-3192-4927-b667-5db29b9af24e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "awesomeButton",
+            "x": 15.1,
+            "y": 381
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

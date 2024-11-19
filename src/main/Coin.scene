@@ -1,0 +1,94 @@
+{
+    "id": "4710337b-048a-4726-8ff2-464f2e9f75ac",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "814b45b3-f9ab-41af-9835-c86f4cc04216",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Ellipse",
+                    "id": "31f0c000-90be-4105-8c1e-5d8c0f3f457d",
+                    "label": "back",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#ffff00",
+                    "strokeColor": "#ff9900",
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "3b2fe09b-fdaa-4567-a144-e82352061677",
+                    "label": "outerRing",
+                    "originX": 0,
+                    "originY": 0,
+                    "strokeColor": "#ff9900",
+                    "isStroked": true,
+                    "width": 25,
+                    "height": 25
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "0b73adfc-ddc1-4dfd-b2a4-abe26804bc1f",
+                    "label": "innerRing",
+                    "x": 2,
+                    "y": 2,
+                    "originX": 0,
+                    "originY": 0,
+                    "strokeColor": "#ff9900",
+                    "isStroked": true,
+                    "width": 21,
+                    "height": 21
+                },
+                {
+                    "type": "Text",
+                    "id": "b779f2cf-602b-4817-a41b-83bd97ec21ae",
+                    "label": "text",
+                    "x": 9,
+                    "y": 8,
+                    "text": "Y",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#ff9900"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "coinType",
+            "label": "coinType",
+            "tooltip": "",
+            "defValue": "yellow",
+            "customDefinition": false,
+            "type": {
+                "id": "option",
+                "options": [
+                    "yellow",
+                    "green",
+                    "blue",
+                    "white"
+                ]
+            }
+        }
+    ]
+}

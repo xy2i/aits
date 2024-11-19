@@ -14,6 +14,12 @@ const PRELOAD_FONTS = [
 /** Fonts that will be loaded before game starts */
 const FONTS = [
     new FontFace("McLaren", "url('/assets/fonts/mclaren.ttf')"),
+    new FontFace("Noto Sans JP", "url('/assets/fonts/noto-sans-jp.ttf')"),
+    new FontFace("Tempesta Seven Extended", "url('/assets/fonts/tempesta-seven-extended.ttf')"),
+    new FontFace("Tempesta Seven Extended", "url('/assets/fonts/tempesta-seven-extended-bold.ttf')", {
+        weight: 'bold',
+    }),
+    new FontFace("Tempesta Seven Condensed", "url('/assets/fonts/tempesta-seven-condensed.ttf')"),
 ];
 
 export async function preloadFonts() {

@@ -1,0 +1,95 @@
+{
+    "id": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6e1101da-b22b-4da1-8d2a-25bd21067d72",
+            "label": "container_1",
+            "x": -0.36934818263879177,
+            "y": -2.2757816623874842,
+            "list": [
+                {
+                    "type": "Polygon",
+                    "id": "8a31c268-adc7-4135-8c6d-fae11fe4436e",
+                    "label": "top",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#875a2d",
+                    "strokeColor": "#000000",
+                    "lineWidth": 2,
+                    "points": "5 0 55 0 60 5 55 10 5 10 0 5"
+                },
+                {
+                    "type": "Polygon",
+                    "id": "0e1db091-1007-43ff-a96f-6ca6c0c0f149",
+                    "label": "outline",
+                    "originX": 0,
+                    "originY": 0,
+                    "fillColor": "#785151",
+                    "strokeColor": "#000000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "points": "5 0 55 0 60 5 60 20 0 20 0 5"
+                },
+                {
+                    "type": "Polygon",
+                    "id": "c5647127-6ae9-4aef-a618-02867b194924",
+                    "label": "bottom",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#82501e",
+                    "strokeColor": "#000000",
+                    "lineWidth": 2,
+                    "points": "0 5 0 20 60 20 60 5 55 10 5 10"
+                },
+                {
+                    "type": "Text",
+                    "id": "efba5eaa-e529-45e8-8e38-dd39fdcfff7d",
+                    "label": "text_1",
+                    "y": 1,
+                    "text": "1",
+                    "fixedWidth": 60,
+                    "fixedHeight": 20,
+                    "paddingTop": 4,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#f0cd64",
+                    "maxLines": 2
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "tabNumber",
+            "label": "tabNumber",
+            "tooltip": "",
+            "defValue": 1,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

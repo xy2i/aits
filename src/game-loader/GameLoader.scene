@@ -1,0 +1,44 @@
+{
+    "id": "b2a5df19-2b14-4e31-bbb9-b079ce603db7",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "GameLoader",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "prefabId": "a90b59b2-442a-4b64-bc7c-43baeef5b527",
+            "id": "296b4e6e-f7e6-4f4c-9828-bd465aded9fd",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "bottomBar",
+            "x": 0,
+            "y": 620
+        },
+        {
+            "type": "Text",
+            "id": "cd2c0e23-abdc-4f19-87bd-f80068b61302",
+            "label": "text_1",
+            "y": 19.85,
+            "text": "Loading...\n(This should take less than 2 seconds)",
+            "fixedWidth": 650,
+            "align": "center",
+            "fontFamily": "Tempesta Seven Extended",
+            "fontSize": "10px",
+            "color": "#666"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

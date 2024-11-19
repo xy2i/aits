@@ -1,0 +1,87 @@
+{
+    "id": "a64dfff0-008d-4e72-80bb-a39431c73eab",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "da5db7f5-750a-493a-8c3d-5e4ad2913d86",
+            "label": "container_1",
+            "x": 5,
+            "list": [
+                {
+                    "type": "Triangle",
+                    "id": "463054e5-981f-45bf-a6d1-1152eed15da8",
+                    "label": "triangle",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#fa9632",
+                    "y1": 20,
+                    "x2": 10,
+                    "x3": 20,
+                    "y3": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "d2b615dd-cebf-4e5b-9bb5-888651bbb7c8",
+                    "label": "timer",
+                    "scope": "CLASS",
+                    "x": -5,
+                    "y": 10,
+                    "text": "5:00",
+                    "fixedWidth": 30,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px",
+                    "stroke": "#000000ff",
+                    "strokeThickness": 3,
+                    "shadow.stroke": true,
+                    "shadow.blur": 2
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "314aa834-abc0-480a-90eb-51ba9795022f",
+                    "label": "overlay",
+                    "x": -5,
+                    "originX": 0,
+                    "originY": 0,
+                    "width": 30,
+                    "height": 20
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "coinType",
+            "label": "coinType",
+            "tooltip": "",
+            "defValue": "yellow",
+            "customDefinition": true,
+            "type": {
+                "id": "option",
+                "options": [
+                    "yellow",
+                    "blue",
+                    "green"
+                ]
+            }
+        }
+    ]
+}

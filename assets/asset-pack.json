@@ -1,0 +1,38 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/shapes/8177.svg",
+                "svgConfig": {
+                    "width": 22,
+                    "height": 22,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "8177"
+            },
+            {
+                "url": "assets/anti-idle-logo.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "anti-idle-logo"
+            },
+            {
+                "url": "assets/defaultBg.png",
+                "type": "image",
+                "key": "defaultBg"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

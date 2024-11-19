@@ -1,0 +1,75 @@
+{
+    "id": "b97bbe0f-f765-431f-9d75-8129c3ecf8cb",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "29b71ed3-46be-4f05-9512-35b78ffac12e",
+            "label": "container_1"
+        },
+        {
+            "type": "Container",
+            "id": "dcdc8c66-b52b-4cdd-9f21-0ac3d08c8902",
+            "label": "layer_1",
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "df3d16c0-626e-413a-a5be-83f5b223344b",
+                    "label": "ad",
+                    "scope": "CLASS",
+                    "x": -191,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "0ff77cad-3fa8-48a9-bad4-2841775c9b53",
+                            "label": "box1",
+                            "useGameObjectName": true,
+                            "scope": "CLASS",
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#030325",
+                            "fillAlpha": 0.9,
+                            "strokeColor": "#0000ff",
+                            "isStroked": true,
+                            "width": 190,
+                            "height": 100
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "5a907dc8-6d44-4c7f-96c7-0d47c6aebb47",
+                            "label": "box2",
+                            "useGameObjectName": true,
+                            "scope": "CLASS",
+                            "x": -191,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#250303",
+                            "fillAlpha": 0.9,
+                            "strokeColor": "#ff0000",
+                            "isStroked": true,
+                            "width": 190,
+                            "height": 100
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

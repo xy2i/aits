@@ -1,0 +1,266 @@
+{
+    "id": "e6062171-74b2-4147-8f8e-eef6d19867c7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "0d52da26-9b3c-4424-b104-a5b69d693191",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "ee201362-a883-46a1-8d2c-bdad93ee4ad1",
+                    "label": "rectangle_1",
+                    "y": 20,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "fillAlpha": 0.8,
+                    "width": 500,
+                    "height": 80
+                },
+                {
+                    "prefabId": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+                    "id": "ea3fd8ed-bcf1-4991-8d19-ab3bc607a17b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tabNumber"
+                    ],
+                    "label": "newsTabButton",
+                    "tabNumber": 1,
+                    "x": 20,
+                    "y": 0
+                },
+                {
+                    "prefabId": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+                    "id": "df6aa0fc-8212-4a57-9f8e-01a5ff5284f1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tabNumber"
+                    ],
+                    "label": "newsTabButton_1",
+                    "tabNumber": 2,
+                    "x": 80,
+                    "y": 0
+                },
+                {
+                    "prefabId": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+                    "id": "ba7233de-ab27-4d2b-87e3-656321866294",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tabNumber"
+                    ],
+                    "label": "newsTabButton_2",
+                    "tabNumber": 3,
+                    "x": 140,
+                    "y": 0
+                },
+                {
+                    "prefabId": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+                    "id": "2757290c-c015-4973-8856-2121ceeae84b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tabNumber"
+                    ],
+                    "label": "newsTabButton_3",
+                    "tabNumber": 4,
+                    "x": 200,
+                    "y": 0
+                },
+                {
+                    "prefabId": "64700c1c-44c2-40de-866b-f8c0903f90b4",
+                    "id": "0bc2e604-e835-4282-8c6c-aabbdcce91c2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tabNumber"
+                    ],
+                    "label": "newsTabButton_4",
+                    "tabNumber": 5,
+                    "x": 260,
+                    "y": 0
+                },
+                {
+                    "prefabId": "2f55e62f-c443-482b-9e68-9519d3114537",
+                    "id": "b818f13d-4f9a-408b-b117-9cc314c27d63",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "pointerup",
+                        "direction",
+                        "alpha"
+                    ],
+                    "label": "upButton",
+                    "pointerup": "",
+                    "direction": "up",
+                    "x": 0,
+                    "y": 20,
+                    "alpha": 0.5
+                },
+                {
+                    "prefabId": "2f55e62f-c443-482b-9e68-9519d3114537",
+                    "id": "69ac282a-43d9-4866-9527-bfdf572cd533",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "pointerup",
+                        "direction",
+                        "alpha"
+                    ],
+                    "label": "downButton",
+                    "pointerup": "",
+                    "direction": "down",
+                    "x": 0,
+                    "y": 80,
+                    "alpha": 0.5
+                },
+                {
+                    "type": "Text",
+                    "id": "cb885996-e211-46aa-afb3-042606eff166",
+                    "label": "superbreak1",
+                    "scope": "CLASS",
+                    "x": 18,
+                    "y": 20,
+                    "text": "[00:00:00]",
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "247241fb-0ed6-438f-ae43-02cbbf61eaa3",
+                    "label": "superbreak2",
+                    "scope": "CLASS",
+                    "x": 18,
+                    "y": 40,
+                    "text": "[00:00:00]",
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "977f4135-9c5a-4b0c-a9e8-bc9239edcd00",
+                    "label": "superbreak3",
+                    "scope": "CLASS",
+                    "x": 18,
+                    "y": 60,
+                    "text": "[00:00:00]",
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "451f7c25-3411-4ec2-a385-b20c3de678de",
+                    "label": "superbreak4",
+                    "scope": "CLASS",
+                    "x": 18,
+                    "y": 80,
+                    "text": "[00:00:00]",
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "91b2956e-f315-42d9-b5ac-00a9f093e84d",
+                    "label": "superbreak1a",
+                    "scope": "CLASS",
+                    "x": 80,
+                    "y": 20,
+                    "fixedWidth": 439.85,
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "ec24f9a9-63b9-4ef7-b7df-f143c9256087",
+                    "label": "superbreak2a",
+                    "scope": "CLASS",
+                    "x": 80,
+                    "y": 40,
+                    "fixedWidth": 439.85,
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "51d0c1aa-e07a-4d49-9d9c-1cb14a1bfec3",
+                    "label": "superbreak3a",
+                    "scope": "CLASS",
+                    "x": 80,
+                    "y": 60,
+                    "fixedWidth": 439.85,
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "8px"
+                },
+                {
+                    "type": "Text",
+                    "id": "a8d99623-8027-4a18-82cb-2badc1d8bd9c",
+                    "label": "superbreak4a",
+                    "scope": "CLASS",
+                    "x": 80,
+                    "y": 80,
+                    "fixedWidth": 439.85,
+                    "paddingLeft": 3,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "8px"
+                },
+                {
+                    "prefabId": "c2f0fb51-c666-4462-b676-7bb9574426c9",
+                    "id": "3d1c3cbb-86fe-493d-8288-c3a68c8fda56",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "newsMode",
+                    "x": 480,
+                    "y": 0
+                },
+                {
+                    "prefabId": "8107c7fd-7160-4431-b8c0-989155251ddc",
+                    "id": "eb05ae57-4c1d-44cd-b5c9-391d546386cb",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "newsSetting",
+                    "x": 0,
+                    "y": -1
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

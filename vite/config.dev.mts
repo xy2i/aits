@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
             },
         },
         server: {
-            port: 8080
+            port: 9999
         },
         resolve: {
             alias: [

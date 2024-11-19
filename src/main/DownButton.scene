@@ -1,0 +1,57 @@
+{
+    "id": "f0b8b9a3-0d16-4a88-854d-8270c626f41a",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "2a453e54-e02b-4f28-b4ff-29557963008e",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "03335474-0061-40b6-83f0-81b579bbcaf9",
+                    "label": "rectangle",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#f00",
+                    "strokeColor": "#000000",
+                    "isStroked": true,
+                    "width": 20,
+                    "height": 20
+                },
+                {
+                    "type": "Triangle",
+                    "id": "933b7c2f-db5a-4e83-8385-6e5a7bb91d97",
+                    "label": "triangle_1",
+                    "x": 5,
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "strokeColor": "#000000",
+                    "isStroked": true,
+                    "y1": 0,
+                    "x2": 10,
+                    "x3": 5,
+                    "y3": 10
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -1,8 +1,7 @@
+import { _root } from "@/flash/root";
 import { Plugins } from "phaser";
 
-import { _root } from "@/flash/root";
-
-export class GlobalMouseWheelPlugin extends Phaser.Plugins.BasePlugin {
+export class GlobalMouseWheelPlugin extends Plugins.BasePlugin {
     constructor(pluginManager) {
         super(pluginManager);
     }

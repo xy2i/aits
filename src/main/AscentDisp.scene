@@ -1,0 +1,74 @@
+{
+    "id": "b2eb4c18-0e19-4b3f-b4d7-7845c17eb613",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "fa1670fa-b759-4b7a-a63c-f4e9c0139672",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Triangle",
+                    "id": "1be80138-624e-4a12-95d8-9c6a871c2561",
+                    "label": "triangle",
+                    "scope": "CLASS",
+                    "y": 3,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#ffff00",
+                    "strokeColor": "#ff9900",
+                    "isStroked": true,
+                    "y1": 15,
+                    "x2": 7.5,
+                    "x3": 15,
+                    "y3": 15
+                },
+                {
+                    "type": "Text",
+                    "id": "0861d6b9-f3a8-48c0-a82a-56f07e9e6d63",
+                    "label": "text_1",
+                    "scope": "CLASS",
+                    "x": 22,
+                    "y": 1,
+                    "text": "0d + 00:00:00",
+                    "fixedHeight": 20,
+                    "paddingTop": 4,
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#ffff00",
+                    "stroke": "#ff9900",
+                    "strokeThickness": 1,
+                    "shadow.color": "#ff9900",
+                    "shadow.blur": 5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "6e0e3fdd-b8da-470e-80b2-d9ddd8a29050",
+                    "label": "overlay",
+                    "x": -1,
+                    "originX": 0,
+                    "originY": 0,
+                    "width": 170,
+                    "height": 20.3
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
