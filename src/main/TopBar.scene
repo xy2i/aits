@@ -73,6 +73,7 @@
                     "y": 15,
                     "text": "1,000,000,000,000",
                     "fixedWidth": 190,
+                    "resolution": 16,
                     "fontFamily": "Tempesta Seven Extended",
                     "fontSize": "10px",
                     "color": "#ffff00"
@@ -83,7 +84,7 @@
                     "label": "greenCoinText",
                     "scope": "CLASS",
                     "x": 32,
-                    "y": 45,
+                    "y": 45.5,
                     "text": "1,00B",
                     "fixedWidth": 100,
                     "fontFamily": "Tempesta Seven Extended",
@@ -147,13 +148,17 @@
                     "scope": "CLASS",
                     "x": 200,
                     "y": 41,
+                    "tintTopLeft": "",
+                    "tintTopRight": "",
+                    "tintBottomLeft": "",
+                    "tintBottomRight": "",
                     "text": "Title",
                     "fixedWidth": 220,
                     "fixedHeight": 21.3,
+                    "resolution": 2.432,
                     "align": "center",
                     "fontFamily": "McLaren",
-                    "fontSize": "12px",
-                    "color": "#e5e5e5"
+                    "fontSize": "12px"
                 },
                 {
                     "type": "Text",
@@ -162,13 +167,21 @@
                     "scope": "CLASS",
                     "x": 185,
                     "y": 16,
+                    "tintTopLeft": "",
+                    "tintTopRight": "",
+                    "tintBottomLeft": "",
+                    "tintBottomRight": "",
                     "text": "Name",
                     "fixedWidth": 240,
                     "fixedHeight": 28.4,
                     "align": "center",
                     "fontFamily": "McLaren",
                     "fontSize": "17px",
-                    "color": "#e5e5e5"
+                    "shadow.offsetX": 5,
+                    "shadow.offsetY": 5,
+                    "shadow.stroke": true,
+                    "shadow.color": "#000000ff",
+                    "shadow.blur": 5
                 },
                 {
                     "prefabId": "0d760eb7-6510-4c6c-9ca7-329c8c381844",
@@ -191,6 +204,44 @@
                     "label": "ascentDisp",
                     "x": 400,
                     "y": 2.5
+                },
+                {
+                    "type": "Image",
+                    "id": "dcc3fc8d-f36e-49ad-91de-99625a773314",
+                    "label": "medium",
+                    "texture": {
+                        "key": "medium"
+                    },
+                    "x": 613,
+                    "y": 34,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Text",
+                    "id": "e234a949-699d-463a-a1b6-3dba186ce7a8",
+                    "label": "levelText",
+                    "scope": "PUBLIC",
+                    "x": 579,
+                    "y": 17.9,
+                    "tintTopLeft": "",
+                    "tintTopRight": "",
+                    "tintBottomLeft": "",
+                    "tintBottomRight": "",
+                    "text": "0",
+                    "fixedWidth": 65,
+                    "fixedHeight": 35.6,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "McLaren",
+                    "fontSize": "22px",
+                    "color": "#cc0000",
+                    "stroke": "#000",
+                    "strokeThickness": 1.5,
+                    "shadow.offsetX": 5,
+                    "shadow.offsetY": 5,
+                    "shadow.color": "#000000ff",
+                    "shadow.blur": 5
                 }
             ]
         }

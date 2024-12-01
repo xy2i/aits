@@ -22,10 +22,43 @@
             },
             "originX": 0,
             "originY": 0,
-            "tintTopLeft": "",
-            "tintTopRight": "",
-            "tintBottomLeft": "",
-            "tintBottomRight": ""
+            "tintTopLeft": "#ffffffff",
+            "tintTopRight": "#ffffff00",
+            "tintBottomLeft": "#ffffff00",
+            "tintBottomRight": "#ffffff00",
+            "list": [
+                {
+                    "type": "ColorMatrix",
+                    "id": "b75c35b2-be1c-4582-904c-2a8fa089efa0",
+                    "label": "hueFx",
+                    "operationType": 4,
+                    "hueRotation": -140
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "d149b267-7887-4906-98b7-ecd78c798ed6",
+                    "label": "contrastFx",
+                    "operationType": 6,
+                    "contrast": -0.3,
+                    "preFX": true
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "4fa02988-4fe0-4f4d-b24e-2dd5c5c85940",
+                    "label": "brightnessFx",
+                    "operationType": 2,
+                    "brightness": 0.1,
+                    "preFX": true
+                },
+                {
+                    "type": "ColorMatrix",
+                    "id": "4770a708-da5a-41ae-ac65-ef66caad908c",
+                    "label": "saturateFx",
+                    "operationType": 3,
+                    "saturate": 2,
+                    "preFX": true
+                }
+            ]
         },
         {
             "type": "Text",

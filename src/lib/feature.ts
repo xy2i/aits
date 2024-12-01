@@ -19,4 +19,10 @@ export enum Feature {
     Fcg = 29,
 }
 
-export const currentFeature: Feature = Feature.Dragon;
+const currentFeature: Feature = Feature.Dragon;
+
+function getCurrentFeature(): Feature {
+    return currentFeature;
+}
+
+export { getCurrentFeature as currentFeature };

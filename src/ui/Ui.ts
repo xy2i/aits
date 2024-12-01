@@ -30,7 +30,6 @@ class Ui extends Phaser.Scene {
 
 		this.editorCreate();
 	}
-
 	/* END-USER-CODE */
 }
 

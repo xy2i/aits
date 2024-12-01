@@ -2,14 +2,39 @@
     "section1": {
         "files": [
             {
+                "url": "assets/3523.png",
+                "type": "image",
+                "key": "3523"
+            },
+            {
                 "url": "assets/shapes/8177.svg",
                 "svgConfig": {
                     "width": 22,
                     "height": 22,
-                    "scale": 0
+                    "scale": 4
                 },
                 "type": "svg",
                 "key": "8177"
+            },
+            {
+                "url": "assets/shapes/8177edit.svg",
+                "svgConfig": {
+                    "width": 22,
+                    "height": 22,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "8177edit"
+            },
+            {
+                "url": "assets/svg/main/minis/adventure-reminder-icon.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 2
+                },
+                "type": "svg",
+                "key": "adventure-reminder-icon"
             },
             {
                 "url": "assets/anti-idle-logo.svg",
@@ -22,9 +47,129 @@
                 "key": "anti-idle-logo"
             },
             {
+                "url": "assets/svg/printer/battery.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "battery"
+            },
+            {
+                "url": "assets/svg/main/minis/card-reminder-icon.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "card-reminder-icon"
+            },
+            {
+                "url": "assets/svg/main/minis/card-timer-bg.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "card-timer-bg"
+            },
+            {
+                "url": "assets/svg/main/top-bar/star/challenge.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "challenge"
+            },
+            {
+                "url": "assets/shapes/cog.svg",
+                "svgConfig": {
+                    "width": 22,
+                    "height": 22,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "cog"
+            },
+            {
                 "url": "assets/defaultBg.png",
                 "type": "image",
                 "key": "defaultBg"
+            },
+            {
+                "url": "assets/svg/main/top-bar/star/hard.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "hard"
+            },
+            {
+                "url": "assets/svg/main/top-bar/star/impossible.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "impossible"
+            },
+            {
+                "url": "assets/svg/main/logo.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 1
+                },
+                "type": "svg",
+                "key": "logo"
+            },
+            {
+                "url": "assets/svg/main/top-bar/star/medium.png",
+                "type": "image",
+                "key": "medium"
+            },
+            {
+                "url": "assets/svg/main/minis/mini-garden-bg.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "mini-garden-bg"
+            },
+            {
+                "url": "assets/svg/main/minis/mini-garden-tree.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "mini-garden-tree"
+            },
+            {
+                "url": "assets/svg/main/top-bar/star/normal.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "normal"
+            },
+            {
+                "url": "assets/sc.webp",
+                "type": "image",
+                "key": "sc"
             }
         ]
     },

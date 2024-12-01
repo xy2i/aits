@@ -29,8 +29,121 @@
                 "y"
             ],
             "label": "news",
-            "x": 41,
-            "y": 480
+            "x": 10,
+            "y": 440
+        },
+        {
+            "type": "Text",
+            "id": "bcf3d676-3d8e-4df9-b24f-30c983084342",
+            "label": "screenSize",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "y": 605,
+            "fixedHeight": 20.3,
+            "resolution": 16,
+            "align": "right",
+            "fontFamily": "Tempesta Seven",
+            "fontSize": "10px",
+            "color": "#cccccc",
+            "stroke": ""
+        },
+        {
+            "prefabId": "11ec73f7-e410-410c-9a84-9c03c0962331",
+            "id": "7a49db76-bd71-4914-86ef-1facb569374e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "miniGarden",
+            "scope": "PUBLIC",
+            "x": 5,
+            "y": 555.4
+        },
+        {
+            "prefabId": "295525ce-817c-4fcd-bd89-23156fa0ae6b",
+            "id": "492a38d7-5e15-485c-ada8-ff9abf6555a6",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "superBattery",
+            "scope": "PUBLIC",
+            "x": 100,
+            "y": 555.4
+        },
+        {
+            "prefabId": "38a7204f-ce0e-481b-8b24-b7416c556397",
+            "id": "27e1c14b-e0ae-488e-9bbc-b9cccbf594fa",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "adventureReminder",
+            "scope": "PUBLIC",
+            "x": 160.05,
+            "y": 556.6
+        },
+        {
+            "prefabId": "d0c9c8d2-5361-4ebb-a6c0-763cd3e4ca81",
+            "id": "f94533a6-2a39-4e51-bb08-a5e004b6a5b1",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardReminder",
+            "x": 210.65,
+            "y": 556.6
+        },
+        {
+            "prefabId": "4e12a758-e2ad-4e56-b7fc-2c1adbcda434",
+            "id": "132ee651-29e0-4e1b-84f4-06f8293ff046",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardTimerExp",
+            "scope": "PUBLIC",
+            "x": 525,
+            "y": 540
+        },
+        {
+            "prefabId": "4e12a758-e2ad-4e56-b7fc-2c1adbcda434",
+            "id": "6d9fd0a1-ffd1-48f4-9b51-f92b5dac5983",
+            "unlock": [
+                "x",
+                "y",
+                "timerType"
+            ],
+            "label": "cardTimerCoin",
+            "scope": "PUBLIC",
+            "timerType": "coin",
+            "x": 585,
+            "y": 540
+        },
+        {
+            "type": "Image",
+            "id": "d275e8db-ebf0-420e-b3d7-8bbf32e5c818",
+            "label": "logo",
+            "scope": "CLASS",
+            "texture": {
+                "key": "logo"
+            },
+            "x": 525,
+            "y": 85,
+            "scaleX": 0.75,
+            "scaleY": 0.75,
+            "originX": 0,
+            "originY": 0,
+            "list": [
+                {
+                    "type": "ColorMatrix",
+                    "id": "8cd3ba38-42bd-421a-85d7-70c34d3a95ac",
+                    "label": "saturateFx",
+                    "operationType": 3,
+                    "saturate": 2.5,
+                    "preFX": true
+                }
+            ]
         },
         {
             "prefabId": "b97bbe0f-f765-431f-9d75-8129c3ecf8cb",

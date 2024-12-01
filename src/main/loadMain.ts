@@ -5,14 +5,16 @@ import { gainBoost } from "@/lib/boost";
 import { gainCareerEXP } from "@/lib/career";
 import { gainBlueCoin, gainCoin, gainGreenCoin } from "@/lib/coin";
 import { checkCyborg } from "@/lib/cyborg";
+import { gainEventToken } from "@/lib/event";
 import { gainEXP } from "@/lib/exp";
 import { currentFeature, Feature } from "@/lib/feature";
-import { withComma } from "@/lib/format";
+import { convertMin, withComma } from "@/lib/format";
+import { harvestAllTree } from "@/lib/garden";
 import { dispNews } from "@/lib/news";
 import { checkPet, killPet } from "@/lib/pet";
 import { printMoney } from "@/lib/printer";
 
-export function loadMain() {
+export function loadMain(main) {
     function dispAsc() {
         elapsed_days = Math.floor(_root.save.ascendPlayTime / 86400);
         remaining = _root.save.ascendPlayTime - elapsed_days * 86400;
@@ -623,81 +625,83 @@ export function loadMain() {
     }
     function checkMini() {
         // console.warn("UNIMPLEMENTED minis");
-        // if (_root.save.featureMiniGarden == true || _root.save.autoHarvestTime > 0) {
-        //     _root.mini1.gotoAndStop(1);
-        //     plantedTrees = 0;
-        //     readyTrees = 0;
-        //     i = 1;
-        //     while (i <= _root.save.gardenCapacity) {
-        //         if (_root.save.gardenTrees[i] > 0 && _root.save.gardenPurchaseTime[i] + _root.save.gardenExpiryTime[i] - _root.systemtimenow > 0) {
-        //             plantedTrees += 1;
-        //             if (_root.save.gardenRecentTime[i] + _root.save.gardenHarvestTime[i] - _root.systemtimenow <= 0) {
-        //                 readyTrees += 1;
-        //             }
-        //         }
-        //         i++;
-        //     }
-        //     mini1.miniGardenText.text = readyTrees + " / " + plantedTrees;
-        //     if (readyTrees > 0) {
-        //         mini1.miniGardenText.textColor = 16776960;
-        //         if (_root.save.autoHarvestTime > 0) {
-        //             _root.harvestAllTree();
-        //         }
-        //     }
-        //     else if (plantedTrees == 0) {
-        //         mini1.miniGardenText.textColor = 16711680;
-        //     }
-        //     else {
-        //         mini1.miniGardenText.textColor = 10066329;
-        //     }
-        //     if (readyTrees > 0) {
-        //         if (mini1._alpha != 100) {
-        //             mini1._alpha = 100;
-        //         }
-        //         else {
-        //             mini1._alpha = 50;
-        //         }
-        //     }
-        //     else {
-        //         mini1._alpha = 30;
-        //     }
-        // }
-        // else {
-        //     mini1.gotoAndStop(2);
-        // }
-        // if (_root.save.featureSuperBattery == true) {
-        //     mini2.gotoAndStop(1);
-        // }
-        // else {
-        //     mini2.gotoAndStop(2);
-        // }
-        // if (_root.save.featureEnergyToolbar == true) {
-        //     mini3.gotoAndStop(1);
-        //     if (_root.save.awesomeEnergy > 0) {
-        //         mini3._alpha = 100;
-        //     }
-        //     else {
-        //         mini3._alpha = 30;
-        //     }
-        //     mini3.adventureText.text = _root.save.awesomeEnergy;
-        // }
-        // else {
-        //     mini3.gotoAndStop(2);
-        // }
-        // if (_root.save.doubleExpTime > 0) {
-        //     mini4.gotoAndStop(2);
-        //     mini4.timeText.text = _root.convertMin(_root.save.doubleExpTime);
-        // }
-        // else {
-        //     mini4.gotoAndStop(1);
-        // }
-        // if (_root.save.doubleCoinTime > 0) {
-        //     mini5.gotoAndStop(2);
-        //     mini5.timeText.text = _root.convertMin(_root.save.doubleCoinTime);
-        // }
-        // else {
-        //     mini5.gotoAndStop(1);
-        // }
+        if (_root.save.featureMiniGarden == true || _root.save.autoHarvestTime > 0) {
+            main.miniGarden.setVisible(true);
+            let plantedTrees = 0;
+            let readyTrees = 0;
+            let i = 1;
+            while (i <= _root.save.gardenCapacity) {
+                if (_root.save.gardenTrees[i] > 0 && _root.save.gardenPurchaseTime[i] + _root.save.gardenExpiryTime[i] - _root.systemtimenow > 0) {
+                    plantedTrees += 1;
+                    if (_root.save.gardenRecentTime[i] + _root.save.gardenHarvestTime[i] - _root.systemtimenow <= 0) {
+                        readyTrees += 1;
+                    }
+                }
+                i++;
+            }
+            main.miniGarden.miniGardenText.text = readyTrees + " / " + plantedTrees;
+            if (readyTrees > 0) {
+                main.miniGarden.miniGardenText.tint = 16776960;
+                if (_root.save.autoHarvestTime > 0) {
+                    harvestAllTree();
+                }
+            }
+            else if (plantedTrees == 0) {
+                main.miniGarden.miniGardenText.tint = 16711680;
+            }
+            else {
+                main.miniGarden.miniGardenText.tint = 10066329;
+            }
+            if (readyTrees > 0) {
+                if (main.miniGarden.alpha != 1) {
+                    main.miniGarden.alpha = 1;
+                }
+                else {
+                    main.miniGarden.alpha = 0.3;
+                }
+            }
+            else {
+                main.miniGarden.alpha = 0.3;
+            }
+        }
+        else {
+            main.miniGarden.setVisible(false);
+        }
+
+        if (_root.save.featureSuperBattery == true) {
+            main.superBattery.setVisible(true);
+        }
+        else {
+            main.superBattery.setVisible(false);
+        }
+
+        if (_root.save.featureEnergyToolbar == true) {
+            main.adventureReminder.setVisible(true);
+            if (_root.save.awesomeEnergy > 0) {
+                main.adventureReminder.alpha = 1;
+            }
+            else {
+                main.adventureReminder.alpha = 0.3;
+            }
+            main.adventureReminder.adventureText.text = _root.save.awesomeEnergy;
+        }
+        else {
+            main.adventureReminder.setVisible(false);
+        }
+        if (_root.save.doubleExpTime > 0) {
+            main.cardTimerExp.setActive();
+            main.cardTimerExp.timeText.text = convertMin(_root.save.doubleExpTime);
+        }
+        else {
+            main.cardTimerExp.setInactive();
+        }
+        if (_root.save.doubleCoinTime > 0) {
+            main.cardTimerCoin.setActive();
+            main.cardTimerCoin.timeText.text = convertMin(_root.save.doubleCoinTime);
+        }
+        else {
+            main.cardTimerCoin.setInactive();
+        }
     }
     function dispStuff() {
         // console.warn("UNIMPLEMENTED techlight");
@@ -1977,7 +1981,7 @@ export function loadMain() {
                 }
             }
             if (_root.save.hyperDay[1] != _root.todayCode && _root.save.hyperDay[2] != _root.todayCode) {
-                _root.gainEventToken(10);
+                gainEventToken(10);
             }
             if (_root.save.boostPremium > 0) {
                 _root.save.boostPremium -= 2;

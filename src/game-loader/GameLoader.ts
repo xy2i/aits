@@ -42,7 +42,6 @@ class GameLoader extends Phaser.Scene {
 
 		this.scene.start("Main");
 	}
-
 	/* END-USER-CODE */
 }
 

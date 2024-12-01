@@ -38,6 +38,7 @@ class AscentDisp extends Phaser.GameObjects.Container {
 		// triangle.postFX!.addGlow(16750848, 1, 0, false, 0.1, 5);
 		// text_1.postFX!.addGlow(16750848, 1, 0, false, 0.1, 5);
 
+        this.postFX!.addGlow(16750848, 1.25, 0, false, 0.1, 5);
 		overlay
 			.setInteractive({ useHandCursor: true })
 			.on("pointerover", () => this.pointerover())

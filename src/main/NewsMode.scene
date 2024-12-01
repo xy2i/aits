@@ -1,0 +1,128 @@
+{
+    "id": "c2f0fb51-c666-4462-b676-7bb9574426c9",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "823c23f0-7d81-48cc-bc1f-40baecb33cec",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Polygon",
+                    "id": "800775e1-bedd-41ce-909c-1ca168e88a53",
+                    "label": "top",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#467846",
+                    "strokeColor": "#000000",
+                    "points": "5 0 15 0 20 5 15 10 5 10 0 5"
+                },
+                {
+                    "type": "Polygon",
+                    "id": "f6287e56-1cb8-42f5-b1dc-5c8981a08d6d",
+                    "label": "bottom",
+                    "scope": "CLASS",
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#3c6e3c",
+                    "strokeColor": "#000000",
+                    "points": "0 0 0 15 20 15 20 0 15 5 5 5"
+                },
+                {
+                    "type": "Triangle",
+                    "id": "f919b211-f50f-4b8c-bc61-844f01209edb",
+                    "label": "play",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#96FA32",
+                    "x1": 7,
+                    "y1": 2.5,
+                    "x2": 7,
+                    "y2": 17.5,
+                    "x3": 15,
+                    "y3": 10
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "85f9e730-e1a0-461d-8524-f6a2e0331bdb",
+                    "label": "pause",
+                    "scope": "CLASS",
+                    "x": 10,
+                    "y": 10,
+                    "fillColor": "c8c828",
+                    "strokeColor": "c8c828",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 13,
+                    "height": 13
+                },
+                {
+                    "type": "Polygon",
+                    "id": "3285823f-0122-49bb-9f74-5e5ddceec827",
+                    "label": "outline",
+                    "originX": 0,
+                    "originY": 0,
+                    "fillColor": "#3c6e3c",
+                    "strokeColor": "#000000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "points": "5 0 15 0 20 5 20 20 0 20 0 5"
+                },
+                {
+                    "type": "Container",
+                    "id": "77ee08f9-9164-4a9c-b6cb-81ce5a76dd8f",
+                    "label": "stop",
+                    "scope": "CLASS",
+                    "x": 5,
+                    "y": 5,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "de660b4f-9b7b-4c66-ad3b-70b1061f5a58",
+                            "label": "rectangle_1",
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "fa3232",
+                            "width": 4,
+                            "height": 10
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "3c1666dc-6da9-4a2a-8e85-b6f1e1b4d8d1",
+                            "label": "rectangle",
+                            "x": 6,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "fa3232",
+                            "width": 4,
+                            "height": 10
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -8,6 +8,7 @@ import { random } from "@/flash/random";
 import { _root } from "@/flash/root";
 import { SharedObject } from "@/flash/sharedobject";
 import { addAchievementR, addNewAchievement } from "@/lib/achievements";
+import { gainEventToken } from "@/lib/event";
 import { withComma } from "@/lib/format";
 import { dispNews } from "@/lib/news";
 
@@ -453,32 +454,6 @@ export function step2loadFunctions() {
         _root.popUp.popTitle.text = popT;
         _root.popUp.popDesc.text = popD;
     }
-    _root.convertMin = function convertMin(thatNumber) {
-        if (thatNumber < 0) {
-            thatNumber = 0;
-        }
-        hr = Math.floor(thatNumber / 3600);
-        min = Math.floor(thatNumber / 60) - hr * 60;
-        if (min < 10) {
-            min = "0" + min;
-        }
-        return hr + ":" + min;
-    }
-    _root.convertSecFull = function convertSecFull(thatNumber) {
-        if (thatNumber < 0) {
-            thatNumber = 0;
-        }
-        hr = Math.floor(thatNumber / 3600);
-        min = Math.floor(thatNumber / 60) - hr * 60;
-        sec = Math.floor(thatNumber) - hr * 3600 - min * 60;
-        if (min < 10) {
-            min = "0" + min;
-        }
-        if (sec < 10) {
-            sec = "0" + sec;
-        }
-        return hr + ":" + min + ":" + sec;
-    }
     _root.convertSec = function convertSec(thatNumber) {
         if (thatNumber < 0) {
             thatNumber = 0;
@@ -748,22 +723,6 @@ export function step2loadFunctions() {
         }
         return _root.bDispX(_root.toB(num));
     }
-    _root.gainEventToken = function gainEventToken(amount) {
-        if (!isNaN(amount) && amount > 0) {
-            let actualAmount = Math.floor(amount);
-            if (actualAmount > _root.eventMaxToken - _root.save.eventTokenToday) {
-                actualAmount = _root.eventMaxToken - _root.save.eventTokenToday;
-            }
-            if (actualAmount < 0) {
-                actualAmount = 0;
-            }
-            _root.save.eventToken += actualAmount;
-            _root.save.eventTokenToday += actualAmount;
-            if (actualAmount > 0) {
-                dispNews(155, "Event Tokens gained! (+" + withComma(actualAmount) + ")");
-            }
-        }
-    }
     _root.claimReward = function claimReward() {
         if (_root.save.seppukuPenalty > _root.save.seppukuAscension) {
             _root.save.seppukuPenalty -= 1;
@@ -781,7 +740,7 @@ export function step2loadFunctions() {
             mm = _root.clock_month;
             dd = _root.clock_date;
             if (_root.eventList[yy][mm][dd][i] == "Receive Event Tokens by claiming rewards") {
-                _root.gainEventToken(1);
+                gainEventToken(1);
             }
             i++;
         }
@@ -1078,251 +1037,6 @@ export function step2loadFunctions() {
                 _root.gainBoost(5, 3);
                 dispNews(6, "Yay, free boost! (+5% Boost)");
             }
-        }
-    }
-    _root.harvestTree = function harvestTree(slot, harvestAll) {
-        tmul = Math.floor(Math.pow(_root.save.level, 0.6)) / 10 + 6.5;
-        if (isNaN(_root.save.gardenHarvestValue[slot])) {
-            _root.save.gardenHarvestValue[slot] = 0;
-        }
-        _root.save.curForestDestroyer = 0;
-        _root.save.harvestCount += 1;
-        _root.save.gardenMastery[_root.save.gardenTrees[slot]] += 1;
-        if (_root.save.questType == "Harvest") {
-            if (_root.save.questSubtype == "Any") {
-                _root.save.questCount += 1;
-            }
-        }
-        plotExpToEarn = _root.save.gardenTreeExp[slot];
-        if (_root.save.gardenTrees[slot] == 1) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Free Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 2) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Blue Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 3) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Pink Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 4) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Green Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 5) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Lime Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 6) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Yellow Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 7) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Red Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 8) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Black Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenTrees[slot] == 9) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Holiday Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (_root.save.gardenCapacity >= 16 && slot <= 25) {
-            if (Math.random() < 0.01 * Math.sqrt(plotExpToEarn)) {
-                if (Math.random() < 0.3333333333333333) {
-                    _root.save.gardenSeed[26] += 1;
-                    dispNews(22, "Gained Seed #1 for Another Garden!");
-                }
-                else if (Math.random() < 0.5) {
-                    _root.save.gardenSeed[51] += 1;
-                    dispNews(22, "Gained Seed #26 for Another Garden!");
-                }
-                else {
-                    _root.save.gardenSeed[76] += 1;
-                    dispNews(22, "Gained Seed #51 for Another Garden!");
-                }
-            }
-        }
-        if (slot >= 26 && slot <= 50) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Another Garden Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-            if (Math.random() < 0.15 && _root.save.gardenSeed[_root.save.gardenTrees[slot]] < 99) {
-                _root.save.gardenSeed[_root.save.gardenTrees[slot]] += 1;
-                dispNews(22, "Gained Seed #" + (_root.save.gardenTrees[slot] - 25) + " for Another Garden!");
-            }
-            if (Math.random() < 0.01 * plotExpToEarn) {
-                fruitToEarn = 1;
-                if (_root.save.permaBanPenalty[14] == 3) {
-                    fruitToEarn = 6;
-                }
-                else if (_root.save.permaBanPenalty[14] == 2) {
-                    fruitToEarn = 4;
-                }
-                else if (_root.save.permaBanPenalty[14] == 1) {
-                    fruitToEarn = 3;
-                }
-                _root.save.gardenFruit += fruitToEarn;
-                if (harvestAll != true) {
-                    dispNews(21, "Gained " + fruitToEarn + " Randomfruit! You now have: " + withComma(_root.save.gardenFruit));
-                }
-                else {
-                    harvestSummaryFruit += fruitToEarn;
-                }
-            }
-        }
-        if (slot >= 51) {
-            if (_root.save.questType == "Harvest") {
-                if (_root.save.questSubtype == "Another Another Garden Tree") {
-                    _root.save.questCount += 1;
-                }
-            }
-        }
-        if (Math.random() < 0.01 + 0.002 * plotExpToEarn) {
-            _root.gainWhiteCoin(1);
-        }
-        _root.save.gardenSlotEXP[slot] += plotExpToEarn;
-        _root.save.gardenEXP += plotExpToEarn;
-        _root.save.gardenPoint += plotExpToEarn;
-        i = 1;
-        while (i <= _root.todayEvent) {
-            yy = _root.clock_year % 10;
-            mm = _root.clock_month;
-            dd = _root.clock_date;
-            if (_root.eventList[yy][mm][dd][i] == "Receive Event Tokens by harvesting trees") {
-                _root.gainEventToken(plotExpToEarn / 5);
-            }
-            i++;
-        }
-        if (harvestAll != true) {
-            careerToGain = Math.floor(5 + plotExpToEarn * (1 + _root.save.gardenSlotEXP[slot] / 50000));
-            if (careerToGain > 5 + 3 * plotExpToEarn) {
-                careerToGain = 5 + 3 * plotExpToEarn;
-            }
-            if (slot >= 26 && slot <= 50) {
-                careerToGain = Math.floor(careerToGain * 2);
-            }
-            if (slot >= 51) {
-                careerToGain = Math.floor(careerToGain * 3);
-            }
-            _root.gainCareerEXP(2, careerToGain, true);
-            dispNews(19, "Tree #" + slot + " harvested! (+" + withComma(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005)) + " Coins)");
-            if (slot <= 25) {
-                _root.gainEXP(_root.save.gardenHarvestValue[slot] * tmul * (0.3 + _root.curCareerLevel[2] * 0.0015) * (1 + _root.save.petStat[1] * 0.002), 6);
-            }
-            else if (slot <= 50) {
-                _root.gainEXP(_root.save.gardenHarvestValue[slot] * tmul * (0.45 + _root.curCareerLevel[2] * 0.00225) * (1 + _root.save.petStat[1] * 0.002), 6);
-            }
-            else {
-                _root.gainEXP(_root.save.gardenHarvestValue[slot] * tmul * (0.6 + _root.curCareerLevel[2] * 0.003) * (1 + _root.save.petStat[1] * 0.002), 6);
-            }
-            _root.gainCoin(Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005), 6));
-            _root.save.harvestCoin += Math.floor(_root.save.gardenHarvestValue[slot] * (1 + _root.curCareerLevel[2] * 0.005));
-            _root.save.gardenRecentTime[slot] = _root.systemtimenow;
-            greenCoinToEarn = Math.ceil(250 + plotExpToEarn * 50);
-            _root.gainGreenCoin(greenCoinToEarn);
-            blueCoinToEarn = Math.ceil(0.5 + plotExpToEarn * 0.1);
-            if (_root.save.gardenTrees[slot] == 1) {
-                blueCoinToEarn = 1;
-            }
-            _root.gainBlueCoin(blueCoinToEarn);
-        }
-        else {
-            careerToGain = Math.floor(5 + plotExpToEarn * (1 + _root.save.gardenSlotEXP[slot] / 50000));
-            if (careerToGain > 5 + 3 * plotExpToEarn) {
-                careerToGain = 5 + 3 * plotExpToEarn;
-            }
-            if (slot >= 26 && slot <= 50) {
-                careerToGain = Math.floor(careerToGain * 2);
-            }
-            if (slot >= 51) {
-                careerToGain = Math.floor(careerToGain * 3);
-            }
-            harvestSummaryCareer += careerToGain;
-            harvestSummaryCount += 1;
-            harvestSummaryCoin += Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005));
-            if (slot <= 25) {
-                harvestSummaryEXP += Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (0.3 + _root.curCareerLevel[2] * 0.0015) * (1 + _root.save.petStat[1] * 0.002));
-            }
-            else if (slot <= 50) {
-                harvestSummaryEXP += Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (0.45 + _root.curCareerLevel[2] * 0.00225) * (1 + _root.save.petStat[1] * 0.002));
-            }
-            else {
-                harvestSummaryEXP += Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (0.6 + _root.curCareerLevel[2] * 0.003) * (1 + _root.save.petStat[1] * 0.002));
-            }
-            _root.save.harvestCoin += Math.floor(_root.save.gardenHarvestValue[slot] * tmul * (1 + _root.curCareerLevel[2] * 0.005));
-            _root.save.gardenRecentTime[slot] = _root.systemtimenow;
-            greenCoinToEarn = Math.ceil(250 + plotExpToEarn * 50);
-            harvestSummaryGreenCoin += greenCoinToEarn;
-            blueCoinToEarn = Math.ceil(0.5 + plotExpToEarn * 0.1);
-            if (_root.save.gardenTrees[slot] == 1) {
-                blueCoinToEarn = 1;
-            }
-            harvestSummaryBlueCoin += blueCoinToEarn;
-        }
-    }
-    _root.harvestAllTree = function harvestAllTree() {
-        harvestSummaryCount = 0;
-        harvestSummaryEXP = 0;
-        harvestSummaryCoin = 0;
-        harvestSummaryGreenCoin = 0;
-        harvestSummaryBlueCoin = 0;
-        harvestSummaryCareer = 0;
-        harvestSummaryFruit = 0;
-        tr = 1;
-        while (tr <= _root.save.gardenCapacity) {
-            if (_root.save.gardenTrees[tr] > 0) {
-                if (_root.save.gardenRecentTime[tr] + _root.save.gardenHarvestTime[tr] - _root.systemtimenow <= 0) {
-                    _root.harvestTree(tr, true);
-                }
-            }
-            tr++;
-        }
-        _root.gainEXP(harvestSummaryEXP, 6);
-        _root.gainCoin(harvestSummaryCoin, 6);
-        _root.gainGreenCoin(harvestSummaryGreenCoin);
-        _root.gainBlueCoin(harvestSummaryBlueCoin);
-        _root.gainCareerEXP(2, harvestSummaryCareer, true);
-        if (harvestSummaryCount >= 2) {
-            dispNews(19, harvestSummaryCount + " trees harvested! (+" + withComma(harvestSummaryCoin) + " Coins)");
-        }
-        else if (harvestSummaryCount == 1) {
-            dispNews(19, "1 tree harvested! (+" + withComma(harvestSummaryCoin) + " Coins)");
-        }
-        if (harvestSummaryFruit >= 1) {
-            dispNews(21, "Gained " + harvestSummaryFruit + " Randomfruit! You now have: " + withComma(_root.save.gardenFruit));
         }
     }
     _root.toHex = function toHex(dec) {

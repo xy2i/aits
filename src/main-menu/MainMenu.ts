@@ -30,6 +30,22 @@ class MainMenu extends Phaser.Scene {
 		defaultBg.tintBottomLeft = 16777215;
 		defaultBg.tintBottomRight = 16777215;
 
+		// hueFx
+		const hueFx = defaultBg.postFX!.addColorMatrix();
+		hueFx.hue(-140);
+
+		// contrastFx
+		const contrastFx = defaultBg.preFX!.addColorMatrix();
+		contrastFx.contrast(-0.3);
+
+		// brightnessFx
+		const brightnessFx = defaultBg.preFX!.addColorMatrix();
+		brightnessFx.brightness(0.1);
+
+		// saturateFx
+		const saturateFx = defaultBg.preFX!.addColorMatrix();
+		saturateFx.saturate(2);
+
 		// text_1
 		const text_1 = this.add.text(0, 151, "", {});
 		text_1.text = "Welcome to Anti-Idle: The Game!";
@@ -99,7 +115,6 @@ class MainMenu extends Phaser.Scene {
 		this.cameras.main.setOrigin(0, 0);
 		this.editorCreate();
 	}
-
 	/* END-USER-CODE */
 }
 

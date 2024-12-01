@@ -1,6 +1,6 @@
 import { type Amf0Value } from "@/flash/sol";
 
-export const _root: {
+const _root: {
     [key: string]: any,
     save: {
         [key: string]: Amf0Value
@@ -13,4 +13,4 @@ export const _root: {
     saveGlobal: {},
 };
 
-console.log(_root);
+export { _root };

@@ -1,5 +1,7 @@
 import { _root } from "@/flash/root";
 import { gainBoost } from "./boost";
+import { withComma } from "./format";
+import { dispNews } from "./news";
 
 export enum CoinType {
     Yellow = "yellow",
@@ -20,7 +22,6 @@ export const COIN_HARDCAP = {
     [CoinType.Blue]: 999_999_999,
     [CoinType.White]: 999_999,
 }
-
 
 export function gainCoin(amount, sauce) {
     let boostToGain;
@@ -299,7 +300,7 @@ export function gainWhiteCoin(amount) {
         if (Math.random() < Math.min(Math.floor(_root.save.totalStupidity / 500), 20) * 0.05) {
             multiplier += 1;
         }
-        i = 1;
+        let i = 1;
         while (i <= _root.todayEvent) {
             let yy = _root.clock_year % 10;
             let mm = _root.clock_month;
@@ -314,10 +315,10 @@ export function gainWhiteCoin(amount) {
             _root.save.whiteCoin = 999999;
         }
         if (Math.floor(amount * multiplier) >= 2) {
-            _root.dispNews(163, "Gained " + withComma(amount * multiplier) + " White Coins! You now have " + withComma(_root.save.whiteCoin) + ".");
+            dispNews(163, "Gained " + withComma(amount * multiplier) + " White Coins! You now have " + withComma(_root.save.whiteCoin) + ".");
         }
         else {
-            _root.dispNews(163, "Gained 1 White Coin! You now have " + withComma(_root.save.whiteCoin) + ".");
+            dispNews(163, "Gained 1 White Coin! You now have " + withComma(_root.save.whiteCoin) + ".");
         }
     }
 }
@@ -326,7 +327,7 @@ export function gainWhiteCoinB(amount) {
     let multiplier;
     if (!isNaN(amount) && amount > 0 && amount != Infinity) {
         multiplier = 1;
-        i = 1;
+        let i = 1;
         while (i <= _root.todayEvent) {
             let yy = _root.clock_year % 10;
             let mm = _root.clock_month;
@@ -341,10 +342,10 @@ export function gainWhiteCoinB(amount) {
             _root.save.whiteCoin = 999999;
         }
         if (Math.floor(amount * multiplier) >= 2) {
-            _root.dispNews(163, "Gained " + withComma(amount * multiplier) + " White Coins! You now have " + withComma(_root.save.whiteCoin) + ".");
+            dispNews(163, "Gained " + withComma(amount * multiplier) + " White Coins! You now have " + withComma(_root.save.whiteCoin) + ".");
         }
         else {
-            _root.dispNews(163, "Gained 1 White Coin! You now have " + withComma(_root.save.whiteCoin) + ".");
+            dispNews(163, "Gained 1 White Coin! You now have " + withComma(_root.save.whiteCoin) + ".");
         }
     }
 }

@@ -61,7 +61,6 @@ class Loader extends Phaser.Scene {
 		this.scene.start('MainMenu');
 		this.scene.launch('Ui');
 	}
-
 	/* END-USER-CODE */
 }
 
@@ -69,3 +68,4 @@ class Loader extends Phaser.Scene {
 
 // You can write more code here
 export { Loader };
+

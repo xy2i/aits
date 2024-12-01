@@ -1,7 +1,7 @@
 import { _root } from "@/flash/root";
 import { currentFeature } from "@/lib/feature";
-import { Display } from "phaser";
 import { NewsMode } from "./NewsMode";
+import { NewsScrollBar } from "./NewsScrollBar";
 import { NewsSetting } from "./NewsSetting";
 import { NewsTabButton } from "./NewsTabButton";
 import { UpButton } from "./UpButton";
@@ -18,6 +18,7 @@ class News extends Phaser.GameObjects.Container {
 		// rectangle_1
 		const rectangle_1 = scene.add.rectangle(0, 20, 500, 80);
 		rectangle_1.setOrigin(0, 0);
+		rectangle_1.alpha = 0.8;
 		rectangle_1.isFilled = true;
 		rectangle_1.fillColor = 0;
 		rectangle_1.fillAlpha = 0.8;
@@ -49,69 +50,87 @@ class News extends Phaser.GameObjects.Container {
 		this.add(upButton);
 
 		// downButton
-		const downButton = new UpButton(scene, 0, 80);
+		const downButton = new UpButton(scene, 0, 81);
 		downButton.alpha = 0.5;
 		this.add(downButton);
 
 		// superbreak1
-		const superbreak1 = scene.add.text(18, 20, "", {});
+		const superbreak1 = scene.add.text(21, 25, "", {});
 		superbreak1.text = "[00:00:00]";
 		superbreak1.setStyle({ "fontFamily": "Tempesta Seven Extended", "fontSize": "8px" });
-		superbreak1.setPadding({"left":3,"top":4});
 		this.add(superbreak1);
 
 		// superbreak2
-		const superbreak2 = scene.add.text(18, 40, "", {});
+		const superbreak2 = scene.add.text(21, 45, "", {});
 		superbreak2.text = "[00:00:00]";
 		superbreak2.setStyle({ "fontFamily": "Tempesta Seven Extended", "fontSize": "8px" });
-		superbreak2.setPadding({"left":3,"top":4});
 		this.add(superbreak2);
 
 		// superbreak3
-		const superbreak3 = scene.add.text(18, 60, "", {});
+		const superbreak3 = scene.add.text(21, 65, "", {});
 		superbreak3.text = "[00:00:00]";
 		superbreak3.setStyle({ "fontFamily": "Tempesta Seven Extended", "fontSize": "8px" });
-		superbreak3.setPadding({"left":3,"top":4});
 		this.add(superbreak3);
 
 		// superbreak4
-		const superbreak4 = scene.add.text(18, 80, "", {});
+		const superbreak4 = scene.add.text(21, 85, "", {});
 		superbreak4.text = "[00:00:00]";
 		superbreak4.setStyle({ "fontFamily": "Tempesta Seven Extended", "fontSize": "8px" });
-		superbreak4.setPadding({"left":3,"top":4});
 		this.add(superbreak4);
 
 		// superbreak1a
-		const superbreak1a = scene.add.text(80, 20, "", {});
-		superbreak1a.setStyle({ "fixedWidth": 439.85, "fontFamily": "Tempesta Seven", "fontSize": "8px" });
-		superbreak1a.setPadding({"left":3,"top":4});
+		const superbreak1a = scene.add.text(83, 25, "", {});
+		superbreak1a.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "8px" });
 		this.add(superbreak1a);
 
 		// superbreak2a
-		const superbreak2a = scene.add.text(80, 40, "", {});
-		superbreak2a.setStyle({ "fixedWidth": 439.85, "fontFamily": "Tempesta Seven", "fontSize": "8px" });
-		superbreak2a.setPadding({"left":3,"top":4});
+		const superbreak2a = scene.add.text(83, 45, "", {});
+		superbreak2a.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "8px" });
 		this.add(superbreak2a);
 
 		// superbreak3a
-		const superbreak3a = scene.add.text(80, 60, "", {});
-		superbreak3a.setStyle({ "fixedWidth": 439.85, "fontFamily": "Tempesta Seven", "fontSize": "8px" });
-		superbreak3a.setPadding({"left":3,"top":4});
+		const superbreak3a = scene.add.text(83, 65, "", {});
+		superbreak3a.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "8px" });
 		this.add(superbreak3a);
 
 		// superbreak4a
-		const superbreak4a = scene.add.text(80, 80, "", {});
-		superbreak4a.setStyle({ "fixedWidth": 439.85, "fontFamily": "Tempesta Seven", "fontSize": "8px" });
-		superbreak4a.setPadding({"left":3,"top":4});
+		const superbreak4a = scene.add.text(83, 85, "", {});
+		superbreak4a.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "8px" });
 		this.add(superbreak4a);
 
 		// newsMode
-		const newsMode = new NewsMode(scene, 480, 0);
+		const newsMode = new NewsMode(scene, 480.5, 0);
 		this.add(newsMode);
 
 		// newsSetting
-		const newsSetting = new NewsSetting(scene, 0, -1);
+		const newsSetting = new NewsSetting(scene, -1, -1);
 		this.add(newsSetting);
+
+		// rectangle_2
+		const rectangle_2 = scene.add.rectangle(0, 20, 500, 80.5);
+		rectangle_2.setOrigin(0, 0);
+		rectangle_2.alpha = 0.8;
+		rectangle_2.fillColor = 0;
+		rectangle_2.fillAlpha = 0.8;
+		rectangle_2.isStroked = true;
+		rectangle_2.strokeColor = 0;
+		rectangle_2.lineWidth = 2;
+		this.add(rectangle_2);
+
+		// rectangle_3
+		const rectangle_3 = scene.add.rectangle(0, 20, 20, 80.5);
+		rectangle_3.setOrigin(0, 0);
+		rectangle_3.alpha = 0.8;
+		rectangle_3.fillColor = 0;
+		rectangle_3.fillAlpha = 0.8;
+		rectangle_3.isStroked = true;
+		rectangle_3.strokeColor = 0;
+		rectangle_3.lineWidth = 2;
+		this.add(rectangle_3);
+
+		// newsScrollBar
+		const newsScrollBar = new NewsScrollBar(scene, 0, 40);
+		this.add(newsScrollBar);
 
 		// newsTabButton (prefab fields)
 		newsTabButton.tabNumber = 1;
@@ -171,39 +190,7 @@ class News extends Phaser.GameObjects.Container {
 			}
 			_root.curTab = _root.saveGlobal.defTab;
 			_root.breakoffset = 0;
-			let b;
-			let fr;
-			if (_root.curTab <= 4) {
-				b = 1;
-				while (b <= 4) {
-					let c = b + _root.breakoffset;
-					this["superbreak" + b].text = _root["X" + _root.curTab + "breakStamp" + c];
-					this["superbreak" + b].setStyle({
-						color: Display.Color.ValueToColor(_root["X" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					this["superbreak" + b + "a"].text = _root["X" + _root.curTab + "breakNews" + c];
-					this["superbreak" + b + "a"].setStyle({
-						color: Display.Color.ValueToColor(_root["X" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					b++;
-				}
-			}
-			else if (_root.curTab == 5) {
-				fr = currentFeature;
-				b = 1;
-				while (b <= 4) {
-					let c = b + _root.breakoffset;
-					this["superbreak" + b].text = _root["F" + fr + "breakStamp" + c];
-					this["superbreak" + b].setStyle({
-						color: Display.Color.ValueToColor(_root["F" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					this["superbreak" + b + "a"].text = _root["F" + fr + "breakNews" + c];
-					this["superbreak" + b + "a"].setStyle({
-						color: Display.Color.ValueToColor(_root["F" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					b++;
-				}
-			}
+			this.updateNews();
 		})
 		this.scene.events.on('update', this.update, this);
 		/* END-USER-CTR-CODE */
@@ -221,43 +208,41 @@ class News extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 	tempFeature = 0;
 
+	updateNews() {
+		let b;
+		let fr;
+		if (_root.curTab <= 4) {
+			b = 1;
+			while (b <= 4) {
+				let c = b + _root.breakoffset;
+				this["superbreak" + b].text = _root["X" + _root.curTab + "breakStamp" + c];
+				this["superbreak" + b].tint = _root["X" + _root.curTab + "breakColor" + c];
+				this["superbreak" + b + "a"].text = _root["X" + _root.curTab + "breakNews" + c];
+				this["superbreak" + b + "a"].tint = _root["X" + _root.curTab + "breakColor" + c];
+				b++;
+			}
+		}
+		else if (_root.curTab == 5) {
+			fr = currentFeature;
+			b = 1;
+			while (b <= 4) {
+				let c = b + _root.breakoffset;
+				this["superbreak" + b].text = _root["F" + fr + "breakStamp" + c];
+				this["superbreak" + b].tint = _root["F" + _root.curTab + "breakColor" + c];
+				this["superbreak" + b + "a"].text = _root["F" + fr + "breakNews" + c];
+				this["superbreak" + b + "a"].tint = _root["F" + _root.curTab + "breakColor" + c];
+				b++;
+			}
+		}
+	}
+
 	update() {
 		if (currentFeature != this.tempFeature) {
 			_root.updateBreakNews = 1;
 			this.tempFeature = currentFeature;
 		}
 		if (_root.updateBreakNews == 1) {
-			if (_root.curTab <= 4) {
-				let b = 1;
-				while (b <= 4) {
-					let c = b + _root.breakoffset;
-					this["superbreak" + b].text = _root["X" + _root.curTab + "breakStamp" + c];
-					this["superbreak" + b].setStyle({
-						color: Display.Color.ValueToColor(_root["X" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					this["superbreak" + b + "a"].text = _root["X" + _root.curTab + "breakNews" + c];
-					this["superbreak" + b + "a"].setStyle({
-						color: Display.Color.ValueToColor(_root["X" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					b++;
-				}
-			}
-			else {
-				let fr = currentFeature;
-				let b = 1;
-				while (b <= 4) {
-					let c = b + _root.breakoffset;
-					this["superbreak" + b].text = _root["F" + fr + "breakStamp" + c];
-					this["superbreak" + b].setStyle({
-						color: Display.Color.ValueToColor(_root["F" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					this["superbreak" + b + "a"].text = _root["F" + fr + "breakNews" + c];
-					this["superbreak" + b + "a"].setStyle({
-						color: Display.Color.ValueToColor(_root["F" + _root.curTab + "breakColor" + c]).rgba,
-					});
-					b++;
-				}
-			}
+			this.updateNews();
 			_root.updateBreakNews = 0;
 		}
 	};

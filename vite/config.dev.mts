@@ -13,7 +13,10 @@ export default defineConfig(({ command, mode }) => {
             },
         },
         server: {
-            port: 9999
+            port: 8080,
+            watch: {
+              usePolling: true
+            }
         },
         resolve: {
             alias: [

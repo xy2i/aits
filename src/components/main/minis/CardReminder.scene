@@ -1,0 +1,70 @@
+{
+    "id": "d0c9c8d2-5361-4ebb-a6c0-763cd3e4ca81",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "e7dbbbec-a2b2-4c87-87d7-7bd9fe8b841b",
+            "label": "container_1",
+            "y": 2.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "4eeb08ed-2fe9-4f66-ab67-2c441568de8c",
+                    "label": "background",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#009900",
+                    "strokeColor": "#003300",
+                    "isStroked": true,
+                    "width": 40,
+                    "height": 20
+                },
+                {
+                    "type": "Image",
+                    "id": "011a5acf-c2c8-4d86-9873-5dab9ed9b2d3",
+                    "label": "card_reminder_icon",
+                    "texture": {
+                        "key": "card-reminder-icon"
+                    },
+                    "x": 7,
+                    "y": 9,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Text",
+                    "id": "c829a0b8-218f-4938-a0f5-f90f275b19b1",
+                    "label": "cardText",
+                    "scope": "CLASS",
+                    "x": 15,
+                    "text": "99",
+                    "fixedWidth": 25,
+                    "fixedHeight": 20.3,
+                    "paddingTop": 4,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#00ff00"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

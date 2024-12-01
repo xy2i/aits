@@ -88,3 +88,31 @@ export function convertSecCD(thatNumber: number): string {
     }
     return min + ":" + sec;
 }
+
+export function convertMin(thatNumber) {
+    if (thatNumber < 0) {
+        thatNumber = 0;
+    }
+    let hr = Math.floor(thatNumber / 3600);
+    let min = Math.floor(thatNumber / 60) - hr * 60;
+    if (min < 10) {
+        min = "0" + min;
+    }
+    return hr + ":" + min;
+}
+
+export function convertSecFull(thatNumber) {
+    if (thatNumber < 0) {
+        thatNumber = 0;
+    }
+    let hr = Math.floor(thatNumber / 3600);
+    let min = Math.floor(thatNumber / 60) - hr * 60;
+    let sec = Math.floor(thatNumber) - hr * 3600 - min * 60;
+    if (min < 10) {
+        min = "0" + min;
+    }
+    if (sec < 10) {
+        sec = "0" + sec;
+    }
+    return hr + ":" + min + ":" + sec;
+}

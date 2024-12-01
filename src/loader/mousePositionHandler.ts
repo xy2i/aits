@@ -7,8 +7,10 @@ export class MousePositionPlugin extends Plugins.BasePlugin {
     }
 
     update() {
-        const activePointer = this.game.input.activePointer;
-        _root._mouseX = activePointer.x;
-        _root._mouseX = activePointer.y;
+        const { width, height } = this.scene.sys.game.canvas;
+        const { x, y } = this.game.input.activePointer;
+        const zoom = this.scene.cameras.main.zoom;
+        _root._xmouse = x / zoom;
+        _root._ymouse = y / zoom;
     }
 }

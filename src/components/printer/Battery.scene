@@ -1,0 +1,94 @@
+{
+    "id": "1e81935f-0f19-4cf7-920d-6bda6911adf9",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b41c24c6-dbdc-4c24-8158-322e771f3b5e",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "623367de-578f-47a9-9dc0-3d40db8c5283",
+                    "label": "bar1",
+                    "scope": "CLASS",
+                    "x": 21,
+                    "y": 11,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 10,
+                    "height": 20
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "70d5a195-8878-4da8-ba40-1490b7c0c84d",
+                    "label": "bar2",
+                    "scope": "CLASS",
+                    "x": 40,
+                    "y": 11,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 10,
+                    "height": 20
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "b9a6d35a-1408-4984-ad52-15de51b27c04",
+                    "label": "bar3",
+                    "scope": "CLASS",
+                    "x": 60,
+                    "y": 11,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 10,
+                    "height": 20
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "2824d463-2da1-4acd-9d2e-81fede8222eb",
+                    "label": "bar4",
+                    "scope": "CLASS",
+                    "x": 80,
+                    "y": 10,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 10,
+                    "height": 20
+                },
+                {
+                    "type": "Image",
+                    "id": "5941bdf7-d1e6-4a0e-aef1-7c5eeadf6566",
+                    "label": "battery",
+                    "texture": {
+                        "key": "battery"
+                    },
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

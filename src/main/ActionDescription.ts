@@ -2,6 +2,7 @@
 // You can write more code here
 
 import { _root } from "@/flash/root";
+import { HEIGHT } from "@/main";
 
 /* START OF COMPILED CODE */
 
@@ -48,7 +49,8 @@ class ActionDescription extends Phaser.GameObjects.Container {
 			width: 190px;
 			text-align: center;
 			white-space: pre-line;
-			font-size: 8px;`,
+			font-size: 8px;
+			z-index: 1000;`,
 			"").setOrigin(0, 0);
 		this.text1.name = "text1";
 		this.text1.pointerEvents = "none";
@@ -59,7 +61,8 @@ class ActionDescription extends Phaser.GameObjects.Container {
 			width: 190px;
 			text-align: center;
 			white-space: pre-line;
-			font-size: 8px;`,
+			font-size: 8px;
+			z-index: 1000;`,
 			"").setOrigin(0, 0);
 		this.text2.name = "text1";
 		this.text2.pointerEvents = "none";
@@ -162,9 +165,9 @@ class ActionDescription extends Phaser.GameObjects.Container {
 		}
 		if (fr != 3) {
 			this.text1.setHTML(_root.actiondescription);
-			box1.displayHeight = this.text1.displayHeight;
+			box1.displayHeight = this.text1.displayHeight / (this.canvasWidth / HEIGHT / window.devicePixelRatio);
 			this.text2.setHTML(_root.actiondescription2);
-			box2.displayHeight = this.text2.displayHeight;
+			box2.displayHeight = this.text2.displayHeight / (this.canvasWidth / HEIGHT / window.devicePixelRatio);
 		}
 		if (fr == 1) {
 			if (adL == true) {
@@ -179,8 +182,11 @@ class ActionDescription extends Phaser.GameObjects.Container {
 	}
 
 	update() {
-		_root._xmouse = this.scene.game.input.activePointer.x;
-		_root._ymouse = this.scene.game.input.activePointer.y;
+		const { width, height } = this.scene.sys.game.canvas;
+		this.canvasWidth = width;
+		this.canvasHeight = height;
+		_root._xmouse = this.scene.game.input.activePointer.x / (height / HEIGHT);
+		_root._ymouse = this.scene.game.input.activePointer.y / (width / HEIGHT);
 		this.checkMouse();
 		this.checkDesc();
 	}

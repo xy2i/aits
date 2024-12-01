@@ -22,6 +22,7 @@
                     "y": 20,
                     "originX": 0,
                     "originY": 0,
+                    "alpha": 0.8,
                     "isFilled": true,
                     "fillColor": "#000",
                     "fillAlpha": 0.8,
@@ -124,7 +125,7 @@
                     "pointerup": "",
                     "direction": "down",
                     "x": 0,
-                    "y": 80,
+                    "y": 81,
                     "alpha": 0.5
                 },
                 {
@@ -132,11 +133,9 @@
                     "id": "cb885996-e211-46aa-afb3-042606eff166",
                     "label": "superbreak1",
                     "scope": "CLASS",
-                    "x": 18,
-                    "y": 20,
+                    "x": 21,
+                    "y": 25,
                     "text": "[00:00:00]",
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
                     "fontFamily": "Tempesta Seven Extended",
                     "fontSize": "8px"
                 },
@@ -145,11 +144,9 @@
                     "id": "247241fb-0ed6-438f-ae43-02cbbf61eaa3",
                     "label": "superbreak2",
                     "scope": "CLASS",
-                    "x": 18,
-                    "y": 40,
+                    "x": 21,
+                    "y": 45,
                     "text": "[00:00:00]",
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
                     "fontFamily": "Tempesta Seven Extended",
                     "fontSize": "8px"
                 },
@@ -158,11 +155,9 @@
                     "id": "977f4135-9c5a-4b0c-a9e8-bc9239edcd00",
                     "label": "superbreak3",
                     "scope": "CLASS",
-                    "x": 18,
-                    "y": 60,
+                    "x": 21,
+                    "y": 65,
                     "text": "[00:00:00]",
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
                     "fontFamily": "Tempesta Seven Extended",
                     "fontSize": "8px"
                 },
@@ -171,11 +166,9 @@
                     "id": "451f7c25-3411-4ec2-a385-b20c3de678de",
                     "label": "superbreak4",
                     "scope": "CLASS",
-                    "x": 18,
-                    "y": 80,
+                    "x": 21,
+                    "y": 85,
                     "text": "[00:00:00]",
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
                     "fontFamily": "Tempesta Seven Extended",
                     "fontSize": "8px"
                 },
@@ -184,11 +177,8 @@
                     "id": "91b2956e-f315-42d9-b5ac-00a9f093e84d",
                     "label": "superbreak1a",
                     "scope": "CLASS",
-                    "x": 80,
-                    "y": 20,
-                    "fixedWidth": 439.85,
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
+                    "x": 83,
+                    "y": 25,
                     "fontFamily": "Tempesta Seven",
                     "fontSize": "8px"
                 },
@@ -197,11 +187,8 @@
                     "id": "ec24f9a9-63b9-4ef7-b7df-f143c9256087",
                     "label": "superbreak2a",
                     "scope": "CLASS",
-                    "x": 80,
-                    "y": 40,
-                    "fixedWidth": 439.85,
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
+                    "x": 83,
+                    "y": 45,
                     "fontFamily": "Tempesta Seven",
                     "fontSize": "8px"
                 },
@@ -210,11 +197,8 @@
                     "id": "51d0c1aa-e07a-4d49-9d9c-1cb14a1bfec3",
                     "label": "superbreak3a",
                     "scope": "CLASS",
-                    "x": 80,
-                    "y": 60,
-                    "fixedWidth": 439.85,
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
+                    "x": 83,
+                    "y": 65,
                     "fontFamily": "Tempesta Seven",
                     "fontSize": "8px"
                 },
@@ -223,11 +207,8 @@
                     "id": "a8d99623-8027-4a18-82cb-2badc1d8bd9c",
                     "label": "superbreak4a",
                     "scope": "CLASS",
-                    "x": 80,
-                    "y": 80,
-                    "fixedWidth": 439.85,
-                    "paddingLeft": 3,
-                    "paddingTop": 4,
+                    "x": 83,
+                    "y": 85,
                     "fontFamily": "Tempesta Seven",
                     "fontSize": "8px"
                 },
@@ -239,7 +220,7 @@
                         "y"
                     ],
                     "label": "newsMode",
-                    "x": 480,
+                    "x": 480.5,
                     "y": 0
                 },
                 {
@@ -250,8 +231,51 @@
                         "y"
                     ],
                     "label": "newsSetting",
-                    "x": 0,
+                    "x": -1,
                     "y": -1
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "089b0b12-4da5-4852-bfe2-8497569dff52",
+                    "label": "rectangle_2",
+                    "y": 20,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.8,
+                    "fillColor": "#000",
+                    "fillAlpha": 0.8,
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 500,
+                    "height": 80.5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "535dbee9-edea-4fe0-bd5e-9aa2920a899c",
+                    "label": "rectangle_3",
+                    "y": 20,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.8,
+                    "fillColor": "#000",
+                    "fillAlpha": 0.8,
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 20,
+                    "height": 80.5
+                },
+                {
+                    "prefabId": "7351b882-bd17-488c-a3cd-b29a8a1e4613",
+                    "id": "6c2d7653-7ec1-41c1-9363-92eb5f0097e1",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "newsScrollBar",
+                    "x": 0,
+                    "y": 40
                 }
             ]
         }

@@ -347,56 +347,63 @@ class BottomBar extends Phaser.GameObjects.Container {
 		// fps
 		const fps = scene.add.text(0, 5, "", {});
 		fps.text = "FPS";
-		fps.setStyle({ "align": "right", "fixedWidth": 22.85, "fontFamily": "Tempesta Seven", "fontSize": "7px" });
+		fps.setStyle({ "align": "right", "fixedWidth": 22.85, "fontFamily": "Tempesta Seven", "fontSize": "7px", "resolution": 16 });
 		this.add(fps);
 
 		// fpsCounter
 		const fpsCounter = scene.add.text(0, 16, "", {});
 		fpsCounter.name = "fpsCounter";
-		fpsCounter.setStyle({ "align": "right", "fixedWidth": 23, "fontFamily": "Tempesta Seven", "fontSize": "10px" });
+		fpsCounter.setStyle({ "align": "right", "fixedWidth": 23, "fontFamily": "Tempesta Seven", "fontSize": "10px", "resolution": 16 });
 		this.add(fpsCounter);
 
 		// upNumberLabel
 		const upNumberLabel = scene.add.text(632, 5, "", {});
 		upNumberLabel.text = "Ver.";
-		upNumberLabel.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "7px" });
+		upNumberLabel.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "7px", "resolution": 16 });
 		this.add(upNumberLabel);
 
 		// upNumber
 		const upNumber = scene.add.text(610, 16, "", {});
 		upNumber.name = "upNumber";
 		upNumber.text = "1,500";
-		upNumber.setStyle({ "align": "right", "color": "#cccccc", "fixedWidth": 40, "fixedHeight": 20, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "" });
+		upNumber.setStyle({ "align": "right", "color": "#cccccc", "fixedWidth": 40, "fixedHeight": 20, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "", "resolution": 16 });
 		this.add(upNumber);
 
 		// flashVerLabel
 		const flashVerLabel = scene.add.text(545, 5, "", {});
 		flashVerLabel.text = "AITS Version";
-		flashVerLabel.setStyle({ "color": "#999999", "fontFamily": "Tempesta Seven", "fontSize": "7px" });
+		flashVerLabel.setStyle({ "color": "#999999", "fontFamily": "Tempesta Seven", "fontSize": "7px", "resolution": 16 });
 		this.add(flashVerLabel);
 
 		// flashNumber
 		const flashNumber = scene.add.text(450, 16, "", {});
 		flashNumber.name = "flashNumber";
-		flashNumber.setStyle({ "align": "right", "color": "#999999", "fixedWidth": 150, "fixedHeight": 20, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "" });
+		flashNumber.setStyle({ "align": "right", "color": "#999999", "fixedWidth": 150, "fixedHeight": 20, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "", "resolution": 16 });
 		this.add(flashNumber);
 
 		// fps_1
 		const fps_1 = scene.add.text(92.303, 5, "", {});
 		fps_1.text = "Date & Time";
-		fps_1.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "7px" });
+		fps_1.setStyle({ "fontFamily": "Tempesta Seven", "fontSize": "7px", "resolution": 16 });
 		this.add(fps_1);
 
 		// timeDisplay
 		const timeDisplay = scene.add.text(30, 16, "", {});
 		timeDisplay.name = "timeDisplay";
-		timeDisplay.setStyle({ "align": "right", "color": "#cccccc", "fixedWidth": 115.01, "fixedHeight": 20.3, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "" });
+		timeDisplay.setStyle({ "align": "right", "color": "#cccccc", "fixedWidth": 115.01, "fixedHeight": 20.3, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "", "resolution": 16 });
 		this.add(timeDisplay);
+
+		// screenSize
+		const screenSize = scene.add.text(180, 6, "", {});
+		screenSize.name = "screenSize";
+		screenSize.setStyle({ "align": "right", "color": "#cccccc", "fixedWidth": 115.01, "fixedHeight": 20.3, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "", "resolution": 16 });
+		this.add(screenSize);
 
 		this.fpsCounter = fpsCounter;
 		this.upNumber = upNumber;
 		this.flashNumber = flashNumber;
 		this.timeDisplay = timeDisplay;
+		this.screenSize = screenSize;
 
 		/* START-USER-CTR-CODE */
 		this.scene.events.once("scene-awake", () => {
@@ -429,6 +436,7 @@ class BottomBar extends Phaser.GameObjects.Container {
 	private upNumber: Phaser.GameObjects.Text;
 	private flashNumber: Phaser.GameObjects.Text;
 	private timeDisplay: Phaser.GameObjects.Text;
+	private screenSize: Phaser.GameObjects.Text;
 
 	/* START-USER-CODE */
 	startTime = 0;
