@@ -38,12 +38,12 @@
             "label": "screenSize",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "y": 605,
+            "y": 611,
             "fixedHeight": 20.3,
             "resolution": 16,
             "align": "right",
             "fontFamily": "Tempesta Seven",
-            "fontSize": "10px",
+            "fontSize": "6px",
             "color": "#cccccc",
             "stroke": ""
         },
@@ -130,8 +130,8 @@
             },
             "x": 525,
             "y": 85,
-            "scaleX": 0.75,
-            "scaleY": 0.75,
+            "scaleX": 0.375,
+            "scaleY": 0.375,
             "originX": 0,
             "originY": 0,
             "list": [
@@ -142,6 +142,348 @@
                     "operationType": 3,
                     "saturate": 2.5,
                     "preFX": true
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "3088e2a4-d25a-4430-921e-73d2a58befe0",
+            "label": "bottomButtons",
+            "y": 585,
+            "list": [
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "c5ccbc54-4478-47b4-8c96-6e67ad9ac2fc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "achivementsButton",
+                    "scope": "CLASS",
+                    "color": "#AFAF2F",
+                    "x": 5,
+                    "y": 2.5,
+                    "scaleX": 1.6,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "d5c5e7af-f128-43c2-87aa-13e666634762",
+                    "label": "achievementsLabel",
+                    "x": 8,
+                    "y": 7.5,
+                    "text": "Achievements",
+                    "paddingLeft": 1,
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "34b05fc8-e4d3-4b5b-90b5-dd611c7dd3d4",
+                    "label": "bg1",
+                    "x": 85,
+                    "y": 2.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.8,
+                    "width": 45,
+                    "height": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "4e1a6a8a-6082-44cb-8872-ca37c764bb05",
+                    "label": "achText",
+                    "scope": "PUBLIC",
+                    "x": 85,
+                    "y": 2.05,
+                    "text": "630",
+                    "fixedWidth": 45,
+                    "fixedHeight": 20.32,
+                    "paddingTop": 5,
+                    "paddingRight": 2,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#ffff00"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "13ded30b-5036-43a7-b868-07e97b160367",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "questsButton",
+                    "scope": "CLASS",
+                    "color": "#2FAF2F",
+                    "x": 135,
+                    "y": 2,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "34c0f160-c1f5-47cf-bd74-800b135b2c31",
+                    "label": "questsLabel",
+                    "x": 135,
+                    "y": 7.5,
+                    "text": "Quests",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "4f9bb7c3-1153-4df4-8df8-58237a4ebd5d",
+                    "id": "fcc98ca1-e1ae-4d40-b428-515ceb63ab3d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "questFlash",
+                    "x": 135,
+                    "y": 2.5
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "8b66283b-f1b9-47b7-b08b-74171ccd8f71",
+            "label": "uiBarButtons",
+            "x": 150,
+            "y": 625,
+            "list": [
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "02e59f4e-69df-4334-9616-f989a5064864",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "statsButton",
+                    "scope": "CLASS",
+                    "color": "#8D6EAC",
+                    "x": 0,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "8973528a-7991-40d3-9b75-39e08c89adc6",
+                    "label": "statsLabel",
+                    "text": "Stats",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "062ad5b3-aeed-4f33-adfe-12cff8d54fc2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "optionsButton",
+                    "scope": "CLASS",
+                    "color": "#6E6EAC",
+                    "x": 55,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "70e57aa1-281c-412a-9dc5-acf9e2947bae",
+                    "label": "optionsLabel",
+                    "x": 55,
+                    "text": "Options",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "b9896638-f409-427a-b9bc-99db96ee1d0e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "careersButton",
+                    "scope": "CLASS",
+                    "color": "#2F6295",
+                    "x": 110,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1,
+                    "list": [
+                        {
+                            "type": "ColorMatrix",
+                            "id": "2e395e64-bd80-47b8-9ce8-1650f2ba962e",
+                            "label": "careersButtonBrightness",
+                            "scope": "CLASS",
+                            "operationType": 2,
+                            "brightness": 0.3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "9fe79886-0ab3-41d9-8941-d08548215d6f",
+                    "label": "careersLabel",
+                    "x": 110,
+                    "text": "Careers",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "02accc73-4c3a-467f-865a-59df19dc827c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "petButton",
+                    "scope": "CLASS",
+                    "color": "#2F6295",
+                    "x": 165,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1,
+                    "list": [
+                        {
+                            "type": "ColorMatrix",
+                            "id": "add98759-4ff1-4aa9-8ca9-8b1319ad149c",
+                            "label": "petButtonBrightness",
+                            "scope": "CLASS",
+                            "operationType": 2,
+                            "brightness": 0.3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "51cfea16-7b38-43ed-b902-efe3cd708a9e",
+                    "label": "petLabel",
+                    "x": 165,
+                    "text": "Pet",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "32723b25-4d42-46e8-b4a3-235ad9db1db6",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "cyborgButton",
+                    "scope": "CLASS",
+                    "color": "#2F6295",
+                    "x": 220,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1,
+                    "list": [
+                        {
+                            "type": "ColorMatrix",
+                            "id": "44db1f7a-fe65-4a69-9a8c-ac10462b13a9",
+                            "label": "cyborgButtonBrightness",
+                            "scope": "CLASS",
+                            "operationType": 2,
+                            "brightness": 0.3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "8fd525b9-d58b-45a6-ac28-d05846aff78b",
+                    "label": "cyborgLabel",
+                    "x": 220,
+                    "text": "Cyborg",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "c44dc718-491a-4277-b5c5-021d8be27962",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "backButton",
+                    "scope": "CLASS",
+                    "color": "#7C7C7C",
+                    "x": 285,
+                    "y": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "bb42116e-ef48-47a0-a34b-ef10b1800c83",
+                    "label": "backLabel",
+                    "x": 285,
+                    "text": "< Back",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "paddingTop": 5,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
                 }
             ]
         },

@@ -59,6 +59,9 @@ class Battery extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		this.bars = [bar1, bar2, bar3, bar4];
 		/* END-USER-CTR-CODE */
 	}

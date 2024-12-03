@@ -84,7 +84,7 @@
                     "label": "greenCoinText",
                     "scope": "CLASS",
                     "x": 32,
-                    "y": 45.5,
+                    "y": 45,
                     "text": "1,00B",
                     "fixedWidth": 100,
                     "fontFamily": "Tempesta Seven Extended",

@@ -1,0 +1,121 @@
+{
+    "id": "d2476090-5f1d-4d1b-af11-16649c40842c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "23e08e71-1d1c-4db8-88be-095c1833e7c6",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "583f0ba4-4766-4576-b2ca-b4247eb2aba7",
+                    "label": "bottom",
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#5F5F5F",
+                    "width": 50,
+                    "height": 15
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9788e114-bc1a-4ef8-a091-2ef634b18d58",
+                    "label": "top",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#737373",
+                    "width": 50,
+                    "height": 5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "dd31b026-28f9-4b2a-88b9-8c070e9a24da",
+                    "label": "outline",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillAlpha": 0.3,
+                    "strokeColor": "#000000",
+                    "isStroked": true,
+                    "width": 50,
+                    "height": 20
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "color",
+            "label": "color",
+            "tooltip": "",
+            "defValue": "#5F5F5F",
+            "customDefinition": false,
+            "type": {
+                "id": "color"
+            }
+        },
+        {
+            "name": "pointerup",
+            "label": "pointerup",
+            "tooltip": "The function to run when this button is clicked.",
+            "defValue": "() => { }",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "() => void"
+            }
+        },
+        {
+            "name": "pointerover",
+            "label": "pointerover",
+            "tooltip": "The function to run when this button is hovered.",
+            "defValue": "() => { }",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "() => void"
+            }
+        },
+        {
+            "name": "pointerout",
+            "label": "pointerout",
+            "tooltip": "The function to run when this button is unfocused.",
+            "defValue": "() => { }",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "() => void"
+            }
+        },
+        {
+            "name": "update",
+            "label": "update",
+            "tooltip": "A function that runs every frame, like Flash's enterFrame.",
+            "defValue": "() => { }",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "() => void"
+            }
+        }
+    ]
+}

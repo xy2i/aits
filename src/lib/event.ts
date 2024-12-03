@@ -1,3 +1,4 @@
+import { _root } from "@/flash/root";
 import { withComma } from "./format";
 import { dispNews } from "./news";
 

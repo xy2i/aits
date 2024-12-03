@@ -44,6 +44,9 @@ class MiniGarden extends Phaser.GameObjects.Container {
 		this.scene.events.once("scene-awake", () => {
 		})
 		this.scene.events.on("update", this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

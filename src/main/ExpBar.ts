@@ -50,6 +50,9 @@ class ExpBar extends Phaser.GameObjects.Container {
 			.on('pointerup', () => this.pointerup());
 
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

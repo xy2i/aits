@@ -126,7 +126,7 @@
                 "svgConfig": {
                     "width": 0,
                     "height": 0,
-                    "scale": 1
+                    "scale": 2
                 },
                 "type": "svg",
                 "key": "logo"

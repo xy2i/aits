@@ -26,6 +26,9 @@ class NewsScrollBar extends Phaser.GameObjects.Rectangle {
 			this.baseY = this.getTopLeft(null, true).y;
 		})
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

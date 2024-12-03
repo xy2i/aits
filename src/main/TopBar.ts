@@ -61,7 +61,7 @@ class TopBar extends Phaser.GameObjects.Container {
 		this.add(coinText);
 
 		// greenCoinText
-		const greenCoinText = scene.add.text(32, 45.5, "", {});
+		const greenCoinText = scene.add.text(32, 45, "", {});
 		greenCoinText.text = "1,00B";
 		greenCoinText.setStyle({ "color": "#66FF00", "fixedWidth": 100, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
 		this.add(greenCoinText);
@@ -180,6 +180,9 @@ class TopBar extends Phaser.GameObjects.Container {
 		});
 
 		this.scene.events.on("update", this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 
@@ -265,3 +268,4 @@ class TopBar extends Phaser.GameObjects.Container {
 
 // You can write more code here
 export { TopBar };
+

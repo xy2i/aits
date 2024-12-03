@@ -97,6 +97,9 @@ class NewsMode extends Phaser.GameObjects.Container {
 			this.updateStyle();
 		})
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

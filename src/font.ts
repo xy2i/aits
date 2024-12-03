@@ -20,6 +20,10 @@ const FONTS = [
         weight: 'bold',
     }),
     new FontFace("Tempesta Seven Condensed", "url('/assets/fonts/tempesta-seven-condensed.ttf')"),
+    new FontFace("Ronda Seven", "url('/assets/fonts/ronda-seven.ttf')"),
+    new FontFace("Ronda Seven", "url('/assets/fonts/ronda-seven-bold.ttf')", {
+        weight: 'bold',
+    }),
 ];
 
 export async function preloadFonts() {

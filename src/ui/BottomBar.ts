@@ -429,6 +429,9 @@ class BottomBar extends Phaser.GameObjects.Container {
 			checkTime();
 		});
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

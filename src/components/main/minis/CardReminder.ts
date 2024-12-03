@@ -40,10 +40,12 @@ class CardReminder extends Phaser.GameObjects.Container {
 		background
 			.setInteractive({ useHandCursor: true })
 			.on("pointerover", () => this.pointerover())
-			.on("pointerout", () => this.pointerout())
-			.on("pointerup", () => this.pointerup());
+			.on("pointerout", () => this.pointerout());
 
 		this.scene.events.on("update", this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 

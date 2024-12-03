@@ -62,6 +62,10 @@ class Overcap extends Phaser.GameObjects.Container {
 			.on("pointerover", () => this.pointerover())
 			.on("pointerout", () => this.pointerout());
 		this.scene.events.on('update', this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
+		console.log("im overcap", x, y)
 		/* END-USER-CTR-CODE */
 
 		// custom definition props

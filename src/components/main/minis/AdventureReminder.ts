@@ -49,6 +49,9 @@ class AdventureReminder extends Phaser.GameObjects.Container {
 			.on("pointerout", () => this.pointerout())
 			.on("pointerup", () => this.pointerup());
 		this.scene.events.on("update", this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 
@@ -124,3 +127,4 @@ class AdventureReminder extends Phaser.GameObjects.Container {
 
 // You can write more code here
 export { AdventureReminder };
+

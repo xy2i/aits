@@ -101,6 +101,9 @@ class NewsTabButton extends Phaser.GameObjects.Container {
 			}
 		});
 		this.scene.events.on("update", this.update, this);
+		this.scene.events.once('shutdown', () => {
+			scene.events.removeAllListeners();
+		});
 		/* END-USER-CTR-CODE */
 	}
 
@@ -142,3 +145,4 @@ class NewsTabButton extends Phaser.GameObjects.Container {
 
 // You can write more code here
 export { NewsTabButton };
+

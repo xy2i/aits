@@ -450,9 +450,10 @@ export function step2loadFunctions() {
         }
     }
     _root.showPopup = function showPopup(popT, popD) {
-        _root.popUp.gotoAndStop(2);
-        _root.popUp.popTitle.text = popT;
-        _root.popUp.popDesc.text = popD;
+        console.warn("UNIMPLEMENTED showPopup", popT, popD);
+        // _root.popUp.gotoAndStop(2);
+        // _root.popUp.popTitle.text = popT;
+        // _root.popUp.popDesc.text = popD;
     }
     _root.convertSec = function convertSec(thatNumber) {
         if (thatNumber < 0) {

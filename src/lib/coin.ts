@@ -17,7 +17,7 @@ export const COIN_SOFTCAP = {
 }
 
 export const COIN_HARDCAP = {
-    [CoinType.Yellow]: 999_999_999_999_999,
+    [CoinType.Yellow]: /*999_999_999_999_999*/Infinity,
     [CoinType.Green]: 999_999_999_999,
     [CoinType.Blue]: 999_999_999,
     [CoinType.White]: 999_999,

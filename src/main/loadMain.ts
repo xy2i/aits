@@ -15,6 +15,7 @@ import { checkPet, killPet } from "@/lib/pet";
 import { printMoney } from "@/lib/printer";
 
 export function loadMain(main) {
+    console.log("im loadmain() function")
     function dispAsc() {
         elapsed_days = Math.floor(_root.save.ascendPlayTime / 86400);
         remaining = _root.save.ascendPlayTime - elapsed_days * 86400;
@@ -624,7 +625,6 @@ export function loadMain(main) {
         }
     }
     function checkMini() {
-        // console.warn("UNIMPLEMENTED minis");
         if (_root.save.featureMiniGarden == true || _root.save.autoHarvestTime > 0) {
             main.miniGarden.setVisible(true);
             let plantedTrees = 0;

@@ -1,11 +1,14 @@
+import Decimal from "break_infinity.js";
+
 export function withComma(thatNumber: number): string {
     let finalNumber = "";
     if (thatNumber == Infinity || isNaN(thatNumber)) {
-        finalNumber = "-----";
+        finalNumber = "-----"; Decimal;
     }
     else {
         if (thatNumber > 999999999999999) {
-            thatNumber = 999999999999999;
+            return thatNumber.toString()
+            //thatNumber = 999999999999999;
         }
         let cNegative = false;
         let groupval = thatNumber;

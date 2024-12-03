@@ -6,10 +6,9 @@ import { Preloader } from '@/scenes/Preloader';
 import { Game, type Types } from "phaser";
 import { setupSOLReader } from './flash/sol';
 import { GameLoader } from './game-loader/GameLoader';
-import { Main } from './main/Main';
 import { Ui } from './ui/Ui';
 
-export const HEIGHT = 650;
+export const SIZE = 650;
 
 function getAllGameObjects(parent) {
     const objects = [];
@@ -63,7 +62,7 @@ const config: Types.Core.GameConfig = {
 
                     for (const scene of game.scene.getScenes(false)) {
                         if (scene.cameras.main) {
-                            scene.cameras.main.setZoom(h / HEIGHT);
+                            scene.cameras.main.setZoom(h / SIZE);
                         }
 
                         // scale text elements resolution
@@ -72,7 +71,7 @@ const config: Types.Core.GameConfig = {
                                 if (child.type === "Text") {
                                     const { width, height } = scene.sys.game.canvas;
                                     child.setStyle({
-                                        resolution: (height / HEIGHT) * 1,
+                                        resolution: (height / SIZE) * 1,
                                     });
                                 }
                             }
@@ -89,7 +88,7 @@ const config: Types.Core.GameConfig = {
                         if (child.type === "Text") {
                             const { width, height } = scene.sys.game.canvas;
                             child.setStyle({
-                                resolution: (height / HEIGHT) * 1.25,
+                                resolution: (height / SIZE) * 1.25,
                             });
                         }
                     });
@@ -116,7 +115,7 @@ const config: Types.Core.GameConfig = {
             { key: "GlobalClick", plugin: GlobalClickPlugin, start: true },
         ],
     },
-    scene: [Preloader, Loader, MainMenu, GameLoader, Main, Ui],
+    scene: [Preloader, Loader, MainMenu, GameLoader, Ui],
 };
 
 let input = document.createElement("input");

@@ -1,8 +1,10 @@
 
 // You can write more code here
 
+import { Main } from '@/main/Main';
 import { BottomBar } from "@/ui/BottomBar";
 import { loadGame } from "./loadGame";
+
 
 /* START OF COMPILED CODE */
 
@@ -40,6 +42,7 @@ class GameLoader extends Phaser.Scene {
 
 		loadGame();
 
+		this.scene.add("Main", Main);
 		this.scene.start("Main");
 	}
 	/* END-USER-CODE */
