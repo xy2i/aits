@@ -1,5 +1,5 @@
 {
-    "id": "90682d59-8365-4651-869c-5873f774dcf6",
+    "id": "70aee4b8-4d91-47ca-80f2-cf694b259b7a",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
@@ -12,14 +12,13 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "a427ae63-3efb-4505-9ff6-06089c2c0030",
-            "label": "insideBar",
-            "scope": "PUBLIC",
+            "id": "73c6ef6d-0497-4852-95d6-daefac3a86b4",
+            "label": "boostGenerator",
             "texture": {
-                "key": "inside-bar-1"
+                "key": "boost-generator"
             },
-            "originX": 0,
-            "originY": 0
+            "scaleX": 0.25,
+            "scaleY": 0.25
         }
     ],
     "plainObjects": [],

@@ -1,11 +1,19 @@
+import { House } from "@/components/house/House";
+import { Boost } from "@/components/main/boost/Boost";
+import { EventToken } from "@/components/main/bottom-bar/EventToken";
+import { QuestToken } from "@/components/main/bottom-bar/QuestToken";
 import { Button } from "@/components/main/Button";
 import { AdventureReminder } from "@/components/main/minis/AdventureReminder";
 import { CardReminder } from "@/components/main/minis/CardReminder";
 import { CardTimer } from "@/components/main/minis/CardTimer";
 import { MiniGarden } from "@/components/main/minis/MiniGarden";
 import { SuperBattery } from "@/components/main/minis/SuperBattery";
+import { ProgressBar } from "@/components/main/progress-bar/ProgressBar";
+import { ProgressBarMode } from "@/components/main/progress-bar/ProgressBarMode";
+import { RestTimer } from "@/components/main/progress-bar/RestTimer";
 import { QuestFlash } from "@/components/main/QuestFlash";
 import { _root } from "@/flash/root";
+import { withComma } from "@/lib/format";
 import { SIZE } from "@/main";
 import { ActionDescription } from "./ActionDescription";
 import { loadMain } from "./loadMain";
@@ -24,14 +32,6 @@ class Main extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
-
-		// topBar
-		const topBar = new TopBar(this, 0, 0);
-		this.add.existing(topBar);
-
-		// news
-		const news = new News(this, 10, 440);
-		this.add.existing(news);
 
 		// screenSize
 		const screenSize = this.add.text(0, 611, "", {});
@@ -55,22 +55,12 @@ class Main extends Phaser.Scene {
 		this.add.existing(cardReminder);
 
 		// cardTimerExp
-		const cardTimerExp = new CardTimer(this, 525, 540);
+		const cardTimerExp = new CardTimer(this, 525, 543);
 		this.add.existing(cardTimerExp);
 
 		// cardTimerCoin
-		const cardTimerCoin = new CardTimer(this, 585, 540);
+		const cardTimerCoin = new CardTimer(this, 585, 543);
 		this.add.existing(cardTimerCoin);
-
-		// logo
-		const logo = this.add.image(525, 85, "logo");
-		logo.scaleX = 0.375;
-		logo.scaleY = 0.375;
-		logo.setOrigin(0, 0);
-
-		// saturateFx
-		const saturateFx = logo.preFX!.addColorMatrix();
-		saturateFx.saturate(2.5);
 
 		// bottomButtons
 		const bottomButtons = this.add.container(0, 585);
@@ -97,28 +87,134 @@ class Main extends Phaser.Scene {
 		bottomButtons.add(bg1);
 
 		// achText
-		const achText = this.add.text(85, 2.05, "", {});
+		const achText = this.add.text(85, 3.05, "", {});
 		achText.text = "630";
 		achText.setStyle({ "align": "right", "color": "#ffff00", "fixedWidth": 45, "fixedHeight": 20.32, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
 		achText.setPadding({"top":5,"right":2});
 		bottomButtons.add(achText);
 
 		// questsButton
-		const questsButton = new Button(this, 135, 2);
+		const questsButton = new Button(this, 135, 2.5);
 		questsButton.scaleX = 1;
 		questsButton.scaleY = 1;
 		bottomButtons.add(questsButton);
 
 		// questsLabel
-		const questsLabel = this.add.text(135, 7.5, "", {});
+		const questsLabel = this.add.text(135, 6.5, "", {});
 		questsLabel.text = "Quests";
 		questsLabel.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth": 50, "fontFamily": "Ronda Seven", "fontSize": "10px" });
 		questsLabel.setPadding({"left":1});
 		bottomButtons.add(questsLabel);
 
 		// questFlash
-		const questFlash = new QuestFlash(this, 135, 2.5);
+		const questFlash = new QuestFlash(this, 135, 2);
 		bottomButtons.add(questFlash);
+
+		// bg
+		const bg = this.add.rectangle(185, 2.5, 45, 20);
+		bg.setOrigin(0, 0);
+		bg.isFilled = true;
+		bg.fillColor = 0;
+		bg.fillAlpha = 0.8;
+		bottomButtons.add(bg);
+
+		// questText
+		const questText = this.add.text(185, 2.5, "", {});
+		questText.text = "100%";
+		questText.setStyle({ "align": "right", "color": "#66ff00", "fixedWidth": 45, "fixedHeight": 20.32, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
+		questText.setPadding({ "top": 5, "right": 2 });
+		bottomButtons.add(questText);
+
+		// questDivider
+		const questDivider = this.add.rectangle(230, 2.5, 1, 20);
+		questDivider.setOrigin(0, 0);
+		questDivider.isFilled = true;
+		questDivider.fillColor = 65280;
+		questDivider.fillAlpha = 0.8;
+		bottomButtons.add(questDivider);
+
+		// bg_1
+		const bg_1 = this.add.rectangle(230, 2.5, 104.8, 20);
+		bg_1.setOrigin(0, 0);
+		bg_1.isFilled = true;
+		bg_1.fillColor = 0;
+		bg_1.fillAlpha = 0.8;
+		bottomButtons.add(bg_1);
+
+		// tokenText1
+		const tokenText1 = this.add.text(230, 2, "", {});
+		tokenText1.text = "9,999,999\n";
+		tokenText1.setStyle({ "align": "right", "color": "#66ff00", "fixedWidth": 90, "fixedHeight": 20.32, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
+		tokenText1.setPadding({ "top": 5, "right": 2 });
+		bottomButtons.add(tokenText1);
+
+		// eventsButton
+		const eventsButton = new Button(this, 350, 2.55);
+		eventsButton.scaleX = 1;
+		eventsButton.scaleY = 1;
+		bottomButtons.add(eventsButton);
+
+		// eventsLabel
+		const eventsLabel = this.add.text(350, 6.55, "", {});
+		eventsLabel.text = "Events";
+		eventsLabel.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth": 50, "fontFamily": "Ronda Seven", "fontSize": "10px" });
+		eventsLabel.setPadding({ "left": 1 });
+		bottomButtons.add(eventsLabel);
+
+		// bg_2
+		const bg_2 = this.add.rectangle(400, 2, 104.8, 20);
+		bg_2.setOrigin(0, 0);
+		bg_2.isFilled = true;
+		bg_2.fillColor = 0;
+		bg_2.fillAlpha = 0.8;
+		bottomButtons.add(bg_2);
+
+		// tokenText
+		const tokenText = this.add.text(400, 2, "", {});
+		tokenText.text = "9,999,999\n";
+		tokenText.setStyle({ "align": "right", "color": "#00ccff", "fixedWidth": 90, "fixedHeight": 20.32, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
+		tokenText.setPadding({ "top": 5, "right": 2 });
+		bottomButtons.add(tokenText);
+
+		// shopButton
+		const shopButton = new Button(this, 520, 2.55);
+		shopButton.scaleX = 1;
+		shopButton.scaleY = 1;
+		bottomButtons.add(shopButton);
+
+		// shopLabel
+		const shopLabel = this.add.text(520, 6.55, "", {});
+		shopLabel.text = "Shop";
+		shopLabel.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth": 50, "fontFamily": "Ronda Seven", "fontSize": "10px" });
+		shopLabel.setPadding({ "left": 1 });
+		bottomButtons.add(shopLabel);
+
+		// bg_3
+		const bg_3 = this.add.rectangle(570, 2, 70, 20);
+		bg_3.setOrigin(0, 0);
+		bg_3.isFilled = true;
+		bg_3.fillColor = 0;
+		bg_3.fillAlpha = 0.8;
+		bottomButtons.add(bg_3);
+
+		// shopText
+		const shopText = this.add.text(570, 2, "", {});
+		shopText.text = "0 / 28\n";
+		shopText.setStyle({ "align": "right", "color": "#ff9900", "fixedWidth": 70, "fixedHeight": 20.32, "fontFamily": "Tempesta Seven Extended", "fontSize": "10px" });
+		shopText.setPadding({ "top": 5, "right": 2 });
+		bottomButtons.add(shopText);
+
+		// questToken
+		const questToken = new QuestToken(this, 320, -0.5);
+		questToken.scaleX = 1.25;
+		questToken.scaleY = 1.25;
+		bottomButtons.add(questToken);
+
+		// eventToken_1
+		const eventToken_1 = new EventToken(this, 490, -0.5);
+		eventToken_1.scaleX = 1.25;
+		eventToken_1.scaleY = 1.25;
+		bottomButtons.add(eventToken_1);
 
 		// uiBarButtons
 		const uiBarButtons = this.add.container(150, 625);
@@ -213,8 +309,53 @@ class Main extends Phaser.Scene {
 		backLabel.setPadding({"left":1,"top":5});
 		uiBarButtons.add(backLabel);
 
+		// middlePanel
+		const middlePanel = this.add.container(10, 440);
+
+		// news
+		const news = new News(this, 0, 0);
+		middlePanel.add(news);
+
+		// boost
+		const boost = new Boost(this, 517, -3);
+		middlePanel.add(boost);
+
+		// sidePanel
+		const sidePanel = this.add.container(525, 80);
+
+		// logo
+		const logo = this.add.image(0, 0, "logo");
+		logo.scaleX = 0.375;
+		logo.scaleY = 0.375;
+		logo.setOrigin(0, 0);
+		sidePanel.add(logo);
+
+		// saturateFx
+		const saturateFx = logo.preFX!.addColorMatrix();
+		saturateFx.saturate(2.5);
+
+		// progressBar
+		const progressBar = new ProgressBar(this, 44, 75);
+		sidePanel.add(progressBar);
+
+		// progressBarMode
+		const progressBarMode = new ProgressBarMode(this, 4, 276);
+		sidePanel.add(progressBarMode);
+
+		// restTimer
+		const restTimer = new RestTimer(this, 4, 322);
+		sidePanel.add(restTimer);
+
+		// topBar
+		const topBar = new TopBar(this, 0, 0);
+		this.add.existing(topBar);
+
+		// house
+		const house = new House(this, 10, 80);
+		this.add.existing(house);
+
 		// actionDescription
-		const actionDescription = new ActionDescription(this, -4, 282);
+		const actionDescription = new ActionDescription(this, -4, 281);
 		this.add.existing(actionDescription);
 
 		// cardTimerCoin (prefab fields)
@@ -225,6 +366,12 @@ class Main extends Phaser.Scene {
 
 		// questsButton (prefab fields)
 		questsButton.color = "#2FAF2F";
+
+		// eventsButton (prefab fields)
+		eventsButton.color = "#2F95AF";
+
+		// shopButton (prefab fields)
+		shopButton.color = "#AF7C2F";
 
 		// statsButton (prefab fields)
 		statsButton.color = "#8D6EAC";
@@ -250,10 +397,15 @@ class Main extends Phaser.Scene {
 		this.adventureReminder = adventureReminder;
 		this.cardTimerExp = cardTimerExp;
 		this.cardTimerCoin = cardTimerCoin;
-		this.logo = logo;
 		this.achivementsButton = achivementsButton;
 		this.achText = achText;
 		this.questsButton = questsButton;
+		this.questText = questText;
+		this.tokenText1 = tokenText1;
+		this.eventsButton = eventsButton;
+		this.tokenText = tokenText;
+		this.shopButton = shopButton;
+		this.shopText = shopText;
 		this.statsButton = statsButton;
 		this.optionsButton = optionsButton;
 		this.careersButtonBrightness = careersButtonBrightness;
@@ -263,6 +415,7 @@ class Main extends Phaser.Scene {
 		this.cyborgButtonBrightness = cyborgButtonBrightness;
 		this.cyborgButton = cyborgButton;
 		this.backButton = backButton;
+		this.logo = logo;
 
 		this.events.emit("scene-awake");
 	}
@@ -273,10 +426,15 @@ class Main extends Phaser.Scene {
 	public adventureReminder!: AdventureReminder;
 	public cardTimerExp!: CardTimer;
 	public cardTimerCoin!: CardTimer;
-	private logo!: Phaser.GameObjects.Image;
 	private achivementsButton!: Button;
 	public achText!: Phaser.GameObjects.Text;
 	private questsButton!: Button;
+	public questText!: Phaser.GameObjects.Text;
+	public tokenText1!: Phaser.GameObjects.Text;
+	private eventsButton!: Button;
+	public tokenText!: Phaser.GameObjects.Text;
+	private shopButton!: Button;
+	public shopText!: Phaser.GameObjects.Text;
 	private statsButton!: Button;
 	private optionsButton!: Button;
 	private careersButtonBrightness!: Phaser.FX.ColorMatrix;
@@ -286,6 +444,7 @@ class Main extends Phaser.Scene {
 	private cyborgButtonBrightness!: Phaser.FX.ColorMatrix;
 	private cyborgButton!: Button;
 	private backButton!: Button;
+	private logo!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 
@@ -337,6 +496,42 @@ class Main extends Phaser.Scene {
 			// }
 			// else {
 			// 	_root.optionsScreen.gotoAndStop(1);
+			// }
+		}
+
+		this.eventsButton.pointerover = () => {
+			_root.actiondescription = "<b><font color=\'#FFFF00\'>Event</font></b>\nCheck which event is going on, what it is about and why it is awesome!";
+		}
+		this.eventsButton.pointerout = () => {
+			_root.actiondescription = "";
+		}
+		this.eventsButton.pointerup = () => {
+			console.warn("UNIMPLEMENTED events options screen")
+			// if(_root.optionsScreen._currentframe != 18)
+			// {
+			//    _root.save.viewEvent += 1;
+			//    _root.optionsScreen.gotoAndStop(18);
+			// }
+			// else
+			// {
+			//    _root.optionsScreen.gotoAndStop(1);
+			// }
+		}
+		this.shopButton.pointerover = () => {
+			_root.actiondescription = "<b><font color=\'#FFFF00\'>Shop</font></b>\nWhere new features, feature upgrades and other awesome things can be purchased!";
+		}
+		this.shopButton.pointerout = () => {
+			_root.actiondescription = "";
+		}
+		this.shopButton.pointerup = () => {
+			console.warn("UNIMPLEMENTED shop options screen")
+			// if(_root.optionsScreen._currentframe < 29 || _root.optionsScreen._currentframe > 32)
+			// {
+			//    _root.optionsScreen.gotoAndStop(28 + _root.shopScreenPage);
+			// }
+			// else
+			// {
+			//    _root.optionsScreen.gotoAndStop(1);
 			// }
 		}
 
@@ -490,15 +685,118 @@ class Main extends Phaser.Scene {
 		}
 
 		this.logo.postFX!.addGlow(0x000000, 7, 0, false, 1, 3);
+		console.log(_root);
 		this.updateFunction = loadMain(this);
 	}
 
+	checkBar() {
+		this.achText.text = withComma(_root.awards);
+		this.questText.text = Math.floor((_root.save.mainQuestC * 1 + _root.save.mainQuestB * 3 + _root.save.mainQuestA * 6 + _root.save.mainQuestS * 10) / 25) + "%";
+		this.tokenText.text = withComma(_root.save.questToken);
+		this.tokenText1.text = withComma(_root.save.eventToken);
+		let featuresBought = 0;
+		if (_root.save.featureIdleMode == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureBoostGen == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureGarden == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureBattleArena == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureButtonMachine == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureMoneyPrinter == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureArcade == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureStadium == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureTukkunFCG == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureLolMarket == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureAwesomeAdventures == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureFishing == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureEpicLicense == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureBoostAuto == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureManualSprayer == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureSpecialSprayer == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureDoomSprayer == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureMiniGarden == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureTravelingTicket == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureArcadePack == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureSuperBattery == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureEnergyToolbar == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureCardToolbar == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.featureTechnicalLight == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.stadiumH1 == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.stadiumH2 == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.stadiumH3 == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.fishRodUnlock[5] == true) {
+			featuresBought += 1;
+		}
+		if (_root.save.fishRodUnlock[6] == true) {
+			featuresBought += 1;
+		}
+		this.shopText.text = featuresBought + " / 29";
+	}
+
+	alt = false;
 	update() {
 		const { width, height } = this.game.canvas;
 		this.screenSize.text = `${width}x${height} dpi=${window.devicePixelRatio
 			}  text resolution=${(height / SIZE) * window.devicePixelRatio}`;
 
 		this.updateFunction();
+
+		this.alt = !this.alt;
+		if (this.alt) {
+			this.checkBar();
+		}
 	}
 	/* END-USER-CODE */
 }

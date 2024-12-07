@@ -33,6 +33,7 @@ class Preloader extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
+
 		// container_1
 		const container_1 = this.add.container(175, 200);
 
@@ -56,13 +57,6 @@ class Preloader extends Phaser.Scene {
 		rectangle.fillColor = 6710886;
 		container_1.add(rectangle);
 
-		// loadingBar
-		const loadingBar = this.add.rectangle(25, 25, 250, 15);
-		loadingBar.setOrigin(0, 0);
-		loadingBar.isFilled = true;
-		loadingBar.fillColor = 65280;
-		container_1.add(loadingBar);
-
 		// flavorText
 		const flavorText = this.add.text(4, 73, "", {});
 		flavorText.text = "Did you know? Anti-Idle: The Game is loading!";
@@ -70,66 +64,93 @@ class Preloader extends Phaser.Scene {
 		flavorText.setWordWrapWidth(280, true);
 		container_1.add(flavorText);
 
+		// loadingBarbg
+		const loadingBarbg = this.add.rectangle(25, 25, 250, 15);
+		loadingBarbg.setOrigin(0, 0);
+		loadingBarbg.isFilled = true;
+		loadingBarbg.fillColor = 26112;
+		container_1.add(loadingBarbg);
+
+		// loadingBar
+		const loadingBar = this.add.rectangle(25, 25, 250, 15);
+		loadingBar.setOrigin(0, 0);
+		loadingBar.isFilled = true;
+		loadingBar.fillColor = 65280;
+		container_1.add(loadingBar);
+
+		// loadingTextAssets
+		const loadingTextAssets = this.add.text(25, 27, "", {});
+		loadingTextAssets.text = "Loading assets...";
+		loadingTextAssets.setStyle({ "align": "right", "color": "#000000ff", "fixedWidth": 250, "fontFamily": "Tempesta Seven", "fontSize": "10px", "shadow.stroke": true });
+		container_1.add(loadingTextAssets);
+
 		// flashNumber
-		const flashNumber = this.add.text(501, 637, "", {});
-		flashNumber.name = "flashNumber";
-		flashNumber.text = "v12345";
-		flashNumber.setStyle({ "align": "right", "color": "#000", "fixedWidth": 150, "fixedHeight": 20, "fontFamily": "Tempesta Seven", "fontSize": "10px", "stroke": "" });
+		const flashNumber = this.add.text(224, 437, "", {});
+		flashNumber.text = "Loading assets...";
+		flashNumber.setStyle({ "align": "right", "color": "#000000ff", "fixedWidth": 250, "fontFamily": "Tempesta Seven", "fontSize": "10px", "fontStyle": "bold" });
+		container_1.add(flashNumber);
 
 		this.loadingText = loadingText;
-		this.loadingBar = loadingBar;
 		this.flavorText = flavorText;
+		this.loadingBarbg = loadingBarbg;
+		this.loadingBar = loadingBar;
+		this.loadingTextAssets = loadingTextAssets;
 		this.flashNumber = flashNumber;
 
 		this.events.emit("scene-awake");
 	}
 
 	private loadingText!: Phaser.GameObjects.Text;
-	private loadingBar!: Phaser.GameObjects.Rectangle;
 	private flavorText!: Phaser.GameObjects.Text;
+	private loadingBarbg!: Phaser.GameObjects.Rectangle;
+	private loadingBar!: Phaser.GameObjects.Rectangle;
+	private loadingTextAssets!: Phaser.GameObjects.Text;
 	private flashNumber!: Phaser.GameObjects.Text;
 
 	/* START-USER-CODE */
+	progress = 0;
 
-	// Write your code here
+	init() {
+		//  Use the 'progress' event emitted by the LoaderPlugin to update the loading bar
+		this.editorCreate();
+		this.load.on('progress', (progress: number) => {
+			this.progress = progress;
+			this.loadingBar.scaleX = progress;
+			this.loadingTextAssets.setVisible(true);
+			this.loadingTextAssets.text = `Loading assets (${Math.floor(progress * 100)}%)...`;
+			if (progress === 1) {
+				this.loadingTextAssets.setVisible(false);
+			}
+		});
+	}
 
-	/** Load assets */
 	async preload() {
 		if (import.meta.env.DEV) {
 			_root.flashVer = `dev ${import.meta.env.COMMIT_HASH}`;
 		} else {
 			_root.flashVer = `${version}`;
 		}
+		this.flashNumber.text = _root.flashVer;
+		this.loadingText.text = "Loading fonts and assets...";
+		const flavor = FLAVOR_TEXT[Math.floor(Math.random() * FLAVOR_TEXT.length)];
+		this.flavorText.text = flavor;
+		preloadFonts().then(() => {
+			// Reload all fonts on this scene once necessary preloader fonts are done,
+			// to have styled fonts ASAP
+			// Re-setting each element is needed because otherwise the font
+			// won't render. Add an space at the end of each to invalidate cache
+			// There's probably a better way to do this.
+			this.loadingText.text = "Loading fonts and assets..." + " ";
+			this.loadingTextAssets.text = `Loading assets (${Math.floor(this.progress * 100)}%)...` + " ";
+			this.flashNumber.text = _root.flashVer + " ";
+			this.flavorText.text = flavor + " ";
+		});
+		await Promise.all([this.load.pack("asset-pack", "assets/asset-pack.json"), loadFonts()])
 	}
 
 	// Write your code here
 	async create() {
-		this.cameras.main.setOrigin(0, 0);
-		this.editorCreate();
-		this.flashNumber.text = _root.flashVer;
-		this.flavorText.text = FLAVOR_TEXT[Math.floor(Math.random() * FLAVOR_TEXT.length)];
-		this.loadingText.text = "Loading preloader fonts...";
-		await preloadFonts();
-		// Force reloading of fonts by restyling preloader elements
-		this.flavorText.setStyle({ "color": "#000", "fontFamily": "Tempesta Seven", "fontSize": "10px", "maxLines": 100 });
-		this.flashNumber.setStyle({ "color": "#000", "fontFamily": "Tempesta Seven", "fontSize": "10px", "maxLines": 100 });
-
-		this.load.on('progress', (progress: number) => {
-			//  Update the progress bar (our bar is 464px wide, so 100% = 464px)
-			console.log("progress")
-			this.loadingBar.width = 4 + (460 * progress);
-		});
-
-		this.load.on('complete', (progress: number) => {
-			console.log("complete")
-			this.loadingBar.width = 4 + (460 * progress);
-		});
-		this.loadingText.text = "Loading fonts...";
-		await loadFonts();
-
-		this.load.pack("asset-pack", "assets/asset-pack.json");
 		this.loadingText.text = "Loading save file...";
-
 		_root.kpaChip = false;
 		_root.autoStart = true;
 		_root.sessionTimeLeft = 2419200;

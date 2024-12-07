@@ -35,7 +35,7 @@
                         "x",
                         "y"
                     ],
-                    "label": "insidebar",
+                    "label": "insideBar",
                     "scope": "CLASS",
                     "x": 0,
                     "y": 0

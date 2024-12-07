@@ -1,7 +1,7 @@
 import { _root } from "@/flash/root";
 import { withComma } from "@/lib/format";
 import { dispNews } from "@/lib/news";
-import { InsideBar } from "./InsideBar";
+import { InsideBar, InsideBarKind } from "./insideBar";
 
 // You can write more code here
 
@@ -19,9 +19,9 @@ class ExpBar extends Phaser.GameObjects.Container {
 		background.fillColor = 1320980;
 		this.add(background);
 
-		// insidebar
-		const insidebar = new InsideBar(scene, 0, 0);
-		this.add(insidebar);
+		// insideBar
+		const insideBar = new InsideBar(scene, 0, 0);
+		this.add(insideBar);
 
 		// numberdisp
 		const numberdisp = scene.add.text(0, -4, "", {});
@@ -40,7 +40,7 @@ class ExpBar extends Phaser.GameObjects.Container {
 		this.add(blackOutline);
 
 		this.background = background;
-		this.insidebar = insidebar;
+		this.insideBar = insideBar;
 		this.numberdisp = numberdisp;
 
 		/* START-USER-CTR-CODE */
@@ -49,6 +49,10 @@ class ExpBar extends Phaser.GameObjects.Container {
 			.on('pointerout', () => this.pointerout())
 			.on('pointerup', () => this.pointerup());
 
+
+		this.scene.events.once("scene-awake", () => {
+			this.insideBar.show(InsideBarKind.Green);
+		})
 		this.scene.events.on('update', this.update, this);
 		this.scene.events.once('shutdown', () => {
 			scene.events.removeAllListeners();
@@ -57,7 +61,7 @@ class ExpBar extends Phaser.GameObjects.Container {
 	}
 
 	private background: Phaser.GameObjects.Rectangle;
-	private insidebar: InsideBar;
+	private insideBar: InsideBar;
 	private numberdisp: Phaser.GameObjects.Text;
 
 	/* START-USER-CODE */
@@ -96,19 +100,19 @@ class ExpBar extends Phaser.GameObjects.Container {
 				this.numberdisp.text = withComma(_root.finalExp * 3);
 			}
 		}
-		this.insidebar.scaleX = _root.save.currentExp / _root.requiredExp;
+		this.insideBar.scaleX = _root.save.currentExp / _root.requiredExp;
 		if (_root.save.level == 9002) {
-			this.insidebar.scaleX = 1;
+			this.insideBar.scaleX = 1;
 			if (_root.saveid != 4) {
 				/// TODO shiny expbar
-				// insideBar.gotoAndStop(8);
+				this.insideBar.show(InsideBarKind.Rainbow);
 				// pbShiny.gotoAndStop(2);
 			}
 		}
 		else if (_root.save.bestLevel == 9002) {
 			if (_root.saveid != 4) {
 				/// TODO 9002 bar
-				// insideBar.gotoAndStop(9);
+				this.insideBar.show(InsideBarKind.Shiny);
 				// pbShiny.gotoAndStop(2);
 			}
 		}

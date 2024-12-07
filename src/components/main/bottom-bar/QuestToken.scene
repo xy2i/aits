@@ -1,0 +1,65 @@
+{
+    "id": "cc5284e3-5ff3-420b-9ddc-9055cc6e6656",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "937dd7cd-d4a2-4dc8-9833-a508740c9583",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Polygon",
+                    "id": "8f6f3448-c7bf-43aa-aaea-029ba544f278",
+                    "label": "stroke",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "65cb65",
+                    "strokeColor": "006600",
+                    "isStroked": true,
+                    "points": "0 5 5 0 15 0 20 5 20 15 15 20 5 20 0 15"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d893efb4-f9fa-435e-a2aa-97ba55d4492c",
+                    "label": "rectangle_1",
+                    "x": 10,
+                    "y": 10,
+                    "strokeColor": "006600",
+                    "lineWidth": 1.5,
+                    "isStroked": true,
+                    "width": 7.5,
+                    "height": 7.5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "11833bef-3369-4c48-8b85-3e608260c152",
+                    "label": "rectangle",
+                    "x": 13.473209381103516,
+                    "y": 13.039499282836914,
+                    "angle": 45,
+                    "isFilled": true,
+                    "fillColor": "006600",
+                    "strokeColor": "006600",
+                    "width": 7.5,
+                    "height": 1.5
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

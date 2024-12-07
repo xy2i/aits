@@ -1,5 +1,5 @@
 {
-    "id": "10854d33-429a-4f3d-a4bb-22dd4f148eef",
+    "id": "10854d33-429a-4f3d-a4bb-22dd4f158eef",
     "sceneType": "SCENE",
     "settings": {
         "preloadPackFiles": [],
@@ -54,23 +54,8 @@
                     "height": 50
                 },
                 {
-                    "type": "Text",
-                    "id": "21f83d7d-6d01-4f7c-8357-c88de4b788f6",
-                    "label": "flavorText",
-                    "scope": "CLASS",
-                    "x": 4,
-                    "y": 73,
-                    "text": "Did you know? Anti-Idle: The Game is loading!",
-                    "fontFamily": "Tempesta Seven",
-                    "fontSize": "10px",
-                    "color": "#000",
-                    "maxLines": 100,
-                    "wordWrapWidth": 280,
-                    "wordWrapUseAdvanced": true
-                },
-                {
                     "type": "Rectangle",
-                    "id": "acdf6220-3a02-4164-85c8-c39b7ef21065",
+                    "id": "ccff9911-7544-44db-90b9-26314010e84a",
                     "label": "loadingBarbg",
                     "scope": "CLASS",
                     "x": 25,
@@ -98,26 +83,26 @@
                 },
                 {
                     "type": "Text",
-                    "id": "58fbfd7b-a956-478d-9806-43a0548d500a",
-                    "label": "loadingTextAssets",
+                    "id": "21f83d7d-6d01-4f7c-8357-c88de4b788f6",
+                    "label": "flavorText",
                     "scope": "CLASS",
-                    "x": 25,
-                    "y": 27,
-                    "text": "Loading assets...",
-                    "fixedWidth": 250,
-                    "align": "right",
+                    "x": 4,
+                    "y": 73,
+                    "text": "Did you know? Anti-Idle: The Game is loading!",
                     "fontFamily": "Tempesta Seven",
                     "fontSize": "10px",
-                    "color": "#000000ff",
-                    "shadow.stroke": true
+                    "color": "#000",
+                    "maxLines": 100,
+                    "wordWrapWidth": 280,
+                    "wordWrapUseAdvanced": true
                 },
                 {
                     "type": "Text",
-                    "id": "b0e8eaf7-e401-4720-9708-30883aab5c57",
-                    "label": "flashNumber",
+                    "id": "8b8c4a0f-7dbe-4e2b-b190-717c497d35bb",
+                    "label": "loadingTextAssets",
                     "scope": "CLASS",
-                    "x": 224,
-                    "y": 437,
+                    "x": 25,
+                    "y": 26,
                     "text": "Loading assets...",
                     "fixedWidth": 250,
                     "align": "right",
@@ -127,6 +112,24 @@
                     "color": "#000000ff"
                 }
             ]
+        },
+        {
+            "type": "Text",
+            "id": "638c23be-5637-482a-93e9-95ffd79f61d1",
+            "label": "flashNumber",
+            "displayName": "flashNumber",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "x": 501,
+            "y": 637,
+            "text": "v12345",
+            "fixedWidth": 150,
+            "fixedHeight": 20,
+            "align": "right",
+            "fontFamily": "Tempesta Seven",
+            "fontSize": "10px",
+            "color": "#000",
+            "stroke": ""
         }
     ],
     "plainObjects": [],

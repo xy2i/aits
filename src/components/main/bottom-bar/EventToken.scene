@@ -1,0 +1,96 @@
+{
+    "id": "86f0db8c-f620-46b4-81d5-6170624f89f1",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "ffce03c8-4b3d-450d-992e-3a31da8eb65f",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Polygon",
+                    "id": "e7ccd578-ed94-4126-a8d9-308f3ef8bc51",
+                    "label": "stroke",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "65cbe5",
+                    "strokeColor": "076d87",
+                    "isStroked": true,
+                    "points": "0 5 5 0 15 0 20 5 20 15 15 20 5 20 0 15"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "ef4e0309-996c-45d9-9fdd-539363ca708d",
+                    "label": "rectangle_1",
+                    "x": 7.5,
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "076d87",
+                    "strokeColor": "006600",
+                    "width": 5,
+                    "height": 1.5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e69918e4-3164-443c-b44b-1f8e54094b4e",
+                    "label": "rectangle",
+                    "x": 7.5,
+                    "y": 13,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "076d87",
+                    "strokeColor": "006600",
+                    "width": 5,
+                    "height": 1.5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "00f1654b-3390-4fb5-88ac-f1792adbcfad",
+                    "label": "rectangle_2",
+                    "x": 7.5,
+                    "y": 9,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "076d87",
+                    "strokeColor": "006600",
+                    "width": 5,
+                    "height": 1.5
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "187c256f-d742-48ee-9491-85a0b6db785a",
+                    "label": "rectangle_3",
+                    "x": 7.5,
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "076d87",
+                    "strokeColor": "006600",
+                    "width": 1.5,
+                    "height": 9
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

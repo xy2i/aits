@@ -1,48 +1,35 @@
+export enum InsideBarKind {
+	Gray = "inside-bar-1",
+	Red = "inside-bar-2",
+	Yellow = "inside-bar-3",
+	Green = "inside-bar-4",
+	Cyan = "inside-bar-5",
+	Blue = "inside-bar-6",
+	Purple = "inside-bar-7",
+	Rainbow = "inside-bar-8",
+	Shiny = "inside-bar-9",
+	LightBlue = "inside-bar-10",
+	LightestBlue = "inside-bar-11",
+	LightGreen = "inside-bar-12",
+}
 
-// You can write more code here
-
+export
 /* START OF COMPILED CODE */
 
-class InsideBar extends Phaser.GameObjects.Container {
+class InsideBar extends Phaser.GameObjects.Image {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 0, y ?? 0);
+	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+		super(scene, x ?? 0, y ?? 0, texture || "inside-bar-1", frame);
 
-		// topRect
-		const topRect = scene.add.rectangle(0, 0, 200, 5);
-		topRect.setOrigin(0, 0);
-		topRect.isFilled = true;
-		this.add(topRect);
-
-		// bottomRect
-		const bottomRect = scene.add.rectangle(0, 5, 200, 15);
-		bottomRect.setOrigin(0, 0);
-		bottomRect.isFilled = true;
-		this.add(bottomRect);
-
-		this.topRect = topRect;
-		this.bottomRect = bottomRect;
+		this.setOrigin(0, 0);
 
 		/* START-USER-CTR-CODE */
-		this.scene.events.on('update', this.update, this);
-		this.scene.events.once('shutdown', () => {
-			scene.events.removeAllListeners();
-		});
 		/* END-USER-CTR-CODE */
 	}
 
-	private topRect: Phaser.GameObjects.Rectangle;
-	private bottomRect: Phaser.GameObjects.Rectangle;
-	public color: "green" = "green";
-
 	/* START-USER-CODE */
-	update() {
-		switch (this.color) {
-			case "green": {
-				this.topRect.fillColor = 0x466e46;
-				this.bottomRect.fillColor = 0x3c643c;
-			}
-		}
+	show(kind: InsideBarKind) {
+		this.setTexture(kind);
 	}
 	/* END-USER-CODE */
 }
@@ -50,4 +37,3 @@ class InsideBar extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export { InsideBar };

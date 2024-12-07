@@ -240,9 +240,9 @@ class News extends Phaser.GameObjects.Container {
 	}
 
 	update() {
-		if (currentFeature != this.tempFeature) {
+		if (currentFeature() != this.tempFeature) {
 			_root.updateBreakNews = 1;
-			this.tempFeature = currentFeature;
+			this.tempFeature = currentFeature();
 		}
 		if (_root.updateBreakNews == 1) {
 			this.updateNews();

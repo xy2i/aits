@@ -11,28 +11,6 @@
     },
     "displayList": [
         {
-            "prefabId": "41a9f0e4-a01c-4ccb-9c87-ef48ac9e4b79",
-            "id": "d0db837a-03e4-4ca9-9323-a1c58f035c8d",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "topBar",
-            "x": 0,
-            "y": 0
-        },
-        {
-            "prefabId": "e6062171-74b2-4147-8f8e-eef6d19867c7",
-            "id": "09c3831a-16c4-4271-b2e4-d8d13158a31f",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "news",
-            "x": 10,
-            "y": 440
-        },
-        {
             "type": "Text",
             "id": "bcf3d676-3d8e-4df9-b24f-30c983084342",
             "label": "screenSize",
@@ -104,7 +82,7 @@
             "label": "cardTimerExp",
             "scope": "PUBLIC",
             "x": 525,
-            "y": 540
+            "y": 543
         },
         {
             "prefabId": "4e12a758-e2ad-4e56-b7fc-2c1adbcda434",
@@ -118,32 +96,7 @@
             "scope": "PUBLIC",
             "timerType": "coin",
             "x": 585,
-            "y": 540
-        },
-        {
-            "type": "Image",
-            "id": "d275e8db-ebf0-420e-b3d7-8bbf32e5c818",
-            "label": "logo",
-            "scope": "CLASS",
-            "texture": {
-                "key": "logo"
-            },
-            "x": 525,
-            "y": 85,
-            "scaleX": 0.375,
-            "scaleY": 0.375,
-            "originX": 0,
-            "originY": 0,
-            "list": [
-                {
-                    "type": "ColorMatrix",
-                    "id": "8cd3ba38-42bd-421a-85d7-70c34d3a95ac",
-                    "label": "saturateFx",
-                    "operationType": 3,
-                    "saturate": 2.5,
-                    "preFX": true
-                }
-            ]
+            "y": 543
         },
         {
             "type": "Container",
@@ -201,7 +154,7 @@
                     "label": "achText",
                     "scope": "PUBLIC",
                     "x": 85,
-                    "y": 2.05,
+                    "y": 3.05,
                     "text": "630",
                     "fixedWidth": 45,
                     "fixedHeight": 20.32,
@@ -226,7 +179,7 @@
                     "scope": "CLASS",
                     "color": "#2FAF2F",
                     "x": 135,
-                    "y": 2,
+                    "y": 2.5,
                     "scaleX": 1,
                     "scaleY": 1
                 },
@@ -235,7 +188,7 @@
                     "id": "34c0f160-c1f5-47cf-bd74-800b135b2c31",
                     "label": "questsLabel",
                     "x": 135,
-                    "y": 7.5,
+                    "y": 6.5,
                     "text": "Quests",
                     "fixedWidth": 50,
                     "paddingLeft": 1,
@@ -253,7 +206,239 @@
                     ],
                     "label": "questFlash",
                     "x": 135,
-                    "y": 2.5
+                    "y": 2
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9bc1c67d-97f2-4e54-b5c2-66d66b4804a0",
+                    "label": "bg",
+                    "x": 185,
+                    "y": 2.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.8,
+                    "width": 45,
+                    "height": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "40ed1c63-cad4-4f91-890a-54e784be88ff",
+                    "label": "questText",
+                    "scope": "PUBLIC",
+                    "x": 185,
+                    "y": 2.5,
+                    "text": "100%",
+                    "fixedWidth": 45,
+                    "fixedHeight": 20.32,
+                    "paddingTop": 5,
+                    "paddingRight": 2,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#66ff00"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "1608a87c-b592-4af8-aa1a-2d0b5e9f7eb6",
+                    "label": "questDivider",
+                    "x": 230,
+                    "y": 2.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#00ff00",
+                    "fillAlpha": 0.8,
+                    "width": 1,
+                    "height": 20
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "85b6d803-2877-402b-a0a0-11b3c21cbf00",
+                    "label": "bg_1",
+                    "x": 230,
+                    "y": 2.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.8,
+                    "width": 104.8,
+                    "height": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "9fac6a19-8a86-455b-bb93-0c9618c6537a",
+                    "label": "tokenText1",
+                    "scope": "PUBLIC",
+                    "x": 230,
+                    "y": 2,
+                    "text": "9,999,999\n",
+                    "fixedWidth": 90,
+                    "fixedHeight": 20.32,
+                    "paddingTop": 5,
+                    "paddingRight": 2,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#66ff00"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "63aa4eac-2e77-4b45-82db-f791358da6db",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "eventsButton",
+                    "scope": "CLASS",
+                    "color": "#2F95AF",
+                    "x": 350,
+                    "y": 2.55,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "dcd793f6-a6ed-426a-be95-5fa43a6a28d5",
+                    "label": "eventsLabel",
+                    "x": 350,
+                    "y": 6.55,
+                    "text": "Events",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "32e9214a-4e2c-4422-a9da-98ee2f7d7a76",
+                    "label": "bg_2",
+                    "x": 400,
+                    "y": 2,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.8,
+                    "width": 104.8,
+                    "height": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "cc0506b7-b2ca-4345-a312-16b8917265ac",
+                    "label": "tokenText",
+                    "scope": "PUBLIC",
+                    "x": 400,
+                    "y": 2,
+                    "text": "9,999,999\n",
+                    "fixedWidth": 90,
+                    "fixedHeight": 20.32,
+                    "paddingTop": 5,
+                    "paddingRight": 2,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#00ccff"
+                },
+                {
+                    "prefabId": "d2476090-5f1d-4d1b-af11-16649c40842c",
+                    "id": "3abd9db1-2817-4bee-a895-c18367281724",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "color"
+                    ],
+                    "label": "shopButton",
+                    "scope": "CLASS",
+                    "color": "#AF7C2F",
+                    "x": 520,
+                    "y": 2.55,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "type": "Text",
+                    "id": "83f6824d-c11f-4e0d-8e05-f648dcbf561f",
+                    "label": "shopLabel",
+                    "x": 520,
+                    "y": 6.55,
+                    "text": "Shop",
+                    "fixedWidth": 50,
+                    "paddingLeft": 1,
+                    "align": "center",
+                    "fontFamily": "Ronda Seven",
+                    "fontSize": "10px",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "e7d64eef-ccd9-4c4f-8c0c-0fb179d04e17",
+                    "label": "bg_3",
+                    "x": 570,
+                    "y": 2,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "fillAlpha": 0.8,
+                    "width": 70,
+                    "height": 20
+                },
+                {
+                    "type": "Text",
+                    "id": "3775c846-f66e-476a-a74d-6f2a9685c2bc",
+                    "label": "shopText",
+                    "scope": "PUBLIC",
+                    "x": 570,
+                    "y": 2,
+                    "text": "0 / 28\n",
+                    "fixedWidth": 70,
+                    "fixedHeight": 20.32,
+                    "paddingTop": 5,
+                    "paddingRight": 2,
+                    "align": "right",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "color": "#ff9900"
+                },
+                {
+                    "prefabId": "cc5284e3-5ff3-420b-9ddc-9055cc6e6656",
+                    "id": "8a25706e-048c-42e0-b805-df39b39c3e6a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "questToken",
+                    "x": 320,
+                    "y": -0.5,
+                    "scaleX": 1.25,
+                    "scaleY": 1.25
+                },
+                {
+                    "prefabId": "86f0db8c-f620-46b4-81d5-6170624f89f1",
+                    "id": "c26865ad-5307-41c2-b932-27c12cceb4ac",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "eventToken_1",
+                    "x": 490,
+                    "y": -0.5,
+                    "scaleX": 1.25,
+                    "scaleY": 1.25
                 }
             ]
         },
@@ -488,6 +673,124 @@
             ]
         },
         {
+            "type": "Container",
+            "id": "b0c47005-e9f2-48b5-bfe7-751053de3992",
+            "label": "middlePanel",
+            "x": 10,
+            "y": 440,
+            "list": [
+                {
+                    "prefabId": "e6062171-74b2-4147-8f8e-eef6d19867c7",
+                    "id": "09c3831a-16c4-4271-b2e4-d8d13158a31f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "news",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "prefabId": "b14c0f67-35c6-4fb5-8d66-07213312e529",
+                    "id": "fcbdc6d2-1a7d-415a-ae8e-939358f8bb80",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "boost",
+                    "x": 517,
+                    "y": -3
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "913ad7d6-e727-491a-9fbc-e7a1fd7a3f41",
+            "label": "sidePanel",
+            "x": 525,
+            "y": 80,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "d275e8db-ebf0-420e-b3d7-8bbf32e5c818",
+                    "label": "logo",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "logo"
+                    },
+                    "scaleX": 0.375,
+                    "scaleY": 0.375,
+                    "originX": 0,
+                    "originY": 0,
+                    "list": [
+                        {
+                            "type": "ColorMatrix",
+                            "id": "8cd3ba38-42bd-421a-85d7-70c34d3a95ac",
+                            "label": "saturateFx",
+                            "operationType": 3,
+                            "saturate": 2.5,
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "cf7b2626-6fd3-4b21-abbd-06f27bd9c197",
+                    "id": "43703b11-9f9f-4178-aa15-88689a42d993",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "progressBar",
+                    "x": 44,
+                    "y": 75
+                },
+                {
+                    "prefabId": "3498eb14-345d-42b2-a922-62f00575f632",
+                    "id": "cd85f20a-f88e-4558-8e53-b7ee0a4c07c8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "progressBarMode",
+                    "x": 4,
+                    "y": 276
+                },
+                {
+                    "prefabId": "cf60ca9c-fd35-4aaf-8b15-72c01f53d022",
+                    "id": "a4b31756-7e2e-4507-8955-6b2145bd591b",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "restTimer",
+                    "x": 4,
+                    "y": 322
+                }
+            ]
+        },
+        {
+            "prefabId": "41a9f0e4-a01c-4ccb-9c87-ef48ac9e4b79",
+            "id": "d0db837a-03e4-4ca9-9323-a1c58f035c8d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "topBar",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "prefabId": "912f354a-2104-4c01-93c9-8d4dbcc715d4",
+            "id": "e4e4acc0-d3ae-4c6d-9c52-3361a082e370",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "house",
+            "x": 10,
+            "y": 80
+        },
+        {
             "prefabId": "b97bbe0f-f765-431f-9d75-8129c3ecf8cb",
             "id": "38d52a8a-241b-40c5-8d92-feb30c47cf90",
             "unlock": [
@@ -496,7 +799,7 @@
             ],
             "label": "actionDescription",
             "x": -4,
-            "y": 282
+            "y": 281
         }
     ],
     "plainObjects": [],

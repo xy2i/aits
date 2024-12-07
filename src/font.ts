@@ -24,6 +24,7 @@ const FONTS = [
     new FontFace("Ronda Seven", "url('/assets/fonts/ronda-seven-bold.ttf')", {
         weight: 'bold',
     }),
+    new FontFace("IDLE PLANET", "url('/assets/fonts/idle-planet.ttf')"),
 ];
 
 export async function preloadFonts() {

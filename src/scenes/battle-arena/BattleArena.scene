@@ -1,0 +1,43 @@
+{
+    "id": "959eaae7-8484-484c-af36-5ec4027ac146",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "BattleArena",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Text",
+            "id": "df45bb18-4e23-415a-993f-bad4614146a5",
+            "label": "text",
+            "text": "battle arena",
+            "color": "#000000ff",
+            "backgroundColor": "#00acd7ff"
+        },
+        {
+            "type": "Image",
+            "id": "c7be76ae-8fc2-4cd7-8ca2-cef5e55fb6a1",
+            "label": "skin",
+            "texture": {
+                "key": "skin"
+            },
+            "x": 35,
+            "y": 150,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "originX": 0,
+            "originY": 0
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

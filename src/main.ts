@@ -6,27 +6,12 @@ import { Preloader } from '@/scenes/Preloader';
 import { Game, type Types } from "phaser";
 import { setupSOLReader } from './flash/sol';
 import { GameLoader } from './game-loader/GameLoader';
+import { CameraZoomPlugin, getAllGameObjects } from './loader/CameraZoomPlugin';
+import { MousePositionPlugin } from './loader/mousePositionHandler';
 import { Ui } from './ui/Ui';
 
 export const SIZE = 650;
 
-function getAllGameObjects(parent) {
-    const objects = [];
-
-    // If the parent is a container or a scene, traverse its children
-    if (parent.list) {
-        parent.list.forEach((child) => {
-            objects.push(child);
-
-            // Recursively check if the child has children
-            if (child.list) {
-                objects.push(...getAllGameObjects(child));
-            }
-        });
-    }
-
-    return objects;
-}
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -46,43 +31,15 @@ const config: Types.Core.GameConfig = {
     antialias: true,
     callbacks: {
         postBoot: (game) => {
-
-            game.scale.on(
-                "resize",
-                (gameSize, baseSize, displaySize, prevWidth, prevHeight) => {
-                    const { zoom } = game.scale;
-                    const { width, height } = game.scale.parentSize;
-                    const w = width / zoom;
-                    const h = height / zoom;
-
-                    if (h === prevHeight) {
-                        return;
-                    }
-                    game.scale.resize(h, h);
-
-                    for (const scene of game.scene.getScenes(false)) {
-                        if (scene.cameras.main) {
-                            scene.cameras.main.setZoom(h / SIZE);
-                        }
-
-                        // scale text elements resolution
-                        getAllGameObjects(scene.children).forEach(
-                            (child) => {
-                                if (child.type === "Text") {
-                                    const { width, height } = scene.sys.game.canvas;
-                                    child.setStyle({
-                                        resolution: (height / SIZE) * 1,
-                                    });
-                                }
-                            }
-                        );
-                    }
-                }
-            );
-
             game.scene.getScenes(false).forEach((scene) => {
-                scene.cameras.main.setOrigin(0, 0);
+                const { zoom } = game.scale;
+                const { width, height } = game.scale.parentSize;
+                const h = height / zoom;
 
+                if (scene.cameras?.main) {
+                    scene.cameras.main.setOrigin(0, 0);
+                    scene.cameras.main.setZoom(h / SIZE);
+                }
                 scene.events.once("create", () => {
                     getAllGameObjects(scene.children).forEach((child) => {
                         if (child.type === "Text") {
@@ -107,6 +64,16 @@ const config: Types.Core.GameConfig = {
     },
     plugins: {
         global: [
+            {
+                key: "CameraZoom",
+                plugin: CameraZoomPlugin,
+                start: true,
+            },
+            {
+                key: "MousePosition",
+                plugin: MousePositionPlugin,
+                start: true,
+            },
             {
                 key: "GlobalMouseWheel",
                 plugin: GlobalMouseWheelPlugin,

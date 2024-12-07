@@ -37,6 +37,16 @@
                 "key": "adventure-reminder-icon"
             },
             {
+                "url": "assets/svg/main/boost/ant-logo.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "ant-logo"
+            },
+            {
                 "url": "assets/anti-idle-logo.svg",
                 "svgConfig": {
                     "width": 0,
@@ -55,6 +65,36 @@
                 },
                 "type": "svg",
                 "key": "battery"
+            },
+            {
+                "url": "assets/svg/main/boost/blue-boost.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "blue-boost"
+            },
+            {
+                "url": "assets/svg/main/boost/boost-bg.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "boost-bg"
+            },
+            {
+                "url": "assets/svg/main/boost/boost-generator.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "boost-generator"
             },
             {
                 "url": "assets/svg/main/minis/card-reminder-icon.svg",
@@ -77,16 +117,6 @@
                 "key": "card-timer-bg"
             },
             {
-                "url": "assets/svg/main/top-bar/star/challenge.svg",
-                "svgConfig": {
-                    "width": 0,
-                    "height": 0,
-                    "scale": 0
-                },
-                "type": "svg",
-                "key": "challenge"
-            },
-            {
                 "url": "assets/shapes/cog.svg",
                 "svgConfig": {
                     "width": 22,
@@ -102,24 +132,134 @@
                 "key": "defaultBg"
             },
             {
-                "url": "assets/svg/main/top-bar/star/hard.svg",
+                "url": "assets/svg/main/event-token.svg",
                 "svgConfig": {
                     "width": 0,
                     "height": 0,
-                    "scale": 0
+                    "scale": 4
                 },
                 "type": "svg",
-                "key": "hard"
+                "key": "event-token"
             },
             {
-                "url": "assets/svg/main/top-bar/star/impossible.svg",
+                "url": "assets/svg/main/inside-bar/inside-bar-1.svg",
                 "svgConfig": {
                     "width": 0,
                     "height": 0,
                     "scale": 0
                 },
                 "type": "svg",
-                "key": "impossible"
+                "key": "inside-bar-1"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-10.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-10"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-11.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-11"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-12.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-12"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-2.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-2"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-3.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-3"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-4.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-4"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-5.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-5"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-6.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-6"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-7.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-7"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-8.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-8"
+            },
+            {
+                "url": "assets/svg/main/inside-bar/inside-bar-9.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "inside-bar-9"
             },
             {
                 "url": "assets/svg/main/logo.svg",
@@ -157,19 +297,59 @@
                 "key": "mini-garden-tree"
             },
             {
-                "url": "assets/svg/main/top-bar/star/normal.svg",
+                "url": "assets/svg/main/boost/purple-boost.svg",
                 "svgConfig": {
                     "width": 0,
                     "height": 0,
                     "scale": 0
                 },
                 "type": "svg",
-                "key": "normal"
+                "key": "purple-boost"
+            },
+            {
+                "url": "assets/svg/main/quest-token.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "quest-token"
+            },
+            {
+                "url": "assets/svg/main/progress-bar/rest-timer-bg.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 4
+                },
+                "type": "svg",
+                "key": "rest-timer-bg"
             },
             {
                 "url": "assets/sc.webp",
                 "type": "image",
                 "key": "sc"
+            },
+            {
+                "url": "assets/svg/battle-arena/skin.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "skin"
+            },
+            {
+                "url": "assets/svg/main/boost/yellow-boost.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "yellow-boost"
             }
         ]
     },

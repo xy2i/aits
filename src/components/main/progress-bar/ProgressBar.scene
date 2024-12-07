@@ -1,0 +1,128 @@
+{
+    "id": "cf7b2626-6fd3-4b21-abbd-06f27bd9c197",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "416ec77b-1fac-46ab-8a4a-b7ed3761ca07",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "99b8d962-74c5-491a-a663-b6d3801fe139",
+                    "label": "bg",
+                    "x": -2,
+                    "y": -2,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "width": 24,
+                    "height": 204
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "2cacb908-c8e5-41e2-a0bb-28449bc0c52b",
+                    "label": "bg_color",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#141428",
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "width": 20,
+                    "height": 200
+                },
+                {
+                    "prefabId": "90682d59-8365-4651-869c-5873f774dcf6",
+                    "id": "72c63b71-d7ae-4462-a152-14a946f3957c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle"
+                    ],
+                    "label": "insideBar",
+                    "scope": "PUBLIC",
+                    "x": 0,
+                    "y": 200,
+                    "angle": -90
+                },
+                {
+                    "prefabId": "90682d59-8365-4651-869c-5873f774dcf6",
+                    "id": "29c4d9d9-d554-44fc-8e87-3b624ce76193",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle"
+                    ],
+                    "label": "insideBar2",
+                    "scope": "PUBLIC",
+                    "x": 0,
+                    "y": 200,
+                    "angle": -90
+                },
+                {
+                    "prefabId": "90682d59-8365-4651-869c-5873f774dcf6",
+                    "id": "29a5233c-b8a0-4fd1-9bd8-880d2d5077c7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle"
+                    ],
+                    "label": "insideBar3",
+                    "scope": "PUBLIC",
+                    "x": 0,
+                    "y": 200,
+                    "angle": -90
+                },
+                {
+                    "prefabId": "90682d59-8365-4651-869c-5873f774dcf6",
+                    "id": "e6b4934e-5358-4cb1-8a6c-2d8795d6cb3d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle"
+                    ],
+                    "label": "insideBar4",
+                    "scope": "PUBLIC",
+                    "x": 0,
+                    "y": 200,
+                    "angle": -90
+                },
+                {
+                    "type": "Text",
+                    "id": "c8530113-bdc1-4ff9-9624-53ba423cd03f",
+                    "label": "textBox",
+                    "scope": "CLASS",
+                    "y": 200,
+                    "angle": -90,
+                    "text": "50%",
+                    "fixedWidth": 200,
+                    "paddingTop": 2,
+                    "align": "center",
+                    "fontFamily": "Noto Sans JP",
+                    "fontSize": "14px",
+                    "color": "#ccffffff",
+                    "stroke": ""
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "id": "cf60ca9c-fd35-4aaf-8b15-72c01f53d022",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "43248711-b3e3-4fec-9856-319eca455dec",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8bc83d5e-f74f-46f6-a7dc-1f25886c634c",
+                    "label": "rest_timer_bg",
+                    "texture": {
+                        "key": "rest-timer-bg"
+                    },
+                    "y": 10,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Text",
+                    "id": "6a240877-6a73-461f-bf92-5f7c0dafc0fe",
+                    "label": "label",
+                    "scope": "CLASS",
+                    "text": "NOT RESTED",
+                    "fixedWidth": 102,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "8px",
+                    "color": "#666"
+                },
+                {
+                    "type": "Text",
+                    "id": "98a71a14-046a-4f30-9f25-35444271f6c6",
+                    "label": "timeText",
+                    "scope": "CLASS",
+                    "y": 14.85,
+                    "text": "0:00:00",
+                    "fixedWidth": 102,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven Extended",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#666"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "eb3a4718-4182-45ad-9347-ba90d697351b",
+                    "label": "overlay",
+                    "originX": 0,
+                    "originY": 0,
+                    "width": 102,
+                    "height": 32
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

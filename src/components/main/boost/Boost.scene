@@ -1,0 +1,170 @@
+{
+    "id": "b14c0f67-35c6-4fb5-8d66-07213312e529",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "8d6e2214-8663-4d13-9138-2081e686afa4",
+            "label": "container_1",
+            "x": -1,
+            "list": [
+                {
+                    "type": "Ellipse",
+                    "id": "91d56d35-da98-43ec-a0e8-e0db2093016a",
+                    "label": "background",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#001432",
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "85b9336f-2a76-497b-b933-bc158a74734a",
+                    "label": "blueBoost",
+                    "texture": {
+                        "key": "blue-boost"
+                    },
+                    "x": 50,
+                    "y": 50,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "8867c970-b99c-416c-90a0-0c4bf524114b",
+                    "label": "yellowBoost",
+                    "texture": {
+                        "key": "yellow-boost"
+                    },
+                    "x": 50,
+                    "y": 50,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "00065d79-faa9-41ae-b8f2-29137c62203d",
+                    "label": "purpleBoost",
+                    "texture": {
+                        "key": "purple-boost"
+                    },
+                    "x": 50,
+                    "y": 50,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "761b572a-52bf-43db-b4da-1782ec205f4b",
+                    "label": "boost_bg",
+                    "texture": {
+                        "key": "boost-bg"
+                    },
+                    "x": 50,
+                    "y": 50,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Text",
+                    "id": "fe46161d-9eb2-4129-a7dc-bae123b8b424",
+                    "label": "boostLabel",
+                    "y": 22.5,
+                    "text": "Boost",
+                    "fixedWidth": 100,
+                    "align": "center",
+                    "fontFamily": "IDLE PLANET",
+                    "fontSize": "8px",
+                    "color": "#0099FF"
+                },
+                {
+                    "type": "Text",
+                    "id": "15c2460b-ac53-4f41-b558-bd19f5cf596c",
+                    "label": "boostText",
+                    "scope": "CLASS",
+                    "y": 35,
+                    "text": "100%",
+                    "fixedWidth": 100,
+                    "align": "center",
+                    "fontFamily": "IDLE PLANET",
+                    "fontSize": "8px",
+                    "color": "#ff0",
+                    "stroke": "#ffffff66",
+                    "shadow.stroke": true,
+                    "shadow.color": "#ffffffff",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "56c426cd-a6bc-4d05-84c6-cd2c07163906",
+                    "label": "ant_logo",
+                    "texture": {
+                        "key": "ant-logo"
+                    },
+                    "x": 30,
+                    "y": 59,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Text",
+                    "id": "fc533b3f-c814-44fb-9eaa-62077c88f26b",
+                    "label": "antText",
+                    "scope": "CLASS",
+                    "x": 44,
+                    "y": 55,
+                    "text": "x0005",
+                    "align": "right",
+                    "fontFamily": "IDLE PLANET",
+                    "fontSize": "8px",
+                    "color": "#ccc",
+                    "stroke": "#ffffff66",
+                    "shadow.stroke": true,
+                    "shadow.color": "#ffffffff",
+                    "shadow.blur": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "e4a6ed51-2e20-4c47-8c47-f9d1d861ff63",
+                    "label": "antTextGray",
+                    "scope": "CLASS",
+                    "x": 44,
+                    "y": 55,
+                    "text": "x000",
+                    "fontFamily": "IDLE PLANET",
+                    "fontSize": "8px",
+                    "color": "#444444",
+                    "stroke": "#ffffff66",
+                    "shadow.stroke": true,
+                    "shadow.color": "#ffffffff",
+                    "shadow.blur": 3
+                },
+                {
+                    "prefabId": "70aee4b8-4d91-47ca-80f2-cf694b259b7a",
+                    "id": "b98b3583-646f-42f1-8c5c-3af96d0ebbd4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "boostGenerator",
+                    "x": 50,
+                    "y": 25
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -15,7 +15,6 @@ import { checkPet, killPet } from "@/lib/pet";
 import { printMoney } from "@/lib/printer";
 
 export function loadMain(main) {
-    console.log("im loadmain() function")
     function dispAsc() {
         elapsed_days = Math.floor(_root.save.ascendPlayTime / 86400);
         remaining = _root.save.ascendPlayTime - elapsed_days * 86400;
@@ -1686,7 +1685,7 @@ export function loadMain(main) {
                 if (_root.save.eliteButtonTime > 0) {
                     tmul += 200;
                 }
-                if (currentFeature !== Feature.Button) {
+                if (currentFeature() !== Feature.Button) {
                     grandpaClickRate = grandpaClickRate * _root.save.buttonGrandpaDiscipline * 0.02;
                     grandpaExcellentRate = grandpaExcellentRate * _root.save.buttonGrandpaDiscipline * 0.02;
                 }

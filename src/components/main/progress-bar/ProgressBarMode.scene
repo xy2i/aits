@@ -1,0 +1,103 @@
+{
+    "id": "3498eb14-345d-42b2-a922-62f00575f632",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 650,
+        "borderHeight": 650
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "0eb59c47-5d4b-4649-9600-a336d68504b5",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "1a9008c5-5b90-4650-9d36-ac12517363e7",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "y": 1,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#7F7FFF",
+                    "fillAlpha": 0.5,
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 100,
+                    "height": 20
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "aa4287ed-1901-4e15-a4f6-9cdafd6c5320",
+                    "label": "rectangle",
+                    "y": 21,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 100,
+                    "height": 15
+                },
+                {
+                    "type": "Text",
+                    "id": "c7c644f0-15fd-46a4-918f-8a6ba16b9b76",
+                    "label": "onoff",
+                    "scope": "CLASS",
+                    "x": 1,
+                    "y": 23,
+                    "text": "OFF",
+                    "fixedWidth": 100,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#666666"
+                },
+                {
+                    "type": "Text",
+                    "id": "4d69adbb-bc4b-4387-bb77-e5004b8d21ce",
+                    "label": "mode",
+                    "scope": "CLASS",
+                    "x": 1,
+                    "y": 5,
+                    "text": "Idle Mode",
+                    "fixedWidth": 100,
+                    "align": "center",
+                    "fontFamily": "Tempesta Seven",
+                    "fontSize": "10px",
+                    "fontStyle": "bold",
+                    "color": "#333366"
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "eab5b73a-33c6-434b-bd4c-6b62fcae3e51",
+                    "label": "outline",
+                    "originX": 0,
+                    "originY": 0,
+                    "fillColor": "#000",
+                    "strokeColor": "#000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 100,
+                    "height": 35
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
